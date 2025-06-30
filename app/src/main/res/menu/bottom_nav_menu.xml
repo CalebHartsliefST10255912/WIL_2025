@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
-<menu xmlns:android="http://schemas.android.com/apk/res/android">
+<menu xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:android="http://schemas.android.com/apk/res/android">
 
     <item
         android:id="@+id/navigation_home"
@@ -7,13 +8,23 @@
         android:title="@string/title_home" />
 
     <item
-        android:id="@+id/navigation_dashboard"
-        android:icon="@drawable/ic_dashboard_black_24dp"
-        android:title="@string/title_dashboard" />
+        android:id="@+id/navigation_training"
+        android:icon="@drawable/training"
+        android:title="Training" />
 
     <item
-        android:id="@+id/navigation_notifications"
-        android:icon="@drawable/ic_notifications_black_24dp"
-        android:title="@string/title_notifications" />
+        android:id="@+id/navigation_qualifications"
+        android:icon="@drawable/qualifications"
+        android:title="Qualifications" />
+
+    <item
+        android:id="@+id/navigation_soup"
+        android:icon="@drawable/soup"
+        android:title="Soup Kitchen" />
+
+    <item
+        android:id="@+id/navigation_contact"
+        android:icon="@drawable/outline_contact_support_24"
+        android:title="Contact Us" />
 
 </menu>
