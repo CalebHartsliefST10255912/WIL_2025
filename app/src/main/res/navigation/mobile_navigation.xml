@@ -12,14 +12,26 @@
         tools:layout="@layout/fragment_home" />
 
     <fragment
-        android:id="@+id/navigation_dashboard"
-        android:name="com.example.wil_byte_horizon.ui.dashboard.DashboardFragment"
-        android:label="@string/title_dashboard"
-        tools:layout="@layout/fragment_dashboard" />
+        android:id="@+id/navigation_train"
+        android:name="com.example.wil_byte_horizon.ui.train.TrainFragment"
+        android:label="@string/title_training"
+        tools:layout="@layout/fragment_train" />
 
     <fragment
-        android:id="@+id/navigation_notifications"
-        android:name="com.example.wil_byte_horizon.ui.notifications.NotificationsFragment"
-        android:label="@string/title_notifications"
-        tools:layout="@layout/fragment_notifications" />
+        android:id="@+id/navigation_qualification"
+        android:name="com.example.wil_byte_horizon.ui.qualif.QualificationFragment"
+        android:label="@string/title_qualifications"
+        tools:layout="@layout/fragment_qualifications" />
+
+    <fragment
+        android:id="@+id/navigation_soup"
+        android:name="com.example.wil_byte_horizon.ui.soup.SoupFragment"
+        android:label="@string/title_soup"
+        tools:layout="@layout/fragment_soup" />
+
+    <fragment
+        android:id="@+id/navigation_contact"
+        android:name="com.example.wil_byte_horizon.ui.contact.ContactFragment"
+        android:label="@string/title_contactus"
+        tools:layout="@layout/fragment_contact" />
 </navigation>
