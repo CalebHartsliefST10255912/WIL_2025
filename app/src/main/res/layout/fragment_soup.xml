@@ -1,17 +1,73 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@drawable/fragment_background"
-    android:orientation="vertical"
-    android:gravity="center"
     android:padding="16dp">
 
-    <!-- Your fragment content here -->
-    <TextView
-        android:layout_width="wrap_content"
+    <LinearLayout
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Soup Fragment"
-        android:textSize="18sp"
-        android:textColor="#000" />
-</LinearLayout>
+        android:orientation="vertical"
+        android:gravity="center_horizontal">
+
+        <!-- Top Logo -->
+        <ImageView
+            android:id="@+id/topLogo"
+            android:layout_width="379dp"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="16dp"
+            android:adjustViewBounds="true"
+            android:contentDescription="Top Logo"
+            android:scaleType="fitCenter"
+            android:src="@drawable/toplogo" />
+
+        <!-- NPO Logo -->
+        <ImageView
+            android:id="@+id/npoLogo"
+            android:layout_width="160dp"
+            android:layout_height="wrap_content"
+            android:src="@drawable/npologo"
+            android:adjustViewBounds="true"
+            android:scaleType="fitCenter"
+            android:contentDescription="NPO Logo"
+            android:layout_marginBottom="16dp" />
+
+        <!-- Section Title -->
+        <TextView
+            android:id="@+id/soupTitle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Community Soup Kitchen"
+            android:textSize="20sp"
+            android:textStyle="bold"
+            android:textColor="#000"
+            android:layout_marginBottom="24dp" />
+
+        <!-- Soup Images Gallery -->
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="220dp"
+            android:layout_marginBottom="16dp"
+            android:scaleType="centerCrop"
+            android:src="@drawable/soup1"
+            android:contentDescription="Soup 1 Image" />
+
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="220dp"
+            android:layout_marginBottom="16dp"
+            android:scaleType="centerCrop"
+            android:src="@drawable/soup2"
+            android:contentDescription="Soup 2 Image" />
+
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="220dp"
+            android:layout_marginBottom="16dp"
+            android:scaleType="centerCrop"
+            android:src="@drawable/soup3"
+            android:contentDescription="Soup 3 Image" />
+
+    </LinearLayout>
+</ScrollView>
