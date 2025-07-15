@@ -1,72 +1,152 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@drawable/fragment_background"
     android:padding="16dp">
 
-    <!-- Banner ViewPager2 -->
-    <androidx.viewpager2.widget.ViewPager2
-        android:id="@+id/bannerViewPager"
+    <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="200dp"
-        android:clipChildren="false"
-        android:clipToPadding="false"
-        android:overScrollMode="never"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"/>
-
-    <!-- Left Arrow -->
-    <ImageButton
-        android:id="@+id/leftArrow"
-        android:layout_width="40dp"
-        android:layout_height="40dp"
-        android:background="@android:color/transparent"
-        android:src="@drawable/outline_arrow_left_24"
-        app:layout_constraintStart_toStartOf="@id/bannerViewPager"
-        app:layout_constraintTop_toTopOf="@id/bannerViewPager"
-        app:layout_constraintBottom_toBottomOf="@id/bannerViewPager" />
-
-    <!-- Right Arrow -->
-    <ImageButton
-        android:id="@+id/rightArrow"
-        android:layout_width="40dp"
-        android:layout_height="40dp"
-        android:background="@android:color/transparent"
-        android:src="@drawable/outline_arrow_right_24"
-        app:layout_constraintEnd_toEndOf="@id/bannerViewPager"
-        app:layout_constraintTop_toTopOf="@id/bannerViewPager"
-        app:layout_constraintBottom_toBottomOf="@id/bannerViewPager" />
-
-    <!-- Dots Indicator -->
-    <com.tbuonomo.viewpagerdotsindicator.WormDotsIndicator
-        android:id="@+id/dotsIndicator"
-        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        app:dotsColor="@android:color/black"
-        app:selectedDotColor="@android:color/holo_green_light"
-        app:dotsCornerRadius="8dp"
-        app:dotsSpacing="8dp"
-        app:dotsSize="12dp"
-        app:layout_constraintTop_toBottomOf="@id/bannerViewPager"
-        app:layout_constraintBottom_toTopOf="@id/textHome"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        android:layout_marginTop="8dp"/>
+        android:orientation="vertical"
+        android:gravity="center_horizontal">
 
-    <!-- Home Text -->
-    <TextView
-        android:id="@+id/textHome"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Welcome to Home"
-        android:textSize="18sp"
-        app:layout_constraintTop_toBottomOf="@id/bannerViewPager"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        android:layout_marginTop="24dp"/>
+        <!-- Top Logo -->
+        <ImageView
+            android:id="@+id/topLogo"
+            android:layout_width="379dp"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="16dp"
+            android:adjustViewBounds="true"
+            android:contentDescription="Top Logo"
+            android:scaleType="fitCenter"
+            android:src="@drawable/toplogo" />
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+        <!-- Hidden Text Placeholder -->
+        <TextView
+            android:id="@+id/textHome"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text=""
+            android:textSize="0sp"
+            android:textStyle="bold"
+            android:layout_marginTop="8dp" />
+
+        <!-- App Title -->
+        <TextView
+            android:id="@+id/TextHome"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Ndikhondinani Skills Development"
+            android:textSize="18sp"
+            android:textStyle="bold"
+            android:layout_marginTop="8dp" />
+
+        <!-- Logo -->
+        <ImageView
+            android:id="@+id/logoImage"
+            android:layout_width="200dp"
+            android:layout_height="200dp"
+            android:src="@drawable/npologo"
+            android:contentDescription="Logo" />
+
+        <!-- Welcome Text -->
+        <TextView
+            android:id="@+id/Home"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Welcome"
+            android:textSize="18sp"
+            android:textStyle="bold"
+            android:layout_marginTop="8dp" />
+
+        <!-- Horizontal Info Boxes -->
+        <LinearLayout
+            android:id="@+id/infoBlock"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_marginTop="24dp">
+
+            <!-- Empowering Section Box -->
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:padding="12dp"
+                android:layout_marginEnd="4dp"
+                android:background="#62DE68">
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginEnd="4dp"
+                    android:layout_weight="1"
+                    android:background="#FFDE80"
+                    android:orientation="vertical"
+                    android:padding="12dp">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:paddingBottom="4dp"
+                        android:text="Empowering"
+                        android:textSize="18sp"
+                        android:textStyle="bold" />
+                </LinearLayout>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Communities with skills to start businesses, prepare foodstuff, manage farms, and brighter futures."
+                    android:textSize="14sp"
+                    android:textStyle="bold" />
+
+                <ImageView
+                    android:id="@+id/sample_people"
+                    android:layout_width="131dp"
+                    android:layout_height="200dp"
+                    android:layout_marginTop="16dp"
+                    android:src="@drawable/sample_people"
+                    android:contentDescription="People Image" />
+            </LinearLayout>
+
+            <!-- Education Section Box -->
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:padding="12dp"
+                android:layout_marginStart="4dp"
+                android:background="#62DE68">
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginEnd="4dp"
+                    android:layout_weight="1"
+                    android:background="#FFDE80"
+                    android:orientation="vertical"
+                    android:padding="12dp">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:paddingBottom="4dp"
+                        android:text="Education"
+                        android:textSize="18sp"
+                        android:textStyle="bold" />
+                </LinearLayout>
+
+                <TextView
+                    android:layout_width="136dp"
+                    android:layout_height="wrap_content"
+                    android:text="Our courses are recognized and structured to equip you with the skills needed to succeed in today's job market and entrepreneurial ventures."
+                    android:textSize="14sp"
+                    android:textStyle="bold" />
+            </LinearLayout>
+        </LinearLayout>
+    </LinearLayout>
+</ScrollView>
