@@ -1,5 +1,6 @@
 [versions]
 agp = "8.10.1"
+dotsindicator = "4.3"
 kotlin = "2.0.21"
 coreKtx = "1.16.0"
 junit = "4.13.2"
@@ -13,9 +14,12 @@ lifecycleViewmodelKtx = "2.9.1"
 navigationFragmentKtx = "2.9.0"
 navigationUiKtx = "2.9.0"
 viewpager2 = "1.1.0"
+viewpager2Version = "1.0.0"
 
 [libraries]
 androidx-core-ktx = { group = "androidx.core", name = "core-ktx", version.ref = "coreKtx" }
+androidx-viewpager2-v100 = { module = "androidx.viewpager2:viewpager2", version.ref = "viewpager2Version" }
+dotsindicator = { module = "com.tbuonomo:dotsindicator", version.ref = "dotsindicator" }
 junit = { group = "junit", name = "junit", version.ref = "junit" }
 androidx-junit = { group = "androidx.test.ext", name = "junit", version.ref = "junitVersion" }
 androidx-espresso-core = { group = "androidx.test.espresso", name = "espresso-core", version.ref = "espressoCore" }

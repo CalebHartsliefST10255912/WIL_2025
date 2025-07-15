@@ -22,8 +22,6 @@ class HomeFragment : Fragment() {
 
     private lateinit var bannerAdapter: BannerAdapter
     private lateinit var viewPager: ViewPager2
-    private lateinit var leftArrow: ImageButton
-    private lateinit var rightArrow: ImageButton
     private lateinit var dotsIndicator: WormDotsIndicator
 
     override fun onCreateView(
@@ -52,20 +50,6 @@ class HomeFragment : Fragment() {
         // Setup dots
         dotsIndicator = binding.dotsIndicator
         dotsIndicator.setViewPager2(viewPager)
-
-        // Arrows
-        leftArrow = binding.leftArrow
-        rightArrow = binding.rightArrow
-
-        leftArrow.setOnClickListener {
-            val current = viewPager.currentItem
-            if (current > 0) viewPager.currentItem = current - 1
-        }
-
-        rightArrow.setOnClickListener {
-            val current = viewPager.currentItem
-            if (current < bannerAdapter.itemCount - 1) viewPager.currentItem = current + 1
-        }
 
         return root
     }
