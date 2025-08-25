@@ -11,16 +11,17 @@
         android:orientation="vertical"
         android:gravity="center_horizontal">
 
-        <!-- Top Logo -->
-        <ImageView
-            android:id="@+id/topLogo"
-            android:layout_width="379dp"
+        <!-- 🔍 Search Bar -->
+        <EditText
+            android:id="@+id/searchBar"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginBottom="24dp"
-            android:adjustViewBounds="true"
-            android:contentDescription="Top Logo"
-            android:scaleType="fitCenter"
-            android:src="@drawable/toplogo" />
+            android:hint="Search qualifications..."
+            android:padding="12dp"
+            android:drawableStart="@android:drawable/ic_menu_search"
+            android:background="@android:drawable/edit_text"
+            android:inputType="text"
+            android:layout_marginBottom="16dp" />
 
         <!-- Section Title -->
         <TextView
@@ -37,7 +38,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="vertical"
-            android:background="#00008B"
+            android:background="@color/grey_block"
             android:padding="16dp"
             android:layout_marginBottom="16dp"
             android:elevation="4dp">
@@ -62,7 +63,8 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="Enrol Now"
-                android:background="#FF4500"
+                android:background="@color/enrol_red"
+                android:backgroundTint="@color/enrol_red"
                 android:textColor="#FFFFFF"
                 android:layout_marginTop="8dp" />
         </LinearLayout>
@@ -72,7 +74,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="vertical"
-            android:background="#228B22"
+            android:background="@color/grey_block"
             android:padding="16dp"
             android:layout_marginBottom="16dp"
             android:elevation="4dp">
@@ -97,7 +99,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="Enrol Now"
-                android:background="#FF4500"
+                android:background="@color/enrol_red"
                 android:textColor="#FFFFFF"
                 android:layout_marginTop="8dp" />
         </LinearLayout>
@@ -107,7 +109,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="vertical"
-            android:background="#00008B"
+            android:background="@color/grey_block"
             android:padding="16dp"
             android:layout_marginBottom="16dp"
             android:elevation="4dp">
@@ -132,7 +134,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="Enrol Now"
-                android:background="#FF4500"
+                android:background="@color/enrol_red"
                 android:textColor="#FFFFFF"
                 android:layout_marginTop="8dp" />
         </LinearLayout>
@@ -142,7 +144,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="vertical"
-            android:background="#20B2AA"
+            android:background="@color/grey_block"
             android:padding="16dp"
             android:layout_marginBottom="16dp"
             android:elevation="4dp">
@@ -167,7 +169,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="Enrol Now"
-                android:background="#FF4500"
+                android:background="@color/enrol_red"
                 android:textColor="#FFFFFF"
                 android:layout_marginTop="8dp" />
         </LinearLayout>
@@ -177,7 +179,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="vertical"
-            android:background="#8B008B"
+            android:background="@color/grey_block"
             android:padding="16dp"
             android:layout_marginBottom="16dp"
             android:elevation="4dp">
@@ -212,7 +214,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="vertical"
-            android:background="#4169E1"
+            android:background="@color/grey_block"
             android:padding="16dp"
             android:layout_marginBottom="16dp"
             android:elevation="4dp">
