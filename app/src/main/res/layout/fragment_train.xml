@@ -5,6 +5,14 @@
     android:background="@drawable/fragment_background"
     android:padding="16dp">
 
+    <!-- Horizontal Info Boxes -->
+    <LinearLayout
+        android:id="@+id/infoBlock"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_marginTop="24dp">
+
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -12,15 +20,6 @@
         android:gravity="center_horizontal">
 
         <!-- Top Logo Image -->
-        <ImageView
-            android:id="@+id/topLogo"
-            android:layout_width="379dp"
-            android:layout_height="wrap_content"
-            android:layout_marginBottom="24dp"
-            android:adjustViewBounds="true"
-            android:contentDescription="Top Logo"
-            android:scaleType="fitCenter"
-            android:src="@drawable/toplogo" />
 
         <!-- Section Title -->
         <TextView
@@ -33,13 +32,13 @@
 
         <!-- Card 1: Business -->
         <LinearLayout
-            android:layout_width="match_parent"
+            android:layout_width="200dp"
+            android:layout_weight="1"
             android:layout_height="wrap_content"
-            android:background="#FFF3E0"
             android:orientation="vertical"
-            android:padding="16dp"
-            android:layout_marginBottom="16dp"
-            android:elevation="4dp">
+            android:padding="12dp"
+            android:layout_marginEnd="4dp"
+            android:background="@color/blue_block">
 
             <ImageView
                 android:layout_width="match_parent"
@@ -67,13 +66,13 @@
 
         <!-- Card 2: Food -->
         <LinearLayout
-            android:layout_width="match_parent"
+            android:layout_width="200dp"
+            android:layout_weight="1"
             android:layout_height="wrap_content"
-            android:background="#FFFDE7"
-            android:orientation="vertical"
-            android:padding="16dp"
-            android:layout_marginBottom="16dp"
-            android:elevation="4dp">
+            android:orientation="horizontal"
+            android:padding="12dp"
+            android:layout_marginEnd="4dp"
+            android:background="@color/blue_block">
 
             <ImageView
                 android:layout_width="match_parent"
@@ -133,5 +132,6 @@
                 android:layout_marginTop="4dp" />
         </LinearLayout>
 
+    </LinearLayout>
     </LinearLayout>
 </ScrollView>

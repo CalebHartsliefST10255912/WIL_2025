@@ -33,15 +33,10 @@ class HomeFragment : Fragment() {
         _binding = FragmentHomeBinding.inflate(inflater, container, false)
         val root: View = binding.root
 
-        val textView: TextView = binding.textHome
-        homeViewModel.text.observe(viewLifecycleOwner) {
-            textView.text = it
-        }
-
         // Setup ViewPager2 with banner adapter
         viewPager = binding.bannerViewPager
         val bannerImages = listOf(
-            R.drawable.npo_banner,
+            R.drawable.org_banner,
             R.drawable.banner_bh
         )
         bannerAdapter = BannerAdapter(bannerImages)
