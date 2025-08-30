@@ -4,7 +4,8 @@
     android:layout_height="match_parent"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:background="@drawable/fragment_background"
-    android:padding="16dp">
+    android:padding="16dp"
+    android:edgeEffectColor="@color/light_blue">
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -67,8 +68,7 @@
                 android:layout_marginTop="16dp"
                 android:backgroundTint="@color/enrol_red"
                 android:text="Enrol Now"
-                android:textColor="@color/white"
-                app:layout_constraintEnd_toMiddleOf="parent" />
+                android:textColor="@color/white" />
         </LinearLayout>
 
         <!-- Qualification 2: Agricultural Studies -->
@@ -104,8 +104,7 @@
                 android:layout_marginTop="16dp"
                 android:backgroundTint="@color/enrol_red"
                 android:text="Enrol Now"
-                android:textColor="@color/white"
-                app:layout_constraintEnd_toMiddleOf="parent" />
+                android:textColor="@color/white" />
         </LinearLayout>
 
         <!-- Qualification 3: Food Technology -->
@@ -141,8 +140,7 @@
                 android:layout_marginTop="16dp"
                 android:backgroundTint="@color/enrol_red"
                 android:text="Enrol Now"
-                android:textColor="@color/white"
-                app:layout_constraintEnd_toMiddleOf="parent" />
+                android:textColor="@color/white" />
         </LinearLayout>
 
         <!-- Qualification 4: Community Development -->
@@ -178,8 +176,7 @@
                 android:layout_marginTop="16dp"
                 android:backgroundTint="@color/enrol_red"
                 android:text="Enrol Now"
-                android:textColor="@color/white"
-                app:layout_constraintEnd_toMiddleOf="parent" />
+                android:textColor="@color/white" />
         </LinearLayout>
 
         <!-- Qualification 5: Financial Literacy and Budgeting -->
@@ -215,8 +212,7 @@
                 android:layout_marginTop="16dp"
                 android:backgroundTint="@color/enrol_red"
                 android:text="Enrol Now"
-                android:textColor="@color/white"
-                app:layout_constraintEnd_toMiddleOf="parent" />
+                android:textColor="@color/white" />
         </LinearLayout>
 
         <!-- Qualification 6: Marketing and Sales Strategies -->
@@ -252,8 +248,7 @@
                 android:layout_marginTop="16dp"
                 android:backgroundTint="@color/enrol_red"
                 android:text="Enrol Now"
-                android:textColor="@color/white"
-                app:layout_constraintEnd_toMiddleOf="parent" />
+                android:textColor="@color/white" />
         </LinearLayout>
 
     </LinearLayout>
