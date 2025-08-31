@@ -1,137 +1,498 @@
 <?xml version="1.0" encoding="utf-8"?>
 <ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@drawable/fragment_background"
-    android:padding="16dp">
-
-    <!-- Horizontal Info Boxes -->
-    <LinearLayout
-        android:id="@+id/infoBlock"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal"
-        android:layout_marginTop="24dp">
+    android:padding="16dp"
+    android:fillViewport="true">
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="vertical"
-        android:gravity="center_horizontal">
+        android:gravity="center">
 
-        <!-- Top Logo Image -->
-
-        <!-- Section Title -->
+        <!-- New TextView row -->
         <TextView
+            android:id="@+id/cardsTitle"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Training Fragment"
-            android:textSize="18sp"
-            android:textColor="#000"
-            android:layout_marginBottom="16dp" />
+            android:text="Training Program"
+            android:textSize="22sp"
+            android:textStyle="bold"
+            android:textColor="@color/header_dark_red"
+            android:layout_marginBottom="12dp" />
 
-        <!-- Card 1: Business -->
+        <!-- New LinearLayout row for description or extra content -->
         <LinearLayout
-            android:layout_width="200dp"
-            android:layout_weight="1"
+            android:id="@+id/cardsDescription"
+            android:layout_width="300dp"
             android:layout_height="wrap_content"
             android:orientation="vertical"
+            android:gravity="center"
+            android:background="@drawable/image_rounded"
             android:padding="12dp"
-            android:layout_marginEnd="4dp"
-            android:background="@color/blue_block">
-
-            <ImageView
-                android:layout_width="match_parent"
-                android:layout_height="500dp"
-                android:scaleType="centerCrop"
-                android:src="@drawable/starting_image"
-                android:contentDescription="Starting and managing your business" />
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Starting and managing your business"
-                android:textSize="16sp"
-                android:textStyle="bold"
-                android:textColor="#000"
-                android:layout_marginTop="8dp" />
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Learn the essentials of entrepreneurship, planning, and financial literacy to run your own business."
-                android:textSize="14sp"
-                android:layout_marginTop="4dp" />
-        </LinearLayout>
-
-        <!-- Card 2: Food -->
-        <LinearLayout
-            android:layout_width="200dp"
-            android:layout_weight="1"
-            android:layout_height="wrap_content"
-            android:orientation="horizontal"
-            android:padding="12dp"
-            android:layout_marginEnd="4dp"
-            android:background="@color/blue_block">
-
-            <ImageView
-                android:layout_width="match_parent"
-                android:layout_height="180dp"
-                android:scaleType="centerCrop"
-                android:src="@drawable/food_image"
-                android:contentDescription="Food production and preparation" />
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Food production and preparation"
-                android:textSize="16sp"
-                android:textStyle="bold"
-                android:textColor="#000"
-                android:layout_marginTop="8dp" />
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Master food handling, hygiene, and preparation techniques for community-based entrepreneurship."
-                android:textSize="14sp"
-                android:layout_marginTop="4dp" />
-        </LinearLayout>
-
-        <!-- Card 3: Farming -->
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:background="#E8F5E9"
-            android:orientation="vertical"
-            android:padding="16dp"
             android:layout_marginBottom="16dp"
             android:elevation="4dp">
 
-            <ImageView
-                android:layout_width="match_parent"
-                android:layout_height="180dp"
-                android:scaleType="centerCrop"
-                android:src="@drawable/farming_image"
-                android:contentDescription="Farm operation and management" />
-
             <TextView
+
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Farm operation and management"
-                android:textSize="16sp"
-                android:textStyle="bold"
-                android:textColor="#000"
-                android:layout_marginTop="8dp" />
+                android:text="Practical Training in:"
+                android:textSize="30sp"
+                android:textColor="@color/blue_main" />
 
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Develop skills in small-scale farming, crop cycles, and sustainable agricultural practices."
-                android:textSize="14sp"
-                android:layout_marginTop="4dp" />
+            <!-- Add more content inside this LinearLayout as needed -->
+
         </LinearLayout>
 
+        <!-- Grid container for cards -->
+        <GridLayout
+            android:id="@+id/cardGrid"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:columnCount="2"
+
+            android:orientation="horizontal"
+            android:alignmentMode="alignMargins"
+            android:rowOrderPreserved="false">
+
+            <!-- Card 1 -->
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_columnWeight="1"
+                android:layout_marginEnd="12dp"
+                android:background="@drawable/image_rounded"
+                android:gravity="center"
+                android:orientation="vertical"
+                android:padding="12dp">
+
+                <com.google.android.material.imageview.ShapeableImageView
+                    android:layout_width="100dp"
+                    android:layout_height="100dp"
+                    android:scaleType="centerCrop"
+                    android:src="@drawable/startingpng"
+                    app:shapeAppearanceOverlay="@style/CircularImage" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:paddingBottom="4dp"
+                    android:text="Starting"
+                    android:textSize="18sp"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:paddingTop="10dp"
+                    android:text="and managing your
+ business"
+                    android:textSize="14sp"
+                    android:textStyle="bold" />
+
+                <LinearLayout
+                    android:id="@+id/share_and_star"
+                    android:layout_width="145dp"
+                    android:layout_height="53dp"
+                    android:layout_marginTop="24dp"
+                    android:orientation="horizontal">
+
+                    <ImageView
+                        android:id="@+id/sample_people"
+                        android:layout_width="30dp"
+                        android:layout_height="30dp"
+                        android:layout_marginTop="16dp"
+                        android:layout_marginEnd="10dp"
+                        android:src="@drawable/starclip"
+                        android:contentDescription="People Image" />
+
+                    <TextView
+                        android:layout_width="35dp"
+                        android:layout_height="30dp"
+                        android:layout_marginTop="30dp"
+                        android:layout_marginEnd="20dp"
+                        android:text="4.8"
+                        android:textSize="14sp"
+                        android:textStyle="bold" />
+
+                    <ImageButton
+                        android:id="@+id/shareButton"
+                        android:layout_width="60dp"
+                        android:layout_height="50dp"
+                        android:layout_marginTop="8dp"
+                        android:background="?attr/selectableItemBackgroundBorderless"
+                        android:padding="5dp"
+                        android:scaleType="centerInside"
+                        android:src="@drawable/share_clip"
+                        android:contentDescription="Share" />
+
+                </LinearLayout>
+            </LinearLayout>
+
+            <!-- Card 2 -->
+            <LinearLayout
+                android:id="@+id/card2row1"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_columnWeight="1"
+                android:layout_marginEnd="12dp"
+                android:background="@drawable/image_rounded"
+                android:gravity="center"
+                android:orientation="vertical"
+                android:padding="12dp">
+
+                <com.google.android.material.imageview.ShapeableImageView
+                    android:layout_width="100dp"
+                    android:layout_height="100dp"
+                    android:scaleType="centerCrop"
+                    android:src="@drawable/food_training"
+                    app:shapeAppearanceOverlay="@style/CircularImage" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:paddingBottom="4dp"
+                    android:text="Food"
+                    android:textSize="18sp"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:paddingTop="10dp"
+                    android:text="Production and Preparation"
+                    android:textSize="14sp"
+                    android:textStyle="bold" />
+
+                <LinearLayout
+                    android:id="@+id/share_and_star1"
+                    android:layout_width="145dp"
+                    android:layout_height="53dp"
+                    android:layout_marginTop="24dp"
+                    android:orientation="horizontal">
+
+                    <ImageView
+                        android:id="@+id/sample_people1"
+                        android:layout_width="30dp"
+                        android:layout_height="30dp"
+                        android:layout_marginTop="16dp"
+                        android:layout_marginEnd="10dp"
+                        android:src="@drawable/starclip"
+                        android:contentDescription="People Image" />
+
+                    <TextView
+                        android:layout_width="35dp"
+                        android:layout_height="30dp"
+                        android:layout_marginTop="30dp"
+                        android:layout_marginEnd="20dp"
+                        android:text="4.8"
+                        android:textSize="14sp"
+                        android:textStyle="bold" />
+
+                    <ImageButton
+                        android:layout_width="60dp"
+                        android:layout_height="50dp"
+                        android:layout_marginTop="8dp"
+                        android:background="?attr/selectableItemBackgroundBorderless"
+                        android:padding="5dp"
+                        android:scaleType="centerInside"
+                        android:src="@drawable/share_clip"
+                        android:contentDescription="Share" />
+
+                </LinearLayout>
+            </LinearLayout>
+
+            <!-- Card 1 -->
+            <LinearLayout
+                android:id="@+id/card1row1"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_columnWeight="1"
+                android:layout_marginTop="20dp"
+                android:layout_marginEnd="12dp"
+                android:background="@drawable/image_rounded"
+                android:gravity="center"
+                android:orientation="vertical"
+                android:padding="12dp">
+
+                <com.google.android.material.imageview.ShapeableImageView
+                    android:layout_width="100dp"
+                    android:layout_height="100dp"
+                    android:scaleType="centerCrop"
+                    android:src="@drawable/farm_training"
+                    app:shapeAppearanceOverlay="@style/CircularImage" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:paddingBottom="4dp"
+                    android:text="Farm"
+                    android:textSize="18sp"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:paddingTop="10dp"
+                    android:text="operation and management"
+                    android:textSize="14sp"
+                    android:textStyle="bold" />
+
+                <LinearLayout
+                    android:layout_width="145dp"
+                    android:layout_height="53dp"
+                    android:layout_marginTop="24dp"
+                    android:orientation="horizontal">
+
+                    <ImageView
+                        android:layout_width="30dp"
+                        android:layout_height="30dp"
+                        android:layout_marginTop="16dp"
+                        android:layout_marginEnd="10dp"
+                        android:src="@drawable/starclip"
+                        android:contentDescription="People Image" />
+
+                    <TextView
+                        android:layout_width="35dp"
+                        android:layout_height="30dp"
+                        android:layout_marginTop="30dp"
+                        android:layout_marginEnd="20dp"
+                        android:text="4.8"
+                        android:textSize="14sp"
+                        android:textStyle="bold" />
+
+                    <ImageButton
+                        android:layout_width="60dp"
+                        android:layout_height="50dp"
+                        android:layout_marginTop="8dp"
+                        android:background="?attr/selectableItemBackgroundBorderless"
+                        android:padding="5dp"
+                        android:scaleType="centerInside"
+                        android:src="@drawable/share_clip"
+                        android:contentDescription="Share" />
+
+                </LinearLayout>
+            </LinearLayout>
+
+            <!-- Card 2 -->
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                android:layout_columnWeight="1"
+                android:layout_marginEnd="12dp"
+                android:background="@drawable/image_rounded"
+                android:gravity="center"
+                android:orientation="vertical"
+                android:padding="12dp">
+
+                <com.google.android.material.imageview.ShapeableImageView
+                    android:layout_width="100dp"
+                    android:layout_height="100dp"
+                    android:scaleType="centerCrop"
+                    android:src="@drawable/startingpng"
+                    app:shapeAppearanceOverlay="@style/CircularImage" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:paddingBottom="4dp"
+                    android:text="Starting"
+                    android:textSize="18sp"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:paddingTop="10dp"
+                    android:text="dfdfhdfksgddsgfdsgdsfhs"
+                    android:textSize="14sp"
+                    android:textStyle="bold" />
+
+                <LinearLayout
+                    android:layout_width="145dp"
+                    android:layout_height="53dp"
+                    android:layout_marginTop="24dp"
+                    android:orientation="horizontal">
+
+                    <ImageView
+                        android:layout_width="30dp"
+                        android:layout_height="30dp"
+                        android:layout_marginTop="16dp"
+                        android:layout_marginEnd="10dp"
+                        android:src="@drawable/starclip"
+                        android:contentDescription="People Image" />
+
+                    <TextView
+                        android:layout_width="35dp"
+                        android:layout_height="30dp"
+                        android:layout_marginTop="30dp"
+                        android:layout_marginEnd="20dp"
+                        android:text="4.8"
+                        android:textSize="14sp"
+                        android:textStyle="bold" />
+
+                    <ImageButton
+                        android:layout_width="60dp"
+                        android:layout_height="50dp"
+                        android:layout_marginTop="8dp"
+                        android:background="?attr/selectableItemBackgroundBorderless"
+                        android:padding="5dp"
+                        android:scaleType="centerInside"
+                        android:src="@drawable/share_clip"
+                        android:contentDescription="Share" />
+
+                </LinearLayout>
+            </LinearLayout>
+
+            <!-- Card 1 -->
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_columnWeight="1"
+                android:layout_marginTop="20dp"
+                android:layout_marginEnd="12dp"
+                android:background="@drawable/image_rounded"
+                android:gravity="center"
+                android:orientation="vertical"
+                android:padding="12dp">
+
+                <com.google.android.material.imageview.ShapeableImageView
+                    android:layout_width="100dp"
+                    android:layout_height="100dp"
+                    android:scaleType="centerCrop"
+                    android:src="@drawable/startingpng"
+                    app:shapeAppearanceOverlay="@style/CircularImage" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:paddingBottom="4dp"
+                    android:text="Starting"
+                    android:textSize="18sp"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:paddingTop="10dp"
+                    android:text="dfdfhdfksgddsgfdsgdsfhs"
+                    android:textSize="14sp"
+                    android:textStyle="bold" />
+
+                <LinearLayout
+                    android:layout_width="145dp"
+                    android:layout_height="53dp"
+                    android:layout_marginTop="24dp"
+                    android:orientation="horizontal">
+
+                    <ImageView
+                        android:layout_width="30dp"
+                        android:layout_height="30dp"
+                        android:layout_marginTop="16dp"
+                        android:layout_marginEnd="10dp"
+                        android:src="@drawable/starclip"
+                        android:contentDescription="People Image" />
+
+                    <TextView
+                        android:layout_width="35dp"
+                        android:layout_height="30dp"
+                        android:layout_marginTop="30dp"
+                        android:layout_marginEnd="20dp"
+                        android:text="4.8"
+                        android:textSize="14sp"
+                        android:textStyle="bold" />
+
+                    <ImageButton
+                        android:layout_width="60dp"
+                        android:layout_height="50dp"
+                        android:layout_marginTop="8dp"
+                        android:background="?attr/selectableItemBackgroundBorderless"
+                        android:padding="5dp"
+                        android:scaleType="centerInside"
+                        android:src="@drawable/share_clip"
+                        android:contentDescription="Share" />
+
+                </LinearLayout>
+            </LinearLayout>
+
+            <!-- Card 2 -->
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                android:layout_columnWeight="1"
+                android:layout_marginEnd="12dp"
+                android:background="@drawable/image_rounded"
+                android:gravity="center"
+                android:orientation="vertical"
+                android:padding="12dp">
+
+                <com.google.android.material.imageview.ShapeableImageView
+                    android:layout_width="100dp"
+                    android:layout_height="100dp"
+                    android:scaleType="centerCrop"
+                    android:src="@drawable/startingpng"
+                    app:shapeAppearanceOverlay="@style/CircularImage" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:paddingBottom="4dp"
+                    android:text="Starting"
+                    android:textSize="18sp"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:paddingTop="10dp"
+                    android:text="dfdfhdfksgddsgfdsgdsfhs"
+                    android:textSize="14sp"
+                    android:textStyle="bold" />
+
+                <LinearLayout
+                    android:layout_width="145dp"
+                    android:layout_height="53dp"
+                    android:layout_marginTop="24dp"
+                    android:orientation="horizontal">
+
+                    <ImageView
+                        android:layout_width="30dp"
+                        android:layout_height="30dp"
+                        android:layout_marginTop="16dp"
+                        android:layout_marginEnd="10dp"
+                        android:src="@drawable/starclip"
+                        android:contentDescription="People Image" />
+
+                    <TextView
+                        android:layout_width="35dp"
+                        android:layout_height="30dp"
+                        android:layout_marginTop="30dp"
+                        android:layout_marginEnd="20dp"
+                        android:text="4.8"
+                        android:textSize="14sp"
+                        android:textStyle="bold" />
+
+                    <ImageButton
+                        android:layout_width="60dp"
+                        android:layout_height="50dp"
+                        android:layout_marginTop="8dp"
+                        android:background="?attr/selectableItemBackgroundBorderless"
+                        android:padding="5dp"
+                        android:scaleType="centerInside"
+                        android:src="@drawable/share_clip"
+                        android:contentDescription="Share" />
+
+                </LinearLayout>
+            </LinearLayout>
+
+        </GridLayout>
+
     </LinearLayout>
-    </LinearLayout>
+
 </ScrollView>
