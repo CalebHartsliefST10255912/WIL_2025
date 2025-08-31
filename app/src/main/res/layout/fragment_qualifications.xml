@@ -2,8 +2,10 @@
 <ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:background="@drawable/fragment_background"
-    android:padding="16dp">
+    android:padding="16dp"
+    android:edgeEffectColor="@color/light_blue">
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -60,13 +62,13 @@
                 android:layout_marginTop="4dp" />
 
             <Button
+                android:id="@+id/btnEnroll_1"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Enrol Now"
-                android:background="@color/enrol_red"
+                android:layout_marginTop="16dp"
                 android:backgroundTint="@color/enrol_red"
-                android:textColor="#FFFFFF"
-                android:layout_marginTop="8dp" />
+                android:text="Enrol Now"
+                android:textColor="@color/white" />
         </LinearLayout>
 
         <!-- Qualification 2: Agricultural Studies -->
@@ -96,12 +98,13 @@
                 android:layout_marginTop="4dp" />
 
             <Button
+                android:id="@+id/btnEnroll_2"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:backgroundTint="@color/enrol_red"
                 android:text="Enrol Now"
-                android:background="@color/enrol_red"
-                android:textColor="#FFFFFF"
-                android:layout_marginTop="8dp" />
+                android:textColor="@color/white" />
         </LinearLayout>
 
         <!-- Qualification 3: Food Technology -->
@@ -131,12 +134,13 @@
                 android:layout_marginTop="4dp" />
 
             <Button
+                android:id="@+id/btnEnroll_3"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:backgroundTint="@color/enrol_red"
                 android:text="Enrol Now"
-                android:background="@color/enrol_red"
-                android:textColor="#FFFFFF"
-                android:layout_marginTop="8dp" />
+                android:textColor="@color/white" />
         </LinearLayout>
 
         <!-- Qualification 4: Community Development -->
@@ -166,12 +170,13 @@
                 android:layout_marginTop="4dp" />
 
             <Button
+                android:id="@+id/btnEnroll_4"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:backgroundTint="@color/enrol_red"
                 android:text="Enrol Now"
-                android:background="@color/enrol_red"
-                android:textColor="#FFFFFF"
-                android:layout_marginTop="8dp" />
+                android:textColor="@color/white" />
         </LinearLayout>
 
         <!-- Qualification 5: Financial Literacy and Budgeting -->
@@ -201,12 +206,13 @@
                 android:layout_marginTop="4dp" />
 
             <Button
+                android:id="@+id/btnEnroll_5"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:backgroundTint="@color/enrol_red"
                 android:text="Enrol Now"
-                android:background="#FF4500"
-                android:textColor="#FFFFFF"
-                android:layout_marginTop="8dp" />
+                android:textColor="@color/white" />
         </LinearLayout>
 
         <!-- Qualification 6: Marketing and Sales Strategies -->
@@ -236,12 +242,13 @@
                 android:layout_marginTop="4dp" />
 
             <Button
+                android:id="@+id/btnEnroll_6"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:backgroundTint="@color/enrol_red"
                 android:text="Enrol Now"
-                android:background="#FF4500"
-                android:textColor="#FFFFFF"
-                android:layout_marginTop="8dp" />
+                android:textColor="@color/white" />
         </LinearLayout>
 
     </LinearLayout>
