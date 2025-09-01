@@ -3,6 +3,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@drawable/fragment_background"
+    android:layout_gravity="center"
     android:padding="16dp">
 
     <LinearLayout
@@ -11,36 +12,38 @@
         android:orientation="vertical"
         android:gravity="center_horizontal">
 
-        <!-- Top Logo Image -->
-        <ImageView
-            android:id="@+id/topLogo"
-            android:layout_width="374dp"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center_horizontal"
-            android:layout_marginBottom="24dp"
-            android:adjustViewBounds="true"
-            android:contentDescription="Top Logo"
-            android:scaleType="fitCenter"
-            android:src="@drawable/toplogo" />
-
-        <!-- Header -->
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Contact Us"
+            android:layout_gravity="left"
+            android:text="@string/contact_us_underlined"
             android:textSize="24sp"
             android:textStyle="bold"
             android:textColor="#000"
             android:layout_marginBottom="8dp" />
 
+
         <!-- Subheader -->
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="We'd love to hear from you"
+            android:text="For more information or to get involved, please reach out."
             android:textSize="16sp"
             android:textColor="#000"
-            android:layout_marginBottom="16dp" />
+            android:layout_marginBottom="16dp"
+            android:layout_marginTop="10dp"/>
+
+        <!-- Header -->
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="left"
+            android:text="Name:"
+            android:textSize="15sp"
+            android:textStyle="bold"
+            android:textColor="#000"
+            android:layout_marginBottom="8dp"
+            android:layout_marginTop="20dp"/>
 
         <!-- Name Field -->
         <EditText
@@ -53,6 +56,18 @@
             android:padding="12dp"
             android:background="@android:drawable/edit_text" />
 
+        <!-- Header -->
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="left"
+            android:text="Email:"
+            android:textSize="15sp"
+            android:textStyle="bold"
+            android:textColor="#000"
+            android:layout_marginBottom="8dp"
+            android:layout_marginTop="12dp"/>
+
         <!-- Email Field -->
         <EditText
             android:id="@+id/editTextEmail"
@@ -63,6 +78,18 @@
             android:layout_marginBottom="12dp"
             android:padding="12dp"
             android:background="@android:drawable/edit_text" />
+
+        <!-- Header -->
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="left"
+            android:text="Message:"
+            android:textSize="15sp"
+            android:textStyle="bold"
+            android:textColor="#000"
+            android:layout_marginBottom="8dp"
+            android:layout_marginTop="12dp"/>
 
         <!-- Message Field -->
         <EditText
