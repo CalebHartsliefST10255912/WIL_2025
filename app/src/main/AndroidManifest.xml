@@ -12,6 +12,8 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.WIL_Byte_Horizon"
         tools:targetApi="31">
+        <activity android:name=".auth.RegisterActivity" />
+        <activity android:name=".auth.LoginActivity" />
         <activity
             android:name=".MainActivity"
             android:exported="true"

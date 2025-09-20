@@ -87,5 +87,12 @@
             android:paddingHorizontal="24dp"
             android:paddingVertical="10dp" />
 
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/btnLogout"
+            android:text="Log out"
+            android:layout_marginTop="24dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"/>
+
     </LinearLayout>
 </ScrollView>
