@@ -15,4 +15,8 @@
     <color name="grey_block">#697C8B</color>
     <color name="enrol_red">#DA3300</color>
     <color name="header_dark_red">#370404</color>
+
+    <!-- Added Colors for Sync Status -->
+    <color name="sync_success">#4CAF50</color> <!-- Green -->
+    <color name="sync_pending">#FF9800</color> <!-- Orange -->
 </resources>

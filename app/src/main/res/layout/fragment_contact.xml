@@ -11,6 +11,19 @@
         android:orientation="vertical"
         android:gravity="center_horizontal">
 
+        <!-- Offline Notice -->
+        <TextView
+            android:id="@+id/textViewOfflineNotice"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Offline Mode: Contact form disabled"
+            android:textColor="@android:color/holo_red_dark"
+            android:background="@android:color/darker_gray"
+            android:padding="8dp"
+            android:gravity="center"
+            android:visibility="gone"
+            android:layout_marginBottom="16dp"/>
+
         <!-- Top Logo Image -->
         <ImageView
             android:id="@+id/topLogo"
@@ -78,7 +91,7 @@
 
         <!-- Send Button -->
         <Button
-            android:id="@+id/buttonSend"
+            android:id="@+id/buttonSubmit"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="Send"
