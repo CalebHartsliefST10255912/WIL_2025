@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "304792530836",
+    "project_id": "wilbytehorizon",
+    "storage_bucket": "wilbytehorizon.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:304792530836:android:0062527e68610ebb7a2981",
+        "android_client_info": {
+          "package_name": "com.example.wil_byte_horizon"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBIdI59kw5bRHtF6OrZkGIVtELNgYIXQtg"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
