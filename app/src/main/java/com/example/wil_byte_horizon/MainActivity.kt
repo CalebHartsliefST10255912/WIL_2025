@@ -41,6 +41,7 @@ class MainActivity : AppCompatActivity() {
                 R.id.navigation_contact
             )
         )
+
         navView.setupWithNavController(navController)
 
         // ---- Custom toolbar setup ----
