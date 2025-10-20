@@ -1,33 +1,41 @@
 {
   "project_info": {
-    "project_number": "706386804209",
-    "project_id": "wil-2025",
-    "storage_bucket": "wil-2025.firebasestorage.app"
+    "project_number": "789525558305",
+    "project_id": "ndikhondinani-npo-db",
+    "storage_bucket": "ndikhondinani-npo-db.firebasestorage.app"
   },
   "client": [
     {
       "client_info": {
-        "mobilesdk_app_id": "1:706386804209:android:2125bb67de6e7e2b631850",
+        "mobilesdk_app_id": "1:789525558305:android:ee4f5ef9253ef91b4b9f60",
         "android_client_info": {
           "package_name": "com.example.wil_byte_horizon"
         }
       },
       "oauth_client": [
         {
-          "client_id": "706386804209-53mjk5fu5cko0d45r2b2uo2lcmm444aj.apps.googleusercontent.com",
+          "client_id": "789525558305-9gvh574gu2kfjnsjfek41u8e6eqgan02.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.wil_byte_horizon",
+            "certificate_hash": "95760a99048ccebbcaba1ebcf4b128d9f4b45c9d"
+          }
+        },
+        {
+          "client_id": "789525558305-leh15fjd1pp6lbf9f5f42bfkh3u0cmp9.apps.googleusercontent.com",
           "client_type": 3
         }
       ],
       "api_key": [
         {
-          "current_key": "AIzaSyAqrmSpZW0EDpwDVdePwtMfa3xh9_hqhjc"
+          "current_key": "AIzaSyDacXYBp1ncXCcJOXmR7avs4o1ttjZNEzY"
         }
       ],
       "services": {
         "appinvite_service": {
           "other_platform_oauth_client": [
             {
-              "client_id": "706386804209-53mjk5fu5cko0d45r2b2uo2lcmm444aj.apps.googleusercontent.com",
+              "client_id": "789525558305-leh15fjd1pp6lbf9f5f42bfkh3u0cmp9.apps.googleusercontent.com",
               "client_type": 3
             }
           ]

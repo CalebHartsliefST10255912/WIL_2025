@@ -18,10 +18,10 @@
         tools:layout="@layout/fragment_train" />
 
     <fragment
-        android:id="@+id/navigation_qualification"
-        android:name="com.example.wil_byte_horizon.ui.qualif.QualificationFragment"
+        android:id="@+id/navigation_enrol"
+        android:name="com.example.wil_byte_horizon.ui.enrol.EnrolFragment"
         android:label="@string/title_qualifications"
-        tools:layout="@layout/fragment_qualifications" />
+        tools:layout="@layout/fragment_enrol" />
 
     <fragment
         android:id="@+id/navigation_soup"

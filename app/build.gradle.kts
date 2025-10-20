@@ -40,10 +40,23 @@ android {
 }
 
 dependencies {
-    implementation(platform("com.google.firebase:firebase-bom:34.2.0"))
-    implementation("com.google.firebase:firebase-analytics")
+    // Firebase BOM (per Google docs you shared)
+    implementation(platform("com.google.firebase:firebase-bom:34.3.0"))
     implementation("com.google.firebase:firebase-auth")
     implementation("com.google.firebase:firebase-firestore")
+
+    // Credential Manager + Google ID
+    implementation("androidx.credentials:credentials:1.3.0")
+    implementation("androidx.credentials:credentials-play-services-auth:1.3.0")
+    implementation("com.google.android.libraries.identity.googleid:googleid:1.1.1")
+
+    // AndroidX + Material
+    implementation("androidx.core:core:1.13.1")
+    implementation("androidx.appcompat:appcompat:1.7.0")
+    implementation("com.google.android.material:material:1.12.0")
+    implementation("androidx.activity:activity:1.9.2")
+    implementation("androidx.lifecycle:lifecycle-runtime:2.8.6")
+    implementation("androidx.lifecycle:lifecycle-viewmodel:2.8.6")
 
     implementation(libs.androidx.core.ktx)
     implementation(libs.androidx.appcompat)

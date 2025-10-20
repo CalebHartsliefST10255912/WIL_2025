@@ -8,7 +8,7 @@
     <string name="title_contactus" />
     <string name="title_qualifications" />
     <string name="title_soup" />
-    <string name="qualifications">Qualifications</string>
+    <string name="enrolment">Enrolment</string>
     <string name="soup_kitchen">Soup Kitchen</string>
     <string name="contact_us">Contact Us</string>
 </resources>

@@ -8,9 +8,9 @@
         android:title="@string/training" />
 
     <item
-        android:id="@+id/navigation_qualification"
+        android:id="@+id/navigation_enrol"
         android:icon="@drawable/qualifications"
-        android:title="@string/qualifications" />
+        android:title="@string/enrolment" />
 
     <item
         android:id="@+id/navigation_home"
