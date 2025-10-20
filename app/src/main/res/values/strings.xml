@@ -11,4 +11,18 @@
     <string name="enrolment">Enrolment</string>
     <string name="soup_kitchen">Soup Kitchen</string>
     <string name="contact_us">Contact Us</string>
+    <string name="logout">Log out</string>
+    <string name="logged_out">Signed out</string>
+    <string name="progress">Progress</string>
+    <string name="loading">Loading</string>
+    <string name="functions_base">https://europe-west1-ndikhondinani-npo-db.cloudfunctions.net/</string>
+    <string name="enrol_form_title">Enrolment</string>
+    <string name="back">Back</string>
+    <string name="next">Next</string>
+    <string name="cancel">Cancel</string>
+    <string name="submit">Submit</string>
+    <string name="form_fix_errors">Please fix the highlighted fields.</string>
+    <string name="form_submitted">Application submitted!</string>
+    <string name="form_submit_failed">Could not submit application.</string>
+    <string name="api_base_url">https://submitapplication-itwvex2gma-ew.a.run.app/</string>
 </resources>

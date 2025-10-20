@@ -12,18 +12,25 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.WIL_Byte_Horizon"
         tools:targetApi="31">
+
         <activity android:name=".auth.RegisterActivity" />
         <activity android:name=".auth.LoginActivity" />
+
+        <!-- ✅ Add this: -->
+        <activity
+            android:name=".ui.enrol_form.EnrolFormActivity"
+            android:exported="false"
+            android:parentActivityName=".MainActivity" />
+
         <activity
             android:name=".MainActivity"
             android:exported="true"
             android:label="@string/app_name">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
-
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-    </application>
 
+    </application>
 </manifest>
