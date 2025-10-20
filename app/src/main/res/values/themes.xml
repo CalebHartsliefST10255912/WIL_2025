@@ -5,6 +5,7 @@
         <item name="colorPrimaryVariant">#388E3C</item>
         <item name="colorOnPrimary">#FFFFFF</item>
         <item name="colorSecondary">#FF9800</item>
+        <item name="colorSecondaryVariant">#FFC107</item>
         <item name="colorOnSecondary">#000000</item>
     </style>
 </resources>
