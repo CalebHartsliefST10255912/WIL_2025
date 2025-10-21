@@ -1,98 +1,336 @@
 <?xml version="1.0" encoding="utf-8"?>
 <ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/fragment_background"
-    android:padding="16dp">
+    android:fillViewport="true">
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="vertical"
-        android:gravity="center_horizontal">
+        android:padding="16dp">
 
-        <!-- Top Logo Image -->
-        <ImageView
-            android:id="@+id/topLogo"
-            android:layout_width="374dp"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center_horizontal"
-            android:layout_marginBottom="24dp"
-            android:adjustViewBounds="true"
-            android:contentDescription="Top Logo"
-            android:scaleType="fitCenter"
-            android:src="@drawable/toplogo" />
-
-        <!-- Header -->
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Contact Us"
-            android:textSize="24sp"
-            android:textStyle="bold"
-            android:textColor="#000"
-            android:layout_marginBottom="8dp" />
-
-        <!-- Subheader -->
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="We'd love to hear from you"
-            android:textSize="16sp"
-            android:textColor="#000"
-            android:layout_marginBottom="16dp" />
-
-        <!-- Name Field -->
-        <EditText
-            android:id="@+id/editTextName"
+        <!-- Intro / Branding -->
+        <com.google.android.material.card.MaterialCardView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:hint="Your Name"
-            android:inputType="textPersonName"
-            android:layout_marginBottom="12dp"
-            android:padding="12dp"
-            android:background="@android:drawable/edit_text" />
+            app:cardCornerRadius="20dp"
+            app:cardUseCompatPadding="true"
+            app:strokeWidth="1dp"
+            app:strokeColor="?attr/colorOutline">
 
-        <!-- Email Field -->
-        <EditText
-            android:id="@+id/editTextEmail"
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:padding="16dp"
+                android:orientation="vertical">
+
+                <ImageView
+                    android:id="@+id/topLogo"
+                    android:layout_width="120dp"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_horizontal"
+                    android:adjustViewBounds="true"
+                    android:contentDescription="@string/cd_org_logo"
+                    android:src="@mipmap/ic_launcher" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_horizontal"
+                    android:layout_marginTop="12dp"
+                    android:text="@string/contact_title"
+                    android:textAppearance="?attr/textAppearanceTitleLarge" />
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="4dp"
+                    android:text="@string/contact_subtitle"
+                    android:textAppearance="?attr/textAppearanceBodyMedium" />
+            </LinearLayout>
+        </com.google.android.material.card.MaterialCardView>
+
+        <!-- Quick contact tiles -->
+        <com.google.android.material.card.MaterialCardView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:hint="Your Email"
-            android:inputType="textEmailAddress"
-            android:layout_marginBottom="12dp"
-            android:padding="12dp"
-            android:background="@android:drawable/edit_text" />
+            android:layout_marginTop="12dp"
+            app:cardCornerRadius="20dp"
+            app:cardUseCompatPadding="true"
+            app:strokeWidth="1dp"
+            app:strokeColor="?attr/colorOutline">
 
-        <!-- Message Field -->
-        <EditText
-            android:id="@+id/editTextMessage"
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:paddingVertical="4dp">
+
+                <!-- Email -->
+                <LinearLayout
+                    android:id="@+id/rowEmail"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:minHeight="56dp"
+                    android:gravity="center_vertical"
+                    android:paddingHorizontal="16dp"
+                    android:orientation="horizontal"
+                    android:foreground="?attr/selectableItemBackground">
+
+                    <ImageView
+                        android:layout_width="24dp"
+                        android:layout_height="24dp"
+                        android:src="@android:drawable/ic_dialog_email"
+                        android:contentDescription="@string/contact_email" />
+
+                    <TextView
+                        android:id="@+id/txtEmailValue"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:paddingStart="16dp"
+                        android:textAppearance="?attr/textAppearanceBodyLarge"
+                        android:maxLines="1"
+                        android:ellipsize="end" />
+                </LinearLayout>
+
+                <com.google.android.material.divider.MaterialDivider
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    app:dividerInsetStart="16dp"
+                    app:dividerInsetEnd="16dp" />
+
+                <!-- Phone -->
+                <LinearLayout
+                    android:id="@+id/rowPhone"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:minHeight="56dp"
+                    android:gravity="center_vertical"
+                    android:paddingHorizontal="16dp"
+                    android:orientation="horizontal"
+                    android:foreground="?attr/selectableItemBackground">
+
+                    <ImageView
+                        android:layout_width="24dp"
+                        android:layout_height="24dp"
+                        android:src="@android:drawable/ic_menu_call"
+                        android:contentDescription="@string/contact_phone" />
+
+                    <TextView
+                        android:id="@+id/txtPhoneValue"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:paddingStart="16dp"
+                        android:textAppearance="?attr/textAppearanceBodyLarge"
+                        android:maxLines="1"
+                        android:ellipsize="end" />
+                </LinearLayout>
+
+                <com.google.android.material.divider.MaterialDivider
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    app:dividerInsetStart="16dp"
+                    app:dividerInsetEnd="16dp" />
+
+                <!-- Website -->
+                <LinearLayout
+                    android:id="@+id/rowWebsite"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:minHeight="56dp"
+                    android:gravity="center_vertical"
+                    android:paddingHorizontal="16dp"
+                    android:orientation="horizontal"
+                    android:foreground="?attr/selectableItemBackground">
+
+                    <ImageView
+                        android:layout_width="24dp"
+                        android:layout_height="24dp"
+                        android:src="@android:drawable/ic_menu_view"
+                        android:contentDescription="@string/contact_website" />
+
+                    <TextView
+                        android:id="@+id/txtWebsiteValue"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:paddingStart="16dp"
+                        android:textAppearance="?attr/textAppearanceBodyLarge"
+                        android:maxLines="1"
+                        android:ellipsize="end" />
+                </LinearLayout>
+
+                <com.google.android.material.divider.MaterialDivider
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    app:dividerInsetStart="16dp"
+                    app:dividerInsetEnd="16dp" />
+
+                <!-- Address / Maps -->
+                <LinearLayout
+                    android:id="@+id/rowAddress"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:minHeight="56dp"
+                    android:gravity="center_vertical"
+                    android:paddingHorizontal="16dp"
+                    android:orientation="horizontal"
+                    android:foreground="?attr/selectableItemBackground">
+
+                    <ImageView
+                        android:layout_width="24dp"
+                        android:layout_height="24dp"
+                        android:src="@android:drawable/ic_dialog_map"
+                        android:contentDescription="@string/contact_address" />
+
+                    <TextView
+                        android:id="@+id/txtAddressValue"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:paddingStart="16dp"
+                        android:text="@string/contact_address_hint"
+                        android:textAppearance="?attr/textAppearanceBodyLarge"
+                        android:maxLines="2"
+                        android:ellipsize="end" />
+                </LinearLayout>
+            </LinearLayout>
+        </com.google.android.material.card.MaterialCardView>
+
+        <!-- Contact form -->
+        <com.google.android.material.card.MaterialCardView
             android:layout_width="match_parent"
-            android:layout_height="120dp"
-            android:hint="Your Message"
-            android:inputType="textMultiLine"
-            android:gravity="top"
-            android:padding="12dp"
-            android:background="@android:drawable/edit_text"
-            android:layout_marginBottom="16dp" />
-
-        <!-- Send Button -->
-        <Button
-            android:id="@+id/buttonSend"
-            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Send"
-            android:backgroundTint="#2196F3"
-            android:textColor="#FFFFFF"
-            android:paddingHorizontal="24dp"
-            android:paddingVertical="10dp" />
+            android:layout_marginTop="12dp"
+            app:cardCornerRadius="20dp"
+            app:cardUseCompatPadding="true"
+            app:strokeWidth="1dp"
+            app:strokeColor="?attr/colorOutline">
 
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:padding="16dp">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/contact_form_title"
+                    android:textAppearance="?attr/textAppearanceTitleMedium" />
+
+                <com.google.android.material.textfield.TextInputLayout
+                    android:id="@+id/inputName"
+                    style="@style/Widget.Material3.TextInputLayout.OutlinedBox"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="12dp"
+                    android:hint="@string/contact_name_hint">
+
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:inputType="textPersonName" />
+                </com.google.android.material.textfield.TextInputLayout>
+
+                <com.google.android.material.textfield.TextInputLayout
+                    android:id="@+id/inputEmail"
+                    style="@style/Widget.Material3.TextInputLayout.OutlinedBox"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="12dp"
+                    android:hint="@string/contact_email_hint">
+
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:inputType="textEmailAddress" />
+                </com.google.android.material.textfield.TextInputLayout>
+
+                <com.google.android.material.textfield.TextInputLayout
+                    android:id="@+id/inputMessage"
+                    style="@style/Widget.Material3.TextInputLayout.OutlinedBox"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="12dp"
+                    android:hint="@string/contact_message_hint">
+
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:layout_width="match_parent"
+                        android:layout_height="120dp"
+                        android:gravity="top|start"
+                        android:inputType="textMultiLine"
+                        android:maxLines="6" />
+                </com.google.android.material.textfield.TextInputLayout>
+
+                <com.google.android.material.button.MaterialButton
+                    android:id="@+id/btnSend"
+                    style="@style/Widget.Material3.Button"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="16dp"
+                    android:text="@string/contact_send" />
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="8dp"
+                    android:text="@string/contact_privacy_note"
+                    android:textAppearance="?attr/textAppearanceBodySmall" />
+            </LinearLayout>
+        </com.google.android.material.card.MaterialCardView>
+
+        <!-- Donate CTA -->
+        <com.google.android.material.card.MaterialCardView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="12dp"
+            app:cardCornerRadius="20dp"
+            app:cardUseCompatPadding="true"
+            app:strokeWidth="1dp"
+            app:strokeColor="?attr/colorOutline">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:padding="16dp"
+                android:orientation="vertical">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/contact_donate_title"
+                    android:textAppearance="?attr/textAppearanceTitleMedium" />
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="6dp"
+                    android:text="@string/contact_donate_body"
+                    android:textAppearance="?attr/textAppearanceBodyMedium" />
+
+                <com.google.android.material.button.MaterialButton
+                    android:id="@+id/btnDonate"
+                    style="@style/Widget.Material3.Button.TonalButton"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="12dp"
+                    android:text="@string/contact_donate_btn" />
+            </LinearLayout>
+        </com.google.android.material.card.MaterialCardView>
+
+        <!-- Footer: logout -->
         <com.google.android.material.button.MaterialButton
             android:id="@+id/btnLogout"
-            android:text="Log out"
-            android:layout_marginTop="24dp"
+            style="@style/Widget.Material3.Button.OutlinedButton"
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content"/>
-
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginTop="16dp"
+            android:text="@string/contact_logout" />
     </LinearLayout>
 </ScrollView>

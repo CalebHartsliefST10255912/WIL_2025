@@ -1,17 +1,15 @@
-package com.example.wil_byte_horizon.ui.soup
+package com.example.wil_byte_horizon.ui.event
 
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
-import androidx.viewpager2.widget.ViewPager2
 import com.example.wil_byte_horizon.R
 import com.example.wil_byte_horizon.databinding.FragmentSoupBinding
 import com.example.wil_byte_horizon.ui.home.BannerAdapter
-import com.tbuonomo.viewpagerdotsindicator.WormDotsIndicator
 
-class SoupFragment : Fragment() {
+class EventFragment : Fragment() {
 
     private var _binding: FragmentSoupBinding? = null
     private val binding get() = _binding!!
