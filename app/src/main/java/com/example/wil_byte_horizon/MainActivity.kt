@@ -64,9 +64,9 @@ class MainActivity : AppCompatActivity() {
         }
 
         // Optional greeting if already signed in
-        FirebaseAuthManager.currentUser()?.email?.let { email ->
-            Snackbar.make(binding.root, "Welcome back, $email", Snackbar.LENGTH_SHORT).show()
-        }
+//        FirebaseAuthManager.currentUser()?.email?.let { email ->
+//            Snackbar.make(binding.root, "Welcome back, $email", Snackbar.LENGTH_SHORT).show()
+//        }
 
         // ---- Bottom Navigation + NavController ----
         val navView: BottomNavigationView = binding.navView

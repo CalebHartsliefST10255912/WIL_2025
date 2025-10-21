@@ -1,123 +1,249 @@
 <?xml version="1.0" encoding="utf-8"?>
 <ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/scrollHome"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    android:background="@drawable/fragment_background"
-    android:padding="16dp">
+    android:fillViewport="true">
 
     <LinearLayout
+        android:id="@+id/homeContent"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="vertical"
-        android:gravity="center_horizontal">
+        android:padding="16dp">
 
-
-        <androidx.viewpager2.widget.ViewPager2
-            android:id="@+id/bannerViewPager"
-            android:layout_width="404dp"
-            android:layout_height="203dp"
-            android:layout_marginTop="16dp" />
-
-
-        <com.tbuonomo.viewpagerdotsindicator.WormDotsIndicator
-            android:id="@+id/dotsIndicator"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="8dp"
-            app:dotsColor="@android:color/darker_gray"
-            app:selectedDotColor="@android:color/holo_green_light"
-            app:dotsCornerRadius="8dp"
-            app:dotsSpacing="8dp"
-            app:dotsSize="12dp" />
-
-        <!-- Horizontal Info Boxes -->
-        <LinearLayout
-            android:id="@+id/infoBlock"
+        <!-- Hero / Mission -->
+        <com.google.android.material.card.MaterialCardView
+            android:id="@+id/cardHero"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:orientation="horizontal"
-            android:layout_marginTop="24dp">
+            app:cardCornerRadius="20dp"
+            app:cardUseCompatPadding="true"
+            app:strokeColor="?attr/colorOutline"
+            app:strokeWidth="1dp">
 
-            <!-- Empowering Section Box -->
             <LinearLayout
-                android:layout_width="0dp"
-                android:layout_weight="1"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:orientation="vertical"
-                android:padding="12dp"
-                android:layout_marginEnd="4dp"
-                android:background="@color/blue_block">
-
-                <LinearLayout
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginEnd="4dp"
-                    android:layout_weight="1"
-                    android:background="@color/blue_word_highlight"
-                    android:orientation="vertical"
-                    android:padding="12dp">
-
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:paddingBottom="4dp"
-                        android:text="Empowering"
-                        android:textSize="18sp"
-                        android:textStyle="bold" />
-                </LinearLayout>
+                android:padding="20dp">
 
                 <TextView
+                    android:id="@+id/txtOrgName"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Communities with skills to start businesses, prepare foodstuff, manage farms, and brighter futures."
-                    android:textSize="14sp"
+                    android:text="@string/app_name"
+                    android:textAppearance="?attr/textAppearanceHeadlineSmall"
                     android:textStyle="bold" />
 
-                <ImageView
-                    android:id="@+id/sample_people"
-                    android:layout_width="131dp"
-                    android:layout_height="200dp"
+                <TextView
+                    android:id="@+id/txtMission"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="8dp"
+                    android:text="@string/home_mission"
+                    android:textAppearance="?attr/textAppearanceBodyMedium" />
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
                     android:layout_marginTop="16dp"
-                    android:src="@drawable/sample_people"
-                    android:contentDescription="People Image" />
-            </LinearLayout>
+                    android:orientation="horizontal">
 
-            <!-- Education Section Box -->
-            <LinearLayout
+                    <com.google.android.material.button.MaterialButton
+                        android:id="@+id/btnDonate"
+                        style="@style/Widget.Material3.Button"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="@string/cta_donate"
+                        app:icon="@drawable/ic_notifications_black_24dp"
+                        app:iconPadding="8dp"
+                        app:iconGravity="textStart" />
+
+                    <com.google.android.material.button.MaterialButton
+                        android:id="@+id/btnVolunteer"
+                        style="@style/Widget.Material3.Button.OutlinedButton"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="12dp"
+                        android:layout_weight="1"
+                        android:text="@string/cta_volunteer"
+                        app:icon="@drawable/ic_notifications_black_24dp"
+                        app:iconPadding="8dp"
+                        app:iconGravity="textStart" />
+                </LinearLayout>
+            </LinearLayout>
+        </com.google.android.material.card.MaterialCardView>
+
+        <!-- Impact Stats -->
+        <!-- Impact Stats -->
+        <TextView
+            android:id="@+id/labelImpact"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:text="@string/home_impact"
+            android:textAppearance="?attr/textAppearanceTitleMedium" />
+
+        <LinearLayout
+            android:id="@+id/statsRow"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:gravity="center"
+            android:orientation="horizontal"
+            android:weightSum="3">
+
+            <com.example.wil_byte_horizon.ui.home.views.StatCardView
+                android:id="@+id/cardBeneficiaries"
                 android:layout_width="0dp"
+                android:layout_height="100dp"
                 android:layout_weight="1"
+                android:layout_marginEnd="8dp"
+                app:labelText="@string/stat_beneficiaries" />
+
+            <com.example.wil_byte_horizon.ui.home.views.StatCardView
+                android:id="@+id/cardVolunteers"
+                android:layout_width="0dp"
+                android:layout_height="100dp"
+                android:layout_weight="1"
+                android:layout_marginEnd="8dp"
+                app:labelText="@string/stat_volunteers" />
+
+            <com.example.wil_byte_horizon.ui.home.views.StatCardView
+                android:id="@+id/cardProjects"
+                android:layout_width="0dp"
+                android:layout_height="100dp"
+                android:layout_weight="1"
+                app:labelText="@string/stat_projects" />
+        </LinearLayout>
+
+        <!-- Programs / What we do -->
+        <TextView
+            android:id="@+id/labelPrograms"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:text="@string/home_programs"
+            android:textAppearance="?attr/textAppearanceTitleMedium" />
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/rvPrograms"
+            android:layout_width="match_parent"
+            android:layout_height="130dp"
+            android:layout_marginTop="8dp"
+            android:clipToPadding="false"
+            android:paddingStart="8dp"
+            android:paddingEnd="8dp"
+            android:overScrollMode="never" />
+
+        <!-- Transparency strip -->
+        <com.google.android.material.card.MaterialCardView
+            android:id="@+id/cardTransparency"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            app:cardCornerRadius="16dp"
+            app:cardUseCompatPadding="true">
+
+            <LinearLayout
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:orientation="vertical"
-                android:padding="12dp"
-                android:layout_marginStart="4dp"
-                android:background="@color/blue_block">
-
-                <LinearLayout
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginEnd="4dp"
-                    android:layout_weight="1"
-                    android:background="@color/blue_word_highlight"
-                    android:orientation="vertical"
-                    android:padding="12dp">
-
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:paddingBottom="4dp"
-                        android:text="Education"
-                        android:textSize="18sp"
-                        android:textStyle="bold" />
-                </LinearLayout>
+                android:padding="16dp">
 
                 <TextView
-                    android:layout_width="136dp"
+                    android:id="@+id/txtTransparencyTitle"
+                    android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Our courses are recognized and structured to equip you with the skills needed to succeed in today's job market and entrepreneurial ventures."
-                    android:textSize="14sp"
+                    android:text="@string/home_transparency_title"
+                    android:textAppearance="?attr/textAppearanceTitleSmall"
                     android:textStyle="bold" />
+
+                <TextView
+                    android:id="@+id/txtTransparency"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="4dp"
+                    android:text="@string/home_transparency_desc"
+                    android:textAppearance="?attr/textAppearanceBodySmall" />
             </LinearLayout>
+        </com.google.android.material.card.MaterialCardView>
+
+        <!-- News / Updates -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:orientation="horizontal"
+            android:gravity="center_vertical">
+
+            <TextView
+                android:id="@+id/labelNews"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="@string/home_news"
+                android:textAppearance="?attr/textAppearanceTitleMedium" />
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/btnAllNews"
+                style="@style/Widget.Material3.Button.TextButton"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/cta_view_all" />
         </LinearLayout>
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/rvNews"
+            android:layout_width="match_parent"
+            android:layout_height="200dp"
+            android:layout_marginTop="8dp"
+            android:clipToPadding="false"
+            android:paddingStart="8dp"
+            android:paddingEnd="8dp"
+            android:overScrollMode="never" />
+
+        <!-- Partners -->
+        <TextView
+            android:id="@+id/labelPartners"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="24dp"
+            android:text="@string/home_partners"
+            android:textAppearance="?attr/textAppearanceTitleMedium" />
+
+        <LinearLayout
+            android:id="@+id/partnersRow"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:orientation="horizontal">
+
+            <com.google.android.material.chip.Chip
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Partner A" />
+            <com.google.android.material.chip.Chip
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Partner B" />
+            <com.google.android.material.chip.Chip
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Partner C" />
+        </LinearLayout>
+
+        <!-- Learn more / Contact -->
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/btnLearnMore"
+            style="@style/Widget.Material3.Button.ElevatedButton"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="24dp"
+            android:text="@string/cta_learn_more" />
+
     </LinearLayout>
 </ScrollView>
