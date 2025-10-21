@@ -23,7 +23,7 @@
         android:title="@string/soup_kitchen" />
 
     <item
-        android:id="@+id/navigation_contact"
+        android:id="@+id/navigation_about"
         android:icon="@drawable/outline_contact_support_24"
         android:title="@string/contact_us" />
 

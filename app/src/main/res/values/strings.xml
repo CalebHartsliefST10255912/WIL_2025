@@ -25,4 +25,94 @@
     <string name="form_submitted">Application submitted!</string>
     <string name="form_submit_failed">Could not submit application.</string>
     <string name="api_base_url">https://submitapplication-itwvex2gma-ew.a.run.app/</string>
+
+    <string name="cd_app_logo">App logo</string>
+    <string name="about_version">Version %1$s</string>
+    <string name="about_version_placeholder">Version 1.0</string>
+    <string name="about_rate">Rate</string>
+
+    <string name="about_our_mission">Our mission</string>
+    <string name="about_mission_text">We build tools that make everyday tasks simpler, faster, and more delightful for our users.</string>
+
+    <string name="about_team">The team</string>
+    <string name="about_team_text">Founded by a small, passionate team of developers and designers in South Africa.</string>
+
+    <string name="about_website">Website</string>
+    <string name="about_privacy_policy">Privacy policy</string>
+    <string name="about_share_app">Share this app</string>
+
+    <string name="about_email_subject">Support request</string>
+    <string name="about_error_open_link">Couldn’t open the link.</string>
+    <string name="about_error_email">No email apps found.</string>
+
+    <string name="about_copyright">© Your Company</string>
+    <string name="about_copyright_dynamic">© %1$d Your Company</string>
+    <string name="about_vision">Our vision</string>
+    <string name="about_vision_text">A connected community where technology removes friction and empowers everyone to participate.</string>
+
+    <string name="about_values">Our values</string>
+    <string name="about_values_list">• User-first design\n• Privacy and security by default\n• Performance on low-end devices\n• Accessibility and inclusivity\n• Open collaboration</string>
+
+    <string name="about_features">Key features</string>
+    <string name="about_features_list">• Secure sign-in and data sync\n• Offline-first experience\n• Real-time updates\n• Dark mode and dynamic color\n• Multi-language ready</string>
+
+    <string name="about_credits">Credits and licenses</string>
+    <string name="about_credits_text">Built with Android Jetpack, Material Design, and Firebase. Some icons and libraries are used under open-source licenses.</string>
+
+    <string name="about_changelog">What’s new</string>
+    <string name="about_changelog_link">Read the latest changes at https://example.com/changelog</string>
+
+    <string name="about_contact_us">Contact us</string>
+
+    <!-- Org details (edit these for your NPO) -->
+    <string name="org_email">info@example.org</string>
+    <string name="org_phone">+27 11 555 1234</string>
+    <string name="org_website">https://www.example.org</string>
+    <string name="org_address_query">Ndikhondinani NPO, Johannesburg, South Africa</string>
+    <string name="org_donate_url">https://www.example.org/donate</string>
+
+    <!-- A11y -->
+    <string name="cd_org_logo">Organisation logo</string>
+
+    <!-- Titles / copy -->
+    <string name="contact_title">Contact Us</string>
+    <string name="contact_subtitle">We value your questions, feedback, and partnership enquiries.</string>
+
+    <string name="contact_email">Email</string>
+    <string name="contact_phone">Phone</string>
+    <string name="contact_website">Website</string>
+    <string name="contact_address">Address</string>
+    <string name="contact_address_hint">Find us on Google Maps</string>
+
+    <string name="contact_form_title">Send us a message</string>
+    <string name="contact_name_hint">Your name</string>
+    <string name="contact_email_hint">Your email</string>
+    <string name="contact_message_hint">Your message</string>
+    <string name="contact_send">Send</string>
+
+    <!-- Validation / UX -->
+    <string name="contact_err_name">Please enter your name.</string>
+    <string name="contact_err_email">Please enter a valid email address.</string>
+    <string name="contact_err_message">Please enter your message.</string>
+    <string name="contact_chooser_email">Send using…</string>
+    <string name="contact_no_email_apps">No email apps available on this device.</string>
+    <string name="contact_cannot_dial">Could not open the dialer.</string>
+    <string name="contact_cannot_open_link">Could not open this link.</string>
+
+    <!-- Email formatting -->
+    <string name="contact_email_subject">New enquiry from %1$s</string>
+    <string name="contact_email_body_header">You have received a new message from the mobile app:</string>
+    <string name="contact_email_from">From: %1$s (%2$s)</string>
+
+    <!-- POPIA-friendly note -->
+    <string name="contact_privacy_note">By contacting us, you consent to us processing your information solely to respond to your enquiry, in line with our Privacy Policy.</string>
+
+    <!-- Donate -->
+    <string name="contact_donate_title">Support our work</string>
+    <string name="contact_donate_body">Your contribution helps us deliver services to more beneficiaries. Every donation makes a difference.</string>
+    <string name="contact_donate_btn">Donate</string>
+
+    <!-- Footer -->
+    <string name="contact_logout">Log out</string>
+
 </resources>

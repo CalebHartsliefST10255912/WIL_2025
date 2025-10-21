@@ -78,13 +78,11 @@ class MainActivity : AppCompatActivity() {
                 R.id.navigation_train,
                 R.id.navigation_soup,
                 R.id.navigation_enrol,
-                R.id.navigation_contact
+                R.id.navigation_about
             )
         )
 
         navView.setupWithNavController(navController)
-        // If you also want Toolbar to handle Up button with these top-level destinations:
-        // setupActionBarWithNavController(navController, appBarConfiguration)
     }
 
     override fun onStart() {
