@@ -115,4 +115,22 @@
     <!-- Footer -->
     <string name="contact_logout">Log out</string>
 
+    <string name="home_mission">Our mission is to uplift communities through education, nutrition, and skills development. Your support helps us reach more people, faster.</string>
+    <string name="home_impact">Our impact</string>
+    <string name="home_programs">What we do</string>
+    <string name="home_news">Latest news</string>
+    <string name="home_partners">Partners</string>
+
+    <string name="home_transparency_title">Transparency &amp; compliance</string>
+    <string name="home_transparency_desc">We publish annual impact reports and follow POPIA. Donations are receipted and audited. (Add NPO/PBO numbers here.)</string>
+
+    <string name="cta_donate">Donate</string>
+    <string name="cta_volunteer">Volunteer</string>
+    <string name="cta_view_all">View all</string>
+    <string name="cta_learn_more">Learn more</string>
+
+    <string name="stat_beneficiaries">Beneficiaries</string>
+    <string name="stat_volunteers">Volunteers</string>
+    <string name="stat_projects">Projects</string>
+
 </resources>
