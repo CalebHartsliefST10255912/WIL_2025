@@ -17,7 +17,7 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.example.wil_byte_horizon.R
 import com.example.wil_byte_horizon.auth.LoginActivity
-import com.example.wil_byte_horizon.data.Qualification
+import com.example.wil_byte_horizon.data.qualifications.Qualification
 import com.example.wil_byte_horizon.ui.enrol_form.EnrolFormActivity
 import com.google.firebase.auth.FirebaseAuth
 import kotlinx.coroutines.flow.collectLatest

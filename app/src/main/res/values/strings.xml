@@ -9,7 +9,7 @@
     <string name="title_qualifications" />
     <string name="title_soup" />
     <string name="enrolment">Enrolment</string>
-    <string name="soup_kitchen">Soup Kitchen</string>
+    <string name="event">Events</string>
     <string name="contact_us">Contact Us</string>
     <string name="logout">Log out</string>
     <string name="logged_out">Signed out</string>
@@ -132,5 +132,7 @@
     <string name="stat_beneficiaries">Beneficiaries</string>
     <string name="stat_volunteers">Volunteers</string>
     <string name="stat_projects">Projects</string>
+
+    <string name="content_desc_event_image">Event image</string>
 
 </resources>

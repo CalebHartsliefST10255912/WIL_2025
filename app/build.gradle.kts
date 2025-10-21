@@ -50,6 +50,7 @@ dependencies {
     implementation("com.google.firebase:firebase-auth")
     implementation("com.google.firebase:firebase-firestore")
     implementation("com.google.firebase:firebase-functions")
+    implementation("com.google.firebase:firebase-storage")
 
     // Credential Manager + Google ID
     implementation("androidx.credentials:credentials:1.3.0")
@@ -78,6 +79,11 @@ dependencies {
     implementation("com.squareup.okhttp3:okhttp:4.12.0")
     implementation("com.squareup.okhttp3:logging-interceptor:4.12.0")
     implementation("org.jetbrains.kotlinx:kotlinx-coroutines-play-services:1.8.1")
+    implementation("org.jetbrains.kotlinx:kotlinx-coroutines-core:1.8.1")
+
+    // Glide for image loading & disk caching
+    implementation("com.github.bumptech.glide:glide:4.16.0")
+    implementation("io.coil-kt:coil:2.6.0")
 
     // Tests
     testImplementation("junit:junit:4.13.2")

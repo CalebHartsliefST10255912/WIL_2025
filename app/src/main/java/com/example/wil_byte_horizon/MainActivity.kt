@@ -76,7 +76,7 @@ class MainActivity : AppCompatActivity() {
             setOf(
                 R.id.navigation_home,
                 R.id.navigation_train,
-                R.id.navigation_soup,
+                R.id.navigation_event,
                 R.id.navigation_enrol,
                 R.id.navigation_about
             )

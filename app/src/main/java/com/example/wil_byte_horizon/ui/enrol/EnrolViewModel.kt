@@ -3,8 +3,8 @@ package com.example.wil_byte_horizon.ui.enrol
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import com.example.wil_byte_horizon.core.FirebaseAuthManager
-import com.example.wil_byte_horizon.data.Qualification
-import com.example.wil_byte_horizon.data.QualificationsRepository
+import com.example.wil_byte_horizon.data.qualifications.Qualification
+import com.example.wil_byte_horizon.data.qualifications.QualificationsRepository
 import kotlinx.coroutines.flow.*
 
 class EnrolViewModel(
