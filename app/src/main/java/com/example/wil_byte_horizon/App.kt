@@ -1,15 +1,22 @@
-// app/src/main/java/com/example/wil_byte_horizon/App.kt
 package com.example.wil_byte_horizon
 
 import android.app.Application
+import com.google.firebase.firestore.FirebaseFirestore
+import com.google.firebase.firestore.FirebaseFirestoreSettings
+import com.google.firebase.firestore.PersistentCacheSettings
 
 class App : Application() {
-    companion object {
-        lateinit var instance: App
-            private set
-    }
     override fun onCreate() {
         super.onCreate()
-        instance = this
+
+        // 🔎 Verbose Firestore logs to Logcat
+        FirebaseFirestore.setLoggingEnabled(true)
+
+        // Explicit persistent cache (modern API)
+        val cache = PersistentCacheSettings.newBuilder().build()
+        FirebaseFirestore.getInstance().firestoreSettings =
+            FirebaseFirestoreSettings.Builder()
+                .setLocalCacheSettings(cache)
+                .build()
     }
 }

@@ -9,7 +9,7 @@ import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.ListAdapter
 import androidx.recyclerview.widget.RecyclerView
 import com.example.wil_byte_horizon.R
-import com.example.wil_byte_horizon.data.Qualification
+import com.example.wil_byte_horizon.data.qualifications.Qualification
 
 class EnrolAdapter(
     private val onEnrolClick: (Qualification) -> Unit

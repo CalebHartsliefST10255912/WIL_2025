@@ -1,4 +1,4 @@
-package com.example.wil_byte_horizon.data
+package com.example.wil_byte_horizon.data.qualifications
 
 import com.google.firebase.firestore.FirebaseFirestore
 import com.google.firebase.firestore.Query

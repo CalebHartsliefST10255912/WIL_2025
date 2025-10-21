@@ -18,9 +18,9 @@
         android:title="@string/title_home" />
 
     <item
-        android:id="@+id/navigation_soup"
+        android:id="@+id/navigation_event"
         android:icon="@drawable/soup"
-        android:title="@string/soup_kitchen" />
+        android:title="@string/event" />
 
     <item
         android:id="@+id/navigation_about"

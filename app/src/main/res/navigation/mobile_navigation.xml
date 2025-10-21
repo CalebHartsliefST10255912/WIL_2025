@@ -18,10 +18,10 @@
         tools:layout="@layout/fragment_enrol" />
 
     <fragment
-        android:id="@+id/navigation_soup"
+        android:id="@+id/navigation_event"
         android:name="com.example.wil_byte_horizon.ui.event.EventFragment"
         android:label="@string/title_soup"
-        tools:layout="@layout/fragment_soup" />
+        tools:layout="@layout/fragment_event" />
 
     <fragment
         android:id="@+id/navigation_about"
