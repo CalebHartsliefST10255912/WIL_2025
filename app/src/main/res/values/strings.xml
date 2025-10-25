@@ -134,5 +134,6 @@
     <string name="stat_projects">Projects</string>
 
     <string name="content_desc_event_image">Event image</string>
+    <string name="content_desc_more">More</string>
 
 </resources>

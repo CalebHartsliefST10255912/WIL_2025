@@ -4,7 +4,9 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Button
+import android.widget.ImageButton
 import android.widget.TextView
+import android.widget.PopupMenu
 import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.ListAdapter
 import androidx.recyclerview.widget.RecyclerView
@@ -12,7 +14,10 @@ import com.example.wil_byte_horizon.R
 import com.example.wil_byte_horizon.data.qualifications.Qualification
 
 class EnrolAdapter(
-    private val onEnrolClick: (Qualification) -> Unit
+    private val isAdmin: Boolean,
+    private val onEnrolClick: (Qualification) -> Unit,
+    private val onEdit: (Qualification) -> Unit,
+    private val onDelete: (Qualification) -> Unit
 ) : ListAdapter<Qualification, EnrolAdapter.VH>(Diff) {
 
     object Diff : DiffUtil.ItemCallback<Qualification>() {
@@ -24,10 +29,30 @@ class EnrolAdapter(
         private val tvTitle: TextView = view.findViewById(R.id.tvTitle)
         private val tvDesc: TextView = view.findViewById(R.id.tvDesc)
         private val btnEnrol: Button = view.findViewById(R.id.btnEnrol)
+        private val btnOverflow: ImageButton? = view.findViewById(R.id.btnOverflow)
+
         fun bind(item: Qualification) {
             tvTitle.text = item.title
             tvDesc.text  = item.description
             btnEnrol.setOnClickListener { onEnrolClick(item) }
+
+            // Admin overflow (only visible for admins)
+            btnOverflow?.apply {
+                visibility = if (isAdmin) View.VISIBLE else View.GONE
+                setOnClickListener { v ->
+                    PopupMenu(v.context, v).apply {
+                        menu.add("Edit")
+                        menu.add("Delete")
+                        setOnMenuItemClickListener { mi ->
+                            when (mi.title?.toString()) {
+                                "Edit" -> onEdit(item)
+                                "Delete" -> onDelete(item)
+                            }
+                            true
+                        }
+                    }.show()
+                }
+            }
         }
     }
 

@@ -12,15 +12,22 @@ import android.widget.Toast
 import androidx.activity.result.contract.ActivityResultContracts
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
+import androidx.lifecycle.Lifecycle
 import androidx.lifecycle.lifecycleScope
+import androidx.lifecycle.repeatOnLifecycle
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.example.wil_byte_horizon.R
 import com.example.wil_byte_horizon.auth.LoginActivity
+import com.example.wil_byte_horizon.core.AdminClaimsManager
+import com.example.wil_byte_horizon.data.admin.AdminRepository
 import com.example.wil_byte_horizon.data.qualifications.Qualification
 import com.example.wil_byte_horizon.ui.enrol_form.EnrolFormActivity
+import com.google.android.material.dialog.MaterialAlertDialogBuilder
 import com.google.firebase.auth.FirebaseAuth
 import kotlinx.coroutines.flow.collectLatest
+import kotlinx.coroutines.flow.distinctUntilChanged
+import kotlinx.coroutines.launch
 
 class EnrolFragment : Fragment() {
 
@@ -28,9 +35,9 @@ class EnrolFragment : Fragment() {
 
     private lateinit var recycler: RecyclerView
     private lateinit var search: EditText
-    private lateinit var adapter: EnrolAdapter
+    private var adapter: EnrolAdapter? = null
 
-    // we store which qual the user intended to enrol for before login
+    private val adminRepo = AdminRepository()
     private var pendingQual: Qualification? = null
 
     private val loginLauncher = registerForActivityResult(
@@ -54,23 +61,10 @@ class EnrolFragment : Fragment() {
         val root = inflater.inflate(R.layout.fragment_enrol, container, false)
 
         search = root.findViewById(R.id.searchBar)
-        recycler = root.findViewById(R.id.rvQualifications) // make sure your XML has this RecyclerView
+        recycler = root.findViewById(R.id.rvQualifications)
         recycler.layoutManager = LinearLayoutManager(requireContext())
 
-        adapter = EnrolAdapter { qual ->
-            val user = FirebaseAuth.getInstance().currentUser
-            if (user == null) {
-                // not signed in → prompt auth, then continue
-                pendingQual = qual
-                loginLauncher.launch(Intent(requireContext(), LoginActivity::class.java))
-            } else {
-                // already signed in → go straight to the form
-                launchForm(qual)
-            }
-        }
-        recycler.adapter = adapter
-
-        // search box -> update filter
+        // Search → update filter
         search.addTextChangedListener(object : TextWatcher {
             override fun afterTextChanged(s: Editable?) {}
             override fun beforeTextChanged(s: CharSequence?, start: Int, count: Int, after: Int) {}
@@ -79,14 +73,73 @@ class EnrolFragment : Fragment() {
             }
         })
 
-        // observe list
-        viewLifecycleOwner.lifecycleScope.launchWhenStarted {
-            vm.filtered.collectLatest { list ->
-                adapter.submitList(list)
+        return root
+    }
+
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        viewLifecycleOwner.lifecycleScope.launch {
+            viewLifecycleOwner.lifecycle.repeatOnLifecycle(Lifecycle.State.STARTED) {
+
+                // 1) Build adapter when admin flag arrives (only when it changes)
+                launch {
+                    AdminClaimsManager.isAdminFlow()
+                        .distinctUntilChanged()
+                        .collectLatest { isAdmin ->
+                            adapter = EnrolAdapter(
+                                isAdmin = isAdmin,
+                                onEnrolClick = { qual ->
+                                    val user = FirebaseAuth.getInstance().currentUser
+                                    if (user == null) {
+                                        pendingQual = qual
+                                        loginLauncher.launch(
+                                            Intent(requireContext(), LoginActivity::class.java)
+                                        )
+                                    } else {
+                                        launchForm(qual)
+                                    }
+                                },
+                                onEdit = { qual -> showEditQualificationDialog(qual) },
+                                onDelete = { qual -> confirmDeleteQualification(qual) }
+                            ).also { recycler.adapter = it }
+
+                            // Immediately paint current snapshot so list isn't blank when we return
+                            adapter?.submitList(vm.filtered.value)
+                        }
+                }
+
+                // 2) Collect filtered list continuously
+                launch {
+                    vm.filtered.collectLatest { list ->
+                        adapter?.submitList(list)
+                    }
+                }
             }
         }
+    }
 
-        return root
+    private fun showEditQualificationDialog(q: Qualification) {
+        EditQualificationDialog(q) { /* snapshot listener updates list */ }
+            .show(parentFragmentManager, "edit_qualification")
+    }
+
+    private fun confirmDeleteQualification(q: Qualification) {
+        MaterialAlertDialogBuilder(requireContext())
+            .setTitle("Delete this qualification?")
+            .setMessage(q.title)
+            .setPositiveButton("Delete") { _, _ ->
+                viewLifecycleOwner.lifecycleScope.launch {
+                    runCatching { adminRepo.deleteQualification(q.id) }
+                        .onFailure {
+                            Toast.makeText(
+                                requireContext(),
+                                it.message ?: "Delete failed",
+                                Toast.LENGTH_LONG
+                            ).show()
+                        }
+                }
+            }
+            .setNegativeButton("Cancel", null)
+            .show()
     }
 
     private fun launchForm(qual: Qualification) {
@@ -94,5 +147,10 @@ class EnrolFragment : Fragment() {
         i.putExtra("QUAL_ID", qual.id)
         i.putExtra("QUAL_TITLE", qual.title)
         startActivity(i)
+    }
+
+    override fun onDestroyView() {
+        super.onDestroyView()
+        adapter = null
     }
 }
