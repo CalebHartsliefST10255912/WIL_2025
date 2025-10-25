@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" android:padding="16dp"
+    android:layout_width="match_parent" android:layout_height="match_parent">
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/btnAddEvent"
+        style="@style/Widget.Material3.Button.TonalButton"
+        android:text="Add Event"
+        android:layout_width="match_parent" android:layout_height="wrap_content" />
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/btnAddQualification"
+        style="@style/Widget.Material3.Button.TonalButton"
+        android:text="Add Qualification"
+        android:layout_marginTop="12dp"
+        android:layout_width="match_parent" android:layout_height="wrap_content" />
+
+</LinearLayout>

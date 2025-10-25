@@ -1,5 +1,8 @@
 package com.example.wil_byte_horizon.core
 
+import android.content.Context
+import androidx.credentials.ClearCredentialStateRequest
+import androidx.credentials.CredentialManager
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.auth.FirebaseUser
 import com.google.firebase.auth.GoogleAuthProvider
@@ -27,4 +30,12 @@ object FirebaseAuthManager {
     }
 
     fun logout() = auth.signOut()
+
+    suspend fun logoutAll(context: Context) {
+        try { FirebaseAuth.getInstance().signOut() } finally {
+            try {
+                CredentialManager.create(context).clearCredentialState(ClearCredentialStateRequest())
+            } catch (_: Exception) { /* devices without Google services */ }
+        }
+    }
 }

@@ -2,8 +2,10 @@ package com.example.wil_byte_horizon.ui.event
 
 import android.util.Log
 import android.view.LayoutInflater
+import android.view.View
 import android.view.ViewGroup
 import android.widget.ImageView
+import android.widget.PopupMenu
 import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.ListAdapter
 import androidx.recyclerview.widget.RecyclerView
@@ -14,7 +16,10 @@ import com.example.wil_byte_horizon.databinding.ItemEventBinding
 import com.google.firebase.storage.FirebaseStorage
 
 class EventsAdapter(
-    private val onOpenMap: (UiEvent) -> Unit
+    private val isAdmin: Boolean,
+    private val onOpenMap: (UiEvent) -> Unit,
+    private val onEdit: (UiEvent) -> Unit,
+    private val onDelete: (UiEvent) -> Unit
 ) : ListAdapter<UiEvent, EventsAdapter.VH>(DIFF) {
 
     companion object {
@@ -42,6 +47,22 @@ class EventsAdapter(
             bindPoster(imagePoster, item.imageUrl)
 
             btnOpenMap.setOnClickListener { onOpenMap(item) }
+
+            // --- Admin overflow actions ---
+            btnOverflow.visibility = if (isAdmin) View.VISIBLE else View.GONE
+            btnOverflow.setOnClickListener { v ->
+                PopupMenu(v.context, v).apply {
+                    menu.add("Edit")
+                    menu.add("Delete")
+                    setOnMenuItemClickListener { mi ->
+                        when (mi.title?.toString()) {
+                            "Edit" -> onEdit(item)
+                            "Delete" -> onDelete(item)
+                        }
+                        true
+                    }
+                }.show()
+            }
         }
     }
 
@@ -58,9 +79,6 @@ class EventsAdapter(
                 memoryCachePolicy(CachePolicy.ENABLED)
                 diskCachePolicy(CachePolicy.ENABLED)
                 networkCachePolicy(CachePolicy.ENABLED)
-                // Uncomment if you add placeholder/error drawables:
-                // placeholder(R.drawable.placeholder)
-                // error(R.drawable.image_error)
             }
         }
 

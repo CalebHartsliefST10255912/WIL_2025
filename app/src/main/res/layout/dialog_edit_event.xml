@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:fillViewport="true"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+    <LinearLayout
+        android:orientation="vertical"
+        android:padding="16dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <EditText android:id="@+id/etTitle" android:hint="Title"
+            android:layout_width="match_parent" android:layout_height="wrap_content"/>
+
+        <EditText android:id="@+id/etDescription" android:hint="Description"
+            android:layout_width="match_parent" android:layout_height="wrap_content"
+            android:minLines="3" android:gravity="top"/>
+
+        <EditText android:id="@+id/etStart" android:hint="Start (yyyy-MM-dd HH:mm)"
+            android:layout_width="match_parent" android:layout_height="wrap_content"/>
+
+        <EditText android:id="@+id/etEnd" android:hint="End (yyyy-MM-dd HH:mm)"
+            android:layout_width="match_parent" android:layout_height="wrap_content"/>
+
+        <EditText android:id="@+id/etLocationName" android:hint="Location name"
+            android:layout_width="match_parent" android:layout_height="wrap_content"/>
+
+        <EditText android:id="@+id/etLat" android:hint="Latitude (optional)"
+            android:inputType="numberDecimal"
+            android:layout_width="match_parent" android:layout_height="wrap_content"/>
+
+        <EditText android:id="@+id/etLng" android:hint="Longitude (optional)"
+            android:inputType="numberDecimal"
+            android:layout_width="match_parent" android:layout_height="wrap_content"/>
+
+        <TextView
+            android:layout_width="match_parent" android:layout_height="wrap_content"
+            android:text="Poster image"/>
+
+        <Button
+            android:id="@+id/btnPickPoster"
+            android:text="Pick from device"
+            android:layout_width="match_parent" android:layout_height="wrap_content"/>
+
+        <EditText
+            android:id="@+id/etImageUrl"
+            android:hint="...or paste an image URL"
+            android:layout_width="match_parent" android:layout_height="wrap_content"/>
+
+        <LinearLayout
+            android:orientation="horizontal"
+            android:layout_width="match_parent" android:layout_height="wrap_content"
+            android:layout_marginTop="12dp"
+            android:gravity="end">
+
+            <Button android:id="@+id/btnCancel" android:text="Cancel"
+                android:layout_width="wrap_content" android:layout_height="wrap_content"/>
+
+            <Button android:id="@+id/btnSave" android:text="Save"
+                android:layout_marginStart="12dp"
+                android:layout_width="wrap_content" android:layout_height="wrap_content"/>
+        </LinearLayout>
+    </LinearLayout>
+</ScrollView>
