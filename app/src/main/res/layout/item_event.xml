@@ -6,7 +6,11 @@
     android:layout_marginHorizontal="16dp"
     android:layout_marginTop="12dp"
     app:cardCornerRadius="16dp"
-    app:cardElevation="2dp">
+    app:cardElevation="4dp"
+    app:cardBackgroundColor="@color/blue_main"
+    app:strokeWidth="1dp"
+    app:strokeColor="#26FEBA70"
+    app:useCompatPadding="true">
 
     <LinearLayout
         android:orientation="vertical"
@@ -14,13 +18,26 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
 
+        <ImageButton
+            android:id="@+id/btnOverflow"
+            android:layout_width="36dp"
+            android:layout_height="36dp"
+            android:layout_gravity="end"
+            android:contentDescription="@string/content_desc_more"
+            android:background="?attr/selectableItemBackgroundBorderless"
+            android:src="@drawable/more_vert_24px"
+            android:tint="@color/nav_white"
+            android:visibility="gone"/>
+
+        <!-- Poster with rounded corners -->
         <ImageView
             android:id="@+id/imagePoster"
             android:layout_width="match_parent"
             android:layout_height="180dp"
             android:scaleType="centerCrop"
             android:contentDescription="@string/content_desc_event_image"
-            android:background="#EEE" />
+            android:background="@drawable/bg_image_rounded"
+            android:clipToOutline="true" />
 
         <TextView
             android:id="@+id/textTitle"
@@ -31,22 +48,46 @@
             android:layout_marginTop="10dp"
             android:maxLines="2"
             android:ellipsize="end"
+            android:textColor="@color/nav_white"
             android:text="Event title" />
 
-        <TextView
-            android:id="@+id/textDate"
+        <!-- Chips row -->
+        <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="4dp"
-            android:text="Tue, 29 Oct 2025 • 14:00 – 16:00"
-            android:textColor="?attr/colorSecondary" />
+            android:orientation="vertical"
+            android:layout_marginTop="6dp">
 
-        <TextView
-            android:id="@+id/textLocation"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="Community Hall, Soweto"
-            android:layout_marginTop="2dp" />
+            <TextView
+                android:id="@+id/textDate"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:paddingStart="10dp"
+                android:paddingEnd="10dp"
+                android:paddingTop="6dp"
+                android:paddingBottom="6dp"
+                android:gravity="center_vertical"
+                android:background="@drawable/bg_chip"
+                android:drawablePadding="6dp"
+                android:textColor="@color/nav_white"
+                android:text="Tue, 29 Oct 2025 • 14:00 – 16:00" />
+
+            <TextView
+                android:id="@+id/textLocation"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:paddingStart="10dp"
+                android:paddingEnd="10dp"
+                android:paddingTop="6dp"
+                android:paddingBottom="6dp"
+                android:gravity="center_vertical"
+                android:background="@drawable/bg_chip"
+                android:drawableStart="@android:drawable/ic_menu_mylocation"
+                android:drawablePadding="6dp"
+                android:textColor="@color/nav_white"
+                android:text="Community Hall, Soweto" />
+        </LinearLayout>
 
         <TextView
             android:id="@+id/textDescription"
@@ -55,7 +96,8 @@
             android:layout_marginTop="8dp"
             android:maxLines="3"
             android:ellipsize="end"
-            android:text="Short description of the event goes here." />
+            android:text="Short description of the event goes here."
+            android:textColor="#E6F8F8F9" />
 
         <com.google.android.material.button.MaterialButton
             android:id="@+id/btnOpenMap"
@@ -63,20 +105,15 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="Open in Maps"
+            android:textAllCaps="false"
             android:layout_marginTop="10dp"
+            android:textColor="@color/org_gold"
             app:icon="@android:drawable/ic_dialog_map"
             app:iconGravity="textStart"
-            app:iconPadding="8dp"/>
-
-        <ImageButton
-            android:id="@+id/btnOverflow"
-            android:layout_width="36dp"
-            android:layout_height="36dp"
-            android:layout_gravity="end"
-            android:contentDescription="@string/content_desc_more"
-            android:background="?attr/selectableItemBackgroundBorderless"
-            android:src="@drawable/ic_notifications_black_24dp"
-            app:tint="?attr/colorOnSurface"
-            android:visibility="gone"/>
+            app:iconPadding="8dp"
+            app:iconTint="@color/org_gold"
+            app:strokeColor="@color/org_gold"
+            app:backgroundTint="@android:color/transparent"
+            app:rippleColor="#33FEBA70"/>
     </LinearLayout>
 </com.google.android.material.card.MaterialCardView>

@@ -74,9 +74,6 @@ class HomeFragment : Fragment() {
         binding.btnAllNews.setOnClickListener {
             // findNavController().navigate(R.id.action_home_to_news)
         }
-        binding.btnLearnMore.setOnClickListener {
-            // findNavController().navigate(R.id.action_home_to_about)
-        }
     }
 
     private fun bindObservers() {

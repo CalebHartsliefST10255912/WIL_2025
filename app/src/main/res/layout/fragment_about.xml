@@ -40,13 +40,18 @@
 
                 <com.google.android.material.button.MaterialButton
                     android:id="@+id/btnRate"
-                    style="@style/Widget.Material3.Button.TonalButton"
+                    style="@style/Widget.Material3.Button"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="@string/about_rate"
+                    android:textAllCaps="false"
+                    android:textColor="@color/blue_main"
+                    app:backgroundTint="@color/org_gold"
+                    app:rippleColor="#33FEBA70"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintTop_toTopOf="parent"
                     app:layout_constraintBottom_toBottomOf="parent" />
+
 
                 <LinearLayout
                     android:id="@+id/titleWrap"
@@ -152,8 +157,7 @@
             </LinearLayout>
         </com.google.android.material.card.MaterialCardView>
 
-
-        <!-- Links & Contact (FIXED: wrap rows inside a vertical LinearLayout) -->
+        <!-- Links & Contact -->
         <com.google.android.material.card.MaterialCardView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -182,7 +186,8 @@
                     <ImageView
                         android:layout_width="24dp"
                         android:layout_height="24dp"
-                        android:src="@android:drawable/ic_dialog_email"
+                        android:src="@drawable/mail_24px"
+                        app:tint="@color/org_gold"
                         android:contentDescription="@string/about_contact_us" />
 
                     <TextView
@@ -215,7 +220,8 @@
                     <ImageView
                         android:layout_width="24dp"
                         android:layout_height="24dp"
-                        android:src="@android:drawable/ic_menu_info_details"
+                        android:src="@drawable/privacy_tip_24px"
+                        app:tint="@color/org_gold"
                         android:contentDescription="@string/about_privacy_policy" />
 
                     <TextView
@@ -248,7 +254,8 @@
                     <ImageView
                         android:layout_width="24dp"
                         android:layout_height="24dp"
-                        android:src="@android:drawable/ic_menu_share"
+                        android:src="@drawable/share_24px"
+                        app:tint="@color/org_gold"
                         android:contentDescription="@string/about_share_app" />
 
                     <TextView
@@ -264,15 +271,6 @@
 
             </LinearLayout>
         </com.google.android.material.card.MaterialCardView>
-
-        <!-- Footer -->
-        <TextView
-            android:id="@+id/txtCopyright"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:gravity="center"
-            android:layout_marginTop="12dp"
-            android:textAppearance="?attr/textAppearanceBodySmall"
-            android:text="@string/about_copyright" />
+        
     </LinearLayout>
 </ScrollView>

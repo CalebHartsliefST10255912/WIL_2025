@@ -3,7 +3,8 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:orientation="vertical"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    android:background="@drawable/fragment_background">
 
     <!-- Offline banner -->
     <TextView
@@ -11,8 +12,8 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:padding="12dp"
-        android:background="?attr/colorSecondaryContainer"
-        android:textColor="?attr/colorOnSecondaryContainer"
+        android:background="@drawable/bg_offline_banner"
+        android:textColor="@color/blue_main"
         android:text="Showing offline data"
         android:visibility="gone"/>
 
@@ -22,7 +23,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="center_horizontal"
-        android:layout_marginTop="12dp"
+        android:layout_marginTop="16dp"
         android:visibility="gone"/>
 
     <TextView
@@ -41,6 +42,7 @@
         android:text="No events available yet."
         android:gravity="center"
         android:padding="24dp"
+        android:textColor="@color/nav_white"
         android:visibility="gone"/>
 
     <androidx.recyclerview.widget.RecyclerView
@@ -48,5 +50,9 @@
         android:layout_width="match_parent"
         android:layout_height="0dp"
         android:layout_weight="1"
+        android:clipToPadding="false"
+        android:paddingTop="8dp"
+        android:paddingBottom="24dp"
+        android:overScrollMode="never"
         tools:listitem="@layout/item_event"/>
 </LinearLayout>

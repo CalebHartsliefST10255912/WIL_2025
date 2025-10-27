@@ -4,12 +4,13 @@
 
     <item
         android:id="@+id/navigation_train"
-        android:icon="@drawable/training"
+        android:visible="false"
+        android:icon="@drawable/volunteer_activism_24px"
         android:title="@string/training" />
 
     <item
         android:id="@+id/navigation_enrol"
-        android:icon="@drawable/qualifications"
+        android:icon="@drawable/school_24px"
         android:title="@string/enrolment" />
 
     <item
@@ -19,12 +20,12 @@
 
     <item
         android:id="@+id/navigation_event"
-        android:icon="@drawable/soup"
+        android:icon="@drawable/event_24px"
         android:title="@string/event" />
 
     <item
         android:id="@+id/navigation_about"
-        android:icon="@drawable/outline_contact_support_24"
+        android:icon="@drawable/info_24px"
         android:title="@string/contact_us" />
 
 </menu>

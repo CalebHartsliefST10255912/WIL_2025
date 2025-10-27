@@ -4,7 +4,12 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     app:cardCornerRadius="16dp"
-    app:cardUseCompatPadding="true">
+    app:cardUseCompatPadding="true"
+    app:cardBackgroundColor="@color/blue_main"
+    app:cardElevation="0dp"
+    android:stateListAnimator="@null"
+    app:strokeWidth="1dp"
+    app:strokeColor="@color/org_gold"> >
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -13,20 +18,24 @@
         android:orientation="vertical"
         android:padding="12dp">
 
+        <!-- Highlight the number in gold -->
         <TextView
             android:id="@+id/txtValue"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="0"
             android:textStyle="bold"
-            android:textAppearance="?attr/textAppearanceHeadlineSmall" />
+            android:textAppearance="?attr/textAppearanceHeadlineSmall"
+            android:textColor="@color/org_gold" />
 
+        <!-- Label in soft white -->
         <TextView
             android:id="@+id/txtLabel"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="Label"
             android:layout_marginTop="4dp"
-            android:textAppearance="?attr/textAppearanceLabelMedium" />
+            android:textAppearance="?attr/textAppearanceLabelMedium"
+            android:textColor="#E6F8F8F9"/>
     </LinearLayout>
 </com.google.android.material.card.MaterialCardView>

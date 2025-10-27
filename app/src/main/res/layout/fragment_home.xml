@@ -4,30 +4,36 @@
     android:id="@+id/scrollHome"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:fillViewport="true">
+    android:fillViewport="true"
+    android:background="@drawable/fragment_background">
 
     <LinearLayout
         android:id="@+id/homeContent"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="vertical"
-        android:padding="16dp">
+        android:padding="16dp"
+        android:background="@android:color/transparent">
 
-        <!-- Hero / Mission -->
+        <!-- Hero / Mission (flat, no shadow) -->
         <com.google.android.material.card.MaterialCardView
             android:id="@+id/cardHero"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             app:cardCornerRadius="20dp"
-            app:cardUseCompatPadding="true"
-            app:strokeColor="?attr/colorOutline"
-            app:strokeWidth="1dp">
+            app:cardUseCompatPadding="false"
+            app:cardBackgroundColor="@color/blue_main"
+            app:strokeColor="#26FEBA70"
+            app:strokeWidth="1dp"
+            app:cardElevation="0dp"
+            android:stateListAnimator="@null">
 
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:orientation="vertical"
-                android:padding="20dp">
+                android:padding="20dp"
+                android:background="@android:color/transparent">
 
                 <TextView
                     android:id="@+id/txtOrgName"
@@ -35,7 +41,8 @@
                     android:layout_height="wrap_content"
                     android:text="@string/app_name"
                     android:textAppearance="?attr/textAppearanceHeadlineSmall"
-                    android:textStyle="bold" />
+                    android:textStyle="bold"
+                    android:textColor="@color/nav_white" />
 
                 <TextView
                     android:id="@+id/txtMission"
@@ -43,14 +50,17 @@
                     android:layout_height="wrap_content"
                     android:layout_marginTop="8dp"
                     android:text="@string/home_mission"
-                    android:textAppearance="?attr/textAppearanceBodyMedium" />
+                    android:textAppearance="?attr/textAppearanceBodyMedium"
+                    android:textColor="#E6F8F8F9" />
 
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="16dp"
-                    android:orientation="horizontal">
+                    android:orientation="horizontal"
+                    android:background="@android:color/transparent">
 
+                    <!-- Gold primary -->
                     <com.google.android.material.button.MaterialButton
                         android:id="@+id/btnDonate"
                         style="@style/Widget.Material3.Button"
@@ -58,10 +68,16 @@
                         android:layout_height="wrap_content"
                         android:layout_weight="1"
                         android:text="@string/cta_donate"
+                        android:textAllCaps="false"
+                        android:textColor="@color/blue_main"
+                        app:backgroundTint="@color/org_gold"
+                        app:rippleColor="#33FEBA70"
                         app:icon="@drawable/ic_notifications_black_24dp"
                         app:iconPadding="8dp"
-                        app:iconGravity="textStart" />
+                        app:iconGravity="textStart"
+                        app:iconTint="@color/blue_main" />
 
+                    <!-- Gold outlined -->
                     <com.google.android.material.button.MaterialButton
                         android:id="@+id/btnVolunteer"
                         style="@style/Widget.Material3.Button.OutlinedButton"
@@ -70,14 +86,20 @@
                         android:layout_marginStart="12dp"
                         android:layout_weight="1"
                         android:text="@string/cta_volunteer"
+                        android:textAllCaps="false"
+                        android:textColor="@color/org_gold"
+                        app:strokeColor="@color/org_gold"
+                        app:strokeWidth="1dp"
+                        app:backgroundTint="@android:color/transparent"
+                        app:rippleColor="#33FEBA70"
                         app:icon="@drawable/ic_notifications_black_24dp"
                         app:iconPadding="8dp"
-                        app:iconGravity="textStart" />
+                        app:iconGravity="textStart"
+                        app:iconTint="@color/org_gold" />
                 </LinearLayout>
             </LinearLayout>
         </com.google.android.material.card.MaterialCardView>
 
-        <!-- Impact Stats -->
         <!-- Impact Stats -->
         <TextView
             android:id="@+id/labelImpact"
@@ -85,7 +107,10 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="20dp"
             android:text="@string/home_impact"
-            android:textAppearance="?attr/textAppearanceTitleMedium" />
+            app:cardBackgroundColor="@android:color/transparent"
+            android:textAppearance="?attr/textAppearanceTitleMedium"
+            android:textColor="@color/nav_white"
+            android:shadowColor="@android:color/transparent"/>
 
         <LinearLayout
             android:id="@+id/statsRow"
@@ -94,30 +119,28 @@
             android:layout_marginTop="8dp"
             android:gravity="center"
             android:orientation="horizontal"
-            android:weightSum="3">
+            android:weightSum="3"
+            android:background="@android:color/transparent">
 
             <com.example.wil_byte_horizon.ui.home.views.StatCardView
                 android:id="@+id/cardBeneficiaries"
                 android:layout_width="0dp"
                 android:layout_height="100dp"
                 android:layout_weight="1"
-                android:layout_marginEnd="8dp"
-                app:labelText="@string/stat_beneficiaries" />
+                android:layout_marginEnd="8dp" />
 
             <com.example.wil_byte_horizon.ui.home.views.StatCardView
                 android:id="@+id/cardVolunteers"
                 android:layout_width="0dp"
                 android:layout_height="100dp"
                 android:layout_weight="1"
-                android:layout_marginEnd="8dp"
-                app:labelText="@string/stat_volunteers" />
+                android:layout_marginEnd="8dp" />
 
             <com.example.wil_byte_horizon.ui.home.views.StatCardView
                 android:id="@+id/cardProjects"
                 android:layout_width="0dp"
                 android:layout_height="100dp"
-                android:layout_weight="1"
-                app:labelText="@string/stat_projects" />
+                android:layout_weight="1" />
         </LinearLayout>
 
         <!-- Programs / What we do -->
@@ -127,7 +150,8 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="20dp"
             android:text="@string/home_programs"
-            android:textAppearance="?attr/textAppearanceTitleMedium" />
+            android:textAppearance="?attr/textAppearanceTitleMedium"
+            android:textColor="@color/nav_white" />
 
         <androidx.recyclerview.widget.RecyclerView
             android:id="@+id/rvPrograms"
@@ -137,22 +161,29 @@
             android:clipToPadding="false"
             android:paddingStart="8dp"
             android:paddingEnd="8dp"
-            android:overScrollMode="never" />
+            android:overScrollMode="never"
+            android:background="@android:color/transparent" />
 
-        <!-- Transparency strip -->
+        <!-- Transparency strip (flat, no shadow) -->
         <com.google.android.material.card.MaterialCardView
             android:id="@+id/cardTransparency"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="20dp"
             app:cardCornerRadius="16dp"
-            app:cardUseCompatPadding="true">
+            app:cardUseCompatPadding="false"
+            app:cardBackgroundColor="@color/blue_main"
+            app:strokeColor="#26FEBA70"
+            app:strokeWidth="1dp"
+            app:cardElevation="0dp"
+            android:stateListAnimator="@null">
 
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:orientation="vertical"
-                android:padding="16dp">
+                android:padding="16dp"
+                android:background="@android:color/transparent">
 
                 <TextView
                     android:id="@+id/txtTransparencyTitle"
@@ -160,7 +191,8 @@
                     android:layout_height="wrap_content"
                     android:text="@string/home_transparency_title"
                     android:textAppearance="?attr/textAppearanceTitleSmall"
-                    android:textStyle="bold" />
+                    android:textStyle="bold"
+                    android:textColor="@color/nav_white" />
 
                 <TextView
                     android:id="@+id/txtTransparency"
@@ -168,7 +200,8 @@
                     android:layout_height="wrap_content"
                     android:layout_marginTop="4dp"
                     android:text="@string/home_transparency_desc"
-                    android:textAppearance="?attr/textAppearanceBodySmall" />
+                    android:textAppearance="?attr/textAppearanceBodySmall"
+                    android:textColor="#E6F8F8F9" />
             </LinearLayout>
         </com.google.android.material.card.MaterialCardView>
 
@@ -178,7 +211,8 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="20dp"
             android:orientation="horizontal"
-            android:gravity="center_vertical">
+            android:gravity="center_vertical"
+            android:background="@android:color/transparent">
 
             <TextView
                 android:id="@+id/labelNews"
@@ -186,14 +220,17 @@
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
                 android:text="@string/home_news"
-                android:textAppearance="?attr/textAppearanceTitleMedium" />
+                android:textAppearance="?attr/textAppearanceTitleMedium"
+                android:textColor="@color/nav_white" />
 
             <com.google.android.material.button.MaterialButton
                 android:id="@+id/btnAllNews"
                 style="@style/Widget.Material3.Button.TextButton"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="@string/cta_view_all" />
+                android:text="@string/cta_view_all"
+                android:textAllCaps="false"
+                android:textColor="@color/org_gold" />
         </LinearLayout>
 
         <androidx.recyclerview.widget.RecyclerView
@@ -204,46 +241,7 @@
             android:clipToPadding="false"
             android:paddingStart="8dp"
             android:paddingEnd="8dp"
-            android:overScrollMode="never" />
-
-        <!-- Partners -->
-        <TextView
-            android:id="@+id/labelPartners"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="24dp"
-            android:text="@string/home_partners"
-            android:textAppearance="?attr/textAppearanceTitleMedium" />
-
-        <LinearLayout
-            android:id="@+id/partnersRow"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="8dp"
-            android:orientation="horizontal">
-
-            <com.google.android.material.chip.Chip
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Partner A" />
-            <com.google.android.material.chip.Chip
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Partner B" />
-            <com.google.android.material.chip.Chip
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Partner C" />
-        </LinearLayout>
-
-        <!-- Learn more / Contact -->
-        <com.google.android.material.button.MaterialButton
-            android:id="@+id/btnLearnMore"
-            style="@style/Widget.Material3.Button.ElevatedButton"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="24dp"
-            android:text="@string/cta_learn_more" />
-
+            android:overScrollMode="never"
+            android:background="@android:color/transparent" />
     </LinearLayout>
 </ScrollView>

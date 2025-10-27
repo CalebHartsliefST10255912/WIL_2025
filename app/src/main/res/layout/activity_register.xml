@@ -1,9 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
 <ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:fillViewport="true"
     android:padding="24dp"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    android:background="@drawable/fragment_background">
 
     <LinearLayout
         android:orientation="vertical"
@@ -16,70 +18,116 @@
             android:textSize="24sp"
             android:textStyle="bold"
             android:layout_marginTop="32dp"
+            android:textColor="@color/black"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content" />
 
+        <!-- Display name -->
         <com.google.android.material.textfield.TextInputLayout
             android:layout_marginTop="24dp"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content">
+            android:layout_height="wrap_content"
+            app:boxBackgroundColor="@android:color/transparent"
+            app:boxStrokeColor="@color/org_gold"
+            app:boxStrokeWidth="1dp"
+            app:boxStrokeWidthFocused="2dp"
+            app:hintTextColor="@color/black">
+
             <com.google.android.material.textfield.TextInputEditText
                 android:id="@+id/etName"
                 android:hint="Display name"
                 android:inputType="textPersonName"
+                android:textColor="@color/nav_white"
+                android:textColorHint="#CCFFFFFF"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"/>
         </com.google.android.material.textfield.TextInputLayout>
 
+        <!-- Email -->
         <com.google.android.material.textfield.TextInputLayout
             android:layout_marginTop="12dp"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content">
+            android:layout_height="wrap_content"
+            app:boxBackgroundColor="@android:color/transparent"
+            app:boxStrokeColor="@color/org_gold"
+            app:boxStrokeWidth="1dp"
+            app:boxStrokeWidthFocused="2dp"
+            app:hintTextColor="@color/black">
+
             <com.google.android.material.textfield.TextInputEditText
                 android:id="@+id/etEmail"
                 android:hint="Email"
                 android:inputType="textEmailAddress"
+                android:textColor="@color/nav_white"
+                android:textColorHint="#CCFFFFFF"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"/>
         </com.google.android.material.textfield.TextInputLayout>
 
+        <!-- Password -->
         <com.google.android.material.textfield.TextInputLayout
             android:layout_marginTop="12dp"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content">
+            android:layout_height="wrap_content"
+            app:endIconMode="password_toggle"
+            app:endIconTint="@color/org_gold"
+            app:boxBackgroundColor="@android:color/transparent"
+            app:boxStrokeColor="@color/org_gold"
+            app:boxStrokeWidth="1dp"
+            app:boxStrokeWidthFocused="2dp"
+            app:hintTextColor="@color/black">
+
             <com.google.android.material.textfield.TextInputEditText
                 android:id="@+id/etPassword"
                 android:hint="Password (6+ chars)"
                 android:inputType="textPassword"
+                android:textColor="@color/nav_white"
+                android:textColorHint="#CCFFFFFF"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"/>
         </com.google.android.material.textfield.TextInputLayout>
 
+        <!-- Confirm -->
         <com.google.android.material.textfield.TextInputLayout
             android:layout_marginTop="12dp"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content">
+            android:layout_height="wrap_content"
+            app:endIconMode="password_toggle"
+            app:endIconTint="@color/org_gold"
+            app:boxBackgroundColor="@android:color/transparent"
+            app:boxStrokeColor="@color/org_gold"
+            app:boxStrokeWidth="1dp"
+            app:boxStrokeWidthFocused="2dp"
+            app:hintTextColor="@color/black">
+
             <com.google.android.material.textfield.TextInputEditText
                 android:id="@+id/etConfirm"
                 android:hint="Confirm password"
                 android:inputType="textPassword"
+                android:textColor="@color/nav_white"
+                android:textColorHint="#CCFFFFFF"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"/>
         </com.google.android.material.textfield.TextInputLayout>
 
+        <!-- Primary action: solid gold -->
         <com.google.android.material.button.MaterialButton
             android:id="@+id/btnRegister"
             android:text="Sign up"
+            android:textAllCaps="false"
             android:layout_marginTop="20dp"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"/>
+            android:layout_height="wrap_content"
+            android:textColor="@color/blue_main"
+            app:backgroundTint="@color/org_gold"
+            app:rippleColor="#33FEBA70" />
 
         <com.google.android.material.progressindicator.CircularProgressIndicator
             android:id="@+id/progress"
             android:visibility="gone"
             android:layout_marginTop="16dp"
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content"/>
-
+            android:layout_height="wrap_content"
+            app:indicatorColor="@color/org_gold"/>
     </LinearLayout>
 </ScrollView>

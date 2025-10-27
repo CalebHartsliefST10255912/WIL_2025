@@ -10,11 +10,15 @@
     <EditText
         android:id="@+id/searchBar"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="44dp"
         android:hint="Search qualifications..."
-        android:padding="12dp"
+        android:paddingLeft="14dp"
+        android:paddingRight="14dp"
         android:drawableStart="@android:drawable/ic_menu_search"
-        android:background="@android:drawable/edit_text"
+        android:drawablePadding="8dp"
+        android:background="@drawable/bg_search"
+        android:textColor="@color/blue_main"
+        android:textColorHint="#AA1A2336"
         android:inputType="text"
         android:layout_marginBottom="12dp" />
 
@@ -23,6 +27,9 @@
         android:id="@+id/rvQualifications"
         android:layout_width="match_parent"
         android:layout_height="0dp"
-        android:overScrollMode="never"
-        android:layout_weight="1"/>
+        android:layout_weight="1"
+        android:clipToPadding="false"
+        android:paddingTop="4dp"
+        android:paddingBottom="4dp"
+        android:overScrollMode="never" />
 </LinearLayout>

@@ -46,8 +46,8 @@ class AboutFragment : Fragment() {
         binding.btnRate.setOnClickListener { openPlayStore() }
 
         // Footer year
-        val year = Calendar.getInstance().get(Calendar.YEAR)
-        binding.txtCopyright.text = getString(R.string.about_copyright_dynamic, year)
+//        val year = Calendar.getInstance().get(Calendar.YEAR)
+//        binding.txtCopyright.text = getString(R.string.about_copyright_dynamic, year)
 
         return binding.root
     }
