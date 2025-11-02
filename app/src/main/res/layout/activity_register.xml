@@ -37,7 +37,7 @@
                 android:id="@+id/etName"
                 android:hint="Display name"
                 android:inputType="textPersonName"
-                android:textColor="@color/nav_white"
+                android:textColor="@color/black"
                 android:textColorHint="#CCFFFFFF"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"/>
@@ -58,7 +58,7 @@
                 android:id="@+id/etEmail"
                 android:hint="Email"
                 android:inputType="textEmailAddress"
-                android:textColor="@color/nav_white"
+                android:textColor="@color/black"
                 android:textColorHint="#CCFFFFFF"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"/>
@@ -81,7 +81,7 @@
                 android:id="@+id/etPassword"
                 android:hint="Password (6+ chars)"
                 android:inputType="textPassword"
-                android:textColor="@color/nav_white"
+                android:textColor="@color/black"
                 android:textColorHint="#CCFFFFFF"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"/>
@@ -104,7 +104,7 @@
                 android:id="@+id/etConfirm"
                 android:hint="Confirm password"
                 android:inputType="textPassword"
-                android:textColor="@color/nav_white"
+                android:textColor="@color/black"
                 android:textColorHint="#CCFFFFFF"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"/>
