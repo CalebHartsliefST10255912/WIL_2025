@@ -1,7 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
 <ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    android:background="@drawable/fragment_background"
+    android:fillViewport="true">
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -10,82 +13,146 @@
         android:padding="16dp">
 
         <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/inputEmailLayout"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:hint="Email">
+            android:hint="Email"
+            app:boxBackgroundColor="@android:color/transparent"
+            app:boxStrokeColor="@color/org_gold"
+            app:boxStrokeWidth="1dp"
+            app:boxStrokeWidthFocused="2dp"
+            app:hintTextColor="@color/black">
             <com.google.android.material.textfield.TextInputEditText
                 android:id="@+id/inputEmail"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:inputType="textEmailAddress"/>
+                android:inputType="textEmailAddress"
+                android:textColor="@color/black"
+                android:textColorHint="#CCFFFFFF"/>
         </com.google.android.material.textfield.TextInputLayout>
 
         <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/inputPhoneLayout"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:layout_marginTop="12dp"
             android:hint="Phone"
-            android:layout_marginTop="12dp">
+            app:boxBackgroundColor="@android:color/transparent"
+            app:boxStrokeColor="@color/org_gold"
+            app:boxStrokeWidth="1dp"
+            app:boxStrokeWidthFocused="2dp"
+            app:hintTextColor="@color/black">
             <com.google.android.material.textfield.TextInputEditText
                 android:id="@+id/inputPhone"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:inputType="phone"/>
+                android:inputType="phone"
+                android:textColor="@color/black"
+                android:textColorHint="#CCFFFFFF"/>
         </com.google.android.material.textfield.TextInputLayout>
 
         <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/inputAddress1Layout"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:layout_marginTop="12dp"
             android:hint="Address line 1"
-            android:layout_marginTop="12dp">
+            app:boxBackgroundColor="@android:color/transparent"
+            app:boxStrokeColor="@color/org_gold"
+            app:boxStrokeWidth="1dp"
+            app:boxStrokeWidthFocused="2dp"
+            app:hintTextColor="@color/black">
             <com.google.android.material.textfield.TextInputEditText
                 android:id="@+id/inputAddress1"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"/>
+                android:layout_height="wrap_content"
+                android:textColor="@color/black"
+                android:textColorHint="#CCFFFFFF"/>
         </com.google.android.material.textfield.TextInputLayout>
 
         <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/inputAddress2Layout"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:layout_marginTop="12dp"
             android:hint="Address line 2"
-            android:layout_marginTop="12dp">
+            app:boxBackgroundColor="@android:color/transparent"
+            app:boxStrokeColor="@color/org_gold"
+            app:boxStrokeWidth="1dp"
+            app:boxStrokeWidthFocused="2dp"
+            app:hintTextColor="@color/black">
             <com.google.android.material.textfield.TextInputEditText
                 android:id="@+id/inputAddress2"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"/>
+                android:layout_height="wrap_content"
+                android:textColor="@color/black"
+                android:textColorHint="#CCFFFFFF"/>
         </com.google.android.material.textfield.TextInputLayout>
 
         <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/inputCityLayout"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:layout_marginTop="12dp"
             android:hint="City"
-            android:layout_marginTop="12dp">
+            app:boxBackgroundColor="@android:color/transparent"
+            app:boxStrokeColor="@color/org_gold"
+            app:boxStrokeWidth="1dp"
+            app:boxStrokeWidthFocused="2dp"
+            app:hintTextColor="@color/black">
             <com.google.android.material.textfield.TextInputEditText
                 android:id="@+id/inputCity"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"/>
+                android:layout_height="wrap_content"
+                android:textColor="@color/black"
+                android:textColorHint="#CCFFFFFF"/>
         </com.google.android.material.textfield.TextInputLayout>
 
+        <!-- Province: exposed dropdown -->
         <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/inputProvinceLayout"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:layout_marginTop="12dp"
             android:hint="Province"
-            android:layout_marginTop="12dp">
-            <com.google.android.material.textfield.TextInputEditText
+            app:endIconMode="dropdown_menu"
+            app:endIconTint="@color/org_gold"
+            app:boxBackgroundColor="@android:color/transparent"
+            app:boxStrokeColor="@color/org_gold"
+            app:boxStrokeWidth="1dp"
+            app:boxStrokeWidthFocused="2dp"
+            app:hintTextColor="@color/black">
+
+            <com.google.android.material.textfield.MaterialAutoCompleteTextView
                 android:id="@+id/inputProvince"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"/>
+                android:layout_height="wrap_content"
+                android:inputType="none"
+                android:importantForAutofill="no"
+                android:textColor="@color/black"
+                android:textColorHint="#CCFFFFFF"
+                android:popupBackground="@color/blue_main"
+                android:entries="@array/south_africa_provinces" />
         </com.google.android.material.textfield.TextInputLayout>
 
         <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/inputPostalCodeLayout"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:layout_marginTop="12dp"
             android:hint="Postal Code"
-            android:layout_marginTop="12dp">
+            app:boxBackgroundColor="@android:color/transparent"
+            app:boxStrokeColor="@color/org_gold"
+            app:boxStrokeWidth="1dp"
+            app:boxStrokeWidthFocused="2dp"
+            app:hintTextColor="@color/black">
             <com.google.android.material.textfield.TextInputEditText
                 android:id="@+id/inputPostalCode"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:inputType="number"/>
+                android:inputType="number"
+                android:textColor="@color/black"
+                android:textColorHint="#CCFFFFFF"/>
         </com.google.android.material.textfield.TextInputLayout>
 
     </LinearLayout>

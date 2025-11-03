@@ -4,10 +4,14 @@ import android.os.Bundle
 import android.view.View
 import androidx.activity.viewModels
 import androidx.appcompat.app.AppCompatActivity
+import androidx.fragment.app.Fragment
 import androidx.viewpager2.widget.ViewPager2
 import com.example.wil_byte_horizon.R
 import com.example.wil_byte_horizon.core.FirebaseAuthManager
 import com.example.wil_byte_horizon.databinding.ActivityEnrolFormBinding
+import com.example.wil_byte_horizon.ui.enrol_form.steps.BackgroundStepFragment
+import com.example.wil_byte_horizon.ui.enrol_form.steps.ContactStepFragment
+import com.example.wil_byte_horizon.ui.enrol_form.steps.PersonalStepFragment
 import com.google.android.material.snackbar.Snackbar
 
 class EnrolFormActivity : AppCompatActivity() {
@@ -42,7 +46,7 @@ class EnrolFormActivity : AppCompatActivity() {
         pager.isUserInputEnabled = false
         updateButtons(pager.currentItem)
 
-        // Nav buttons
+        // Back
         binding.btnBack.setOnClickListener {
             if (pager.currentItem == 0) finish()
             else {
@@ -50,12 +54,32 @@ class EnrolFormActivity : AppCompatActivity() {
                 updateButtons(pager.currentItem)
             }
         }
+
+        // Next
         binding.btnNext.setOnClickListener {
             val step = pager.currentItem
+
+            // 🔴 Show field-level errors ON DEMAND (only when Next is pressed)
+            val currentFrag = findStepFragment(step)
+            val canProceedByUi = when (currentFrag) {
+                is PersonalStepFragment   -> currentFrag.onNextPressed()
+                is ContactStepFragment    -> currentFrag.onNextPressed()
+                is BackgroundStepFragment -> currentFrag.onNextPressed()
+                // Review step has no per-field editors; allow continue to submit.
+                else -> true
+            }
+
+            if (!canProceedByUi) {
+                Snackbar.make(binding.root, R.string.form_fix_errors, Snackbar.LENGTH_LONG).show()
+                return@setOnClickListener
+            }
+
+            // (Optional) Keep your ViewModel gate as a second safety net
             if (!vm.validateStep(step)) {
                 Snackbar.make(binding.root, R.string.form_fix_errors, Snackbar.LENGTH_LONG).show()
                 return@setOnClickListener
             }
+
             if (step < EnrolFormPagerAdapter.TOTAL_STEPS - 1) {
                 pager.currentItem += 1
                 updateButtons(pager.currentItem)
@@ -63,9 +87,17 @@ class EnrolFormActivity : AppCompatActivity() {
                 submit()
             }
         }
+
         pager.registerOnPageChangeCallback(object : ViewPager2.OnPageChangeCallback() {
             override fun onPageSelected(position: Int) = updateButtons(position)
         })
+    }
+
+    /** Find the fragment currently shown by ViewPager2. */
+    private fun findStepFragment(position: Int): Fragment? {
+        // Default tag used by FragmentStateAdapter for ViewPager2
+        val tag = "f$position"
+        return supportFragmentManager.findFragmentByTag(tag)
     }
 
     private fun updateButtons(step: Int) {
@@ -77,7 +109,6 @@ class EnrolFormActivity : AppCompatActivity() {
 
         val pct = ((step + 1).toFloat() / EnrolFormPagerAdapter.TOTAL_STEPS * 100).toInt()
 
-        // Your XML uses a standard ProgressBar with id progressHorizontal
         binding.progressHorizontal.isIndeterminate = false
         binding.progressHorizontal.max = 100
         binding.progressHorizontal.progress = pct

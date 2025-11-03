@@ -136,4 +136,44 @@
     <string name="content_desc_event_image">Event image</string>
     <string name="content_desc_more">More</string>
 
+    <!-- Dropdown options: highest education -->
+    <string-array name="education_level_options">
+        <item>No formal education</item>
+        <item>Some high school</item>
+        <item>Matric / Grade 12</item>
+        <item>Certificate (NQF 5)</item>
+        <item>Diploma (NQF 6)</item>
+        <item>Bachelors degree (NQF 7)</item>
+        <item>Honours / Postgrad diploma (NQF 8)</item>
+        <item>Masters degree (NQF 9)</item>
+        <item>Doctorate (NQF 10)</item>
+        <item>Other</item>
+    </string-array>
+
+    <!-- Dropdown options: employment status -->
+    <string-array name="employment_status_options">
+        <item>Employed full-time</item>
+        <item>Employed part-time</item>
+        <item>Self-employed</item>
+        <item>Freelancer / Contract</item>
+        <item>Unemployed</item>
+        <item>Student</item>
+        <item>Intern</item>
+        <item>Retired</item>
+        <item>Homemaker</item>
+        <item>Unable to work</item>
+        <item>Other</item>
+    </string-array>
+
+    <string-array name="south_africa_provinces">
+        <item>Eastern Cape</item>
+        <item>Free State</item>
+        <item>Gauteng</item>
+        <item>KwaZulu-Natal</item>
+        <item>Limpopo</item>
+        <item>Mpumalanga</item>
+        <item>Northern Cape</item>
+        <item>North West</item>
+        <item>Western Cape</item>
+    </string-array>
 </resources>

@@ -1,7 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
 <ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    android:background="@drawable/fragment_background"
+    android:fillViewport="true">
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -9,39 +12,81 @@
         android:orientation="vertical"
         android:padding="16dp">
 
+        <!-- Highest education -->
         <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/inputHighestEducationLayout"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:hint="Highest education">
-            <com.google.android.material.textfield.TextInputEditText
+            android:hint="Highest education"
+            app:endIconMode="dropdown_menu"
+            app:endIconTint="@color/org_gold"
+            app:boxBackgroundColor="@android:color/transparent"
+            app:boxStrokeColor="@color/org_gold"
+            app:boxStrokeWidth="1dp"
+            app:boxStrokeWidthFocused="2dp"
+            app:hintTextColor="@color/black">
+
+            <com.google.android.material.textfield.MaterialAutoCompleteTextView
                 android:id="@+id/inputHighestEducation"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"/>
+                android:layout_height="wrap_content"
+                android:inputType="none"
+                android:importantForAutofill="no"
+                android:textColor="@color/black"
+                android:textColorHint="#CCFFFFFF"
+                android:popupBackground="@color/blue_main"
+                android:entries="@array/education_level_options" />
         </com.google.android.material.textfield.TextInputLayout>
 
+        <!-- Employment status -->
         <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/inputEmploymentStatusLayout"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:layout_marginTop="12dp"
             android:hint="Employment status"
-            android:layout_marginTop="12dp">
-            <com.google.android.material.textfield.TextInputEditText
+            app:endIconMode="dropdown_menu"
+            app:endIconTint="@color/org_gold"
+            app:boxBackgroundColor="@android:color/transparent"
+            app:boxStrokeColor="@color/org_gold"
+            app:boxStrokeWidth="1dp"
+            app:boxStrokeWidthFocused="2dp"
+            app:hintTextColor="@color/black">
+
+            <com.google.android.material.textfield.MaterialAutoCompleteTextView
                 android:id="@+id/inputEmploymentStatus"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"/>
+                android:layout_height="wrap_content"
+                android:inputType="none"
+                android:importantForAutofill="no"
+                android:textColor="@color/black"
+                android:textColorHint="#CCFFFFFF"
+                android:popupBackground="@color/blue_main"
+                android:entries="@array/employment_status_options" />
         </com.google.android.material.textfield.TextInputLayout>
 
+        <!-- Motivation -->
         <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/inputMotivationLayout"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:layout_marginTop="12dp"
             android:hint="Motivation (why do you want to enrol?)"
-            android:layout_marginTop="12dp">
+            app:boxBackgroundColor="@android:color/transparent"
+            app:boxStrokeColor="@color/org_gold"
+            app:boxStrokeWidth="1dp"
+            app:boxStrokeWidthFocused="2dp"
+            app:hintTextColor="@color/black">
+
             <com.google.android.material.textfield.TextInputEditText
                 android:id="@+id/inputMotivation"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:minLines="3"
                 android:gravity="top"
-                android:inputType="textMultiLine"/>
+                android:inputType="textMultiLine"
+                android:textColor="@color/black"
+                android:textColorHint="#CCFFFFFF" />
         </com.google.android.material.textfield.TextInputLayout>
 
     </LinearLayout>
