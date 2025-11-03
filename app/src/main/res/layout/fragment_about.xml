@@ -186,7 +186,7 @@
                     <ImageView
                         android:layout_width="24dp"
                         android:layout_height="24dp"
-                        android:src="@drawable/mail_24px"
+                        android:src="@drawable/ic_mail_24px"
                         app:tint="@color/org_gold"
                         android:contentDescription="@string/about_contact_us" />
 
@@ -220,7 +220,7 @@
                     <ImageView
                         android:layout_width="24dp"
                         android:layout_height="24dp"
-                        android:src="@drawable/privacy_tip_24px"
+                        android:src="@drawable/ic_privacy_tip_24px"
                         app:tint="@color/org_gold"
                         android:contentDescription="@string/about_privacy_policy" />
 
@@ -254,7 +254,7 @@
                     <ImageView
                         android:layout_width="24dp"
                         android:layout_height="24dp"
-                        android:src="@drawable/share_24px"
+                        android:src="@drawable/ic_share_24px"
                         app:tint="@color/org_gold"
                         android:contentDescription="@string/about_share_app" />
 

@@ -8,7 +8,7 @@
     <fragment
         android:id="@+id/navigation_home"
         android:name="com.example.wil_byte_horizon.ui.home.HomeFragment"
-        android:label="@string/title_home"
+        android:label=""
         tools:layout="@layout/fragment_home" />
 
     <fragment
@@ -26,7 +26,7 @@
     <fragment
         android:id="@+id/navigation_about"
         android:name="com.example.wil_byte_horizon.ui.about.AboutFragment"
-        android:label="@string/about_our_mission"
+        android:label=""
         tools:layout="@layout/fragment_about" />
 
     <fragment

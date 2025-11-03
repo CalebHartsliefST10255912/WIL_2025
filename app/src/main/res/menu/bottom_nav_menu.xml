@@ -5,12 +5,12 @@
     <item
         android:id="@+id/navigation_train"
         android:visible="false"
-        android:icon="@drawable/volunteer_activism_24px"
+        android:icon="@drawable/ic_volunteer_activism_24px"
         android:title="@string/training" />
 
     <item
         android:id="@+id/navigation_enrol"
-        android:icon="@drawable/school_24px"
+        android:icon="@drawable/ic_school_24px"
         android:title="@string/enrolment" />
 
     <item
@@ -20,12 +20,12 @@
 
     <item
         android:id="@+id/navigation_event"
-        android:icon="@drawable/event_24px"
+        android:icon="@drawable/ic_event_24px"
         android:title="@string/event" />
 
     <item
         android:id="@+id/navigation_about"
-        android:icon="@drawable/info_24px"
+        android:icon="@drawable/ic_info_24px"
         android:title="@string/contact_us" />
 
 </menu>

@@ -3,7 +3,8 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:fillViewport="true">
+    android:fillViewport="true"
+    android:background="@android:color/transparent">
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -16,9 +17,12 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             app:cardCornerRadius="20dp"
-            app:cardUseCompatPadding="true"
+            app:cardUseCompatPadding="false"
+            app:cardBackgroundColor="@android:color/transparent"
             app:strokeWidth="1dp"
-            app:strokeColor="?attr/colorOutline">
+            app:strokeColor="@color/org_gold"
+            app:cardElevation="0dp"
+            android:stateListAnimator="@null">
 
             <LinearLayout
                 android:layout_width="match_parent"
@@ -41,14 +45,16 @@
                     android:layout_gravity="center_horizontal"
                     android:layout_marginTop="12dp"
                     android:text="@string/contact_title"
-                    android:textAppearance="?attr/textAppearanceTitleLarge" />
+                    android:textAppearance="?attr/textAppearanceTitleLarge"
+                    android:textColor="@android:color/black" />
 
                 <TextView
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="4dp"
                     android:text="@string/contact_subtitle"
-                    android:textAppearance="?attr/textAppearanceBodyMedium" />
+                    android:textAppearance="?attr/textAppearanceBodyMedium"
+                    android:textColor="@android:color/black" />
             </LinearLayout>
         </com.google.android.material.card.MaterialCardView>
 
@@ -58,9 +64,12 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="12dp"
             app:cardCornerRadius="20dp"
-            app:cardUseCompatPadding="true"
+            app:cardUseCompatPadding="false"
+            app:cardBackgroundColor="@android:color/transparent"
             app:strokeWidth="1dp"
-            app:strokeColor="?attr/colorOutline">
+            app:strokeColor="@color/org_gold"
+            app:cardElevation="0dp"
+            android:stateListAnimator="@null">
 
             <LinearLayout
                 android:layout_width="match_parent"
@@ -82,7 +91,8 @@
                     <ImageView
                         android:layout_width="24dp"
                         android:layout_height="24dp"
-                        android:src="@android:drawable/ic_dialog_email"
+                        android:src="@drawable/ic_mail_24px"
+                        app:tint="@color/org_gold"
                         android:contentDescription="@string/contact_email" />
 
                     <TextView
@@ -93,14 +103,16 @@
                         android:paddingStart="16dp"
                         android:textAppearance="?attr/textAppearanceBodyLarge"
                         android:maxLines="1"
-                        android:ellipsize="end" />
+                        android:ellipsize="end"
+                        android:textColor="@android:color/black" />
                 </LinearLayout>
 
                 <com.google.android.material.divider.MaterialDivider
                     android:layout_width="match_parent"
                     android:layout_height="1dp"
                     app:dividerInsetStart="16dp"
-                    app:dividerInsetEnd="16dp" />
+                    app:dividerInsetEnd="16dp"
+                    app:dividerColor="#26FEBA70" />
 
                 <!-- Phone -->
                 <LinearLayout
@@ -116,7 +128,8 @@
                     <ImageView
                         android:layout_width="24dp"
                         android:layout_height="24dp"
-                        android:src="@android:drawable/ic_menu_call"
+                        android:src="@drawable/ic_phone_enabled_24px"
+                        app:tint="@color/org_gold"
                         android:contentDescription="@string/contact_phone" />
 
                     <TextView
@@ -127,14 +140,16 @@
                         android:paddingStart="16dp"
                         android:textAppearance="?attr/textAppearanceBodyLarge"
                         android:maxLines="1"
-                        android:ellipsize="end" />
+                        android:ellipsize="end"
+                        android:textColor="@android:color/black" />
                 </LinearLayout>
 
                 <com.google.android.material.divider.MaterialDivider
                     android:layout_width="match_parent"
                     android:layout_height="1dp"
                     app:dividerInsetStart="16dp"
-                    app:dividerInsetEnd="16dp" />
+                    app:dividerInsetEnd="16dp"
+                    app:dividerColor="#26FEBA70" />
 
                 <!-- Website -->
                 <LinearLayout
@@ -150,7 +165,8 @@
                     <ImageView
                         android:layout_width="24dp"
                         android:layout_height="24dp"
-                        android:src="@android:drawable/ic_menu_view"
+                        android:src="@drawable/ic_web_24px"
+                        app:tint="@color/org_gold"
                         android:contentDescription="@string/contact_website" />
 
                     <TextView
@@ -161,14 +177,16 @@
                         android:paddingStart="16dp"
                         android:textAppearance="?attr/textAppearanceBodyLarge"
                         android:maxLines="1"
-                        android:ellipsize="end" />
+                        android:ellipsize="end"
+                        android:textColor="@android:color/black" />
                 </LinearLayout>
 
                 <com.google.android.material.divider.MaterialDivider
                     android:layout_width="match_parent"
                     android:layout_height="1dp"
                     app:dividerInsetStart="16dp"
-                    app:dividerInsetEnd="16dp" />
+                    app:dividerInsetEnd="16dp"
+                    app:dividerColor="#26FEBA70" />
 
                 <!-- Address / Maps -->
                 <LinearLayout
@@ -184,7 +202,8 @@
                     <ImageView
                         android:layout_width="24dp"
                         android:layout_height="24dp"
-                        android:src="@android:drawable/ic_dialog_map"
+                        android:src="@drawable/ic_map_24px"
+                        app:tint="@color/org_gold"
                         android:contentDescription="@string/contact_address" />
 
                     <TextView
@@ -196,7 +215,8 @@
                         android:text="@string/contact_address_hint"
                         android:textAppearance="?attr/textAppearanceBodyLarge"
                         android:maxLines="2"
-                        android:ellipsize="end" />
+                        android:ellipsize="end"
+                        android:textColor="@android:color/black" />
                 </LinearLayout>
             </LinearLayout>
         </com.google.android.material.card.MaterialCardView>
@@ -207,9 +227,12 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="12dp"
             app:cardCornerRadius="20dp"
-            app:cardUseCompatPadding="true"
+            app:cardUseCompatPadding="false"
+            app:cardBackgroundColor="@android:color/transparent"
             app:strokeWidth="1dp"
-            app:strokeColor="?attr/colorOutline">
+            app:strokeColor="@color/org_gold"
+            app:cardElevation="0dp"
+            android:stateListAnimator="@null">
 
             <LinearLayout
                 android:layout_width="match_parent"
@@ -221,7 +244,8 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="@string/contact_form_title"
-                    android:textAppearance="?attr/textAppearanceTitleMedium" />
+                    android:textAppearance="?attr/textAppearanceTitleMedium"
+                    android:textColor="@android:color/black" />
 
                 <com.google.android.material.textfield.TextInputLayout
                     android:id="@+id/inputName"
@@ -229,12 +253,19 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="12dp"
-                    android:hint="@string/contact_name_hint">
+                    android:hint="@string/contact_name_hint"
+                    app:boxBackgroundColor="@android:color/transparent"
+                    app:boxStrokeColor="@color/org_gold"
+                    app:boxStrokeWidth="1dp"
+                    app:boxStrokeWidthFocused="2dp"
+                    app:hintTextColor="@android:color/black">
 
                     <com.google.android.material.textfield.TextInputEditText
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:inputType="textPersonName" />
+                        android:inputType="textPersonName"
+                        android:textColor="@android:color/black"
+                        android:textColorHint="#99000000" />
                 </com.google.android.material.textfield.TextInputLayout>
 
                 <com.google.android.material.textfield.TextInputLayout
@@ -243,12 +274,19 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="12dp"
-                    android:hint="@string/contact_email_hint">
+                    android:hint="@string/contact_email_hint"
+                    app:boxBackgroundColor="@android:color/transparent"
+                    app:boxStrokeColor="@color/org_gold"
+                    app:boxStrokeWidth="1dp"
+                    app:boxStrokeWidthFocused="2dp"
+                    app:hintTextColor="@android:color/black">
 
                     <com.google.android.material.textfield.TextInputEditText
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:inputType="textEmailAddress" />
+                        android:inputType="textEmailAddress"
+                        android:textColor="@android:color/black"
+                        android:textColorHint="#99000000" />
                 </com.google.android.material.textfield.TextInputLayout>
 
                 <com.google.android.material.textfield.TextInputLayout
@@ -257,14 +295,21 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="12dp"
-                    android:hint="@string/contact_message_hint">
+                    android:hint="@string/contact_message_hint"
+                    app:boxBackgroundColor="@android:color/transparent"
+                    app:boxStrokeColor="@color/org_gold"
+                    app:boxStrokeWidth="1dp"
+                    app:boxStrokeWidthFocused="2dp"
+                    app:hintTextColor="@android:color/black">
 
                     <com.google.android.material.textfield.TextInputEditText
                         android:layout_width="match_parent"
                         android:layout_height="120dp"
                         android:gravity="top|start"
                         android:inputType="textMultiLine"
-                        android:maxLines="6" />
+                        android:maxLines="6"
+                        android:textColor="@android:color/black"
+                        android:textColorHint="#99000000" />
                 </com.google.android.material.textfield.TextInputLayout>
 
                 <com.google.android.material.button.MaterialButton
@@ -273,14 +318,19 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="16dp"
-                    android:text="@string/contact_send" />
+                    android:text="@string/contact_send"
+                    android:textAllCaps="false"
+                    android:textColor="@android:color/black"
+                    app:backgroundTint="@color/org_gold"
+                    app:rippleColor="#33FEBA70" />
 
                 <TextView
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="8dp"
                     android:text="@string/contact_privacy_note"
-                    android:textAppearance="?attr/textAppearanceBodySmall" />
+                    android:textAppearance="?attr/textAppearanceBodySmall"
+                    android:textColor="@android:color/black" />
             </LinearLayout>
         </com.google.android.material.card.MaterialCardView>
 
@@ -290,9 +340,12 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="12dp"
             app:cardCornerRadius="20dp"
-            app:cardUseCompatPadding="true"
+            app:cardUseCompatPadding="false"
+            app:cardBackgroundColor="@android:color/transparent"
             app:strokeWidth="1dp"
-            app:strokeColor="?attr/colorOutline">
+            app:strokeColor="@color/org_gold"
+            app:cardElevation="0dp"
+            android:stateListAnimator="@null">
 
             <LinearLayout
                 android:layout_width="match_parent"
@@ -304,26 +357,32 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="@string/contact_donate_title"
-                    android:textAppearance="?attr/textAppearanceTitleMedium" />
+                    android:textAppearance="?attr/textAppearanceTitleMedium"
+                    android:textColor="@android:color/black" />
 
                 <TextView
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="6dp"
                     android:text="@string/contact_donate_body"
-                    android:textAppearance="?attr/textAppearanceBodyMedium" />
+                    android:textAppearance="?attr/textAppearanceBodyMedium"
+                    android:textColor="@android:color/black" />
 
                 <com.google.android.material.button.MaterialButton
                     android:id="@+id/btnDonate"
-                    style="@style/Widget.Material3.Button.TonalButton"
+                    style="@style/Widget.Material3.Button"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="12dp"
-                    android:text="@string/contact_donate_btn" />
+                    android:text="@string/contact_donate_btn"
+                    android:textAllCaps="false"
+                    android:textColor="@android:color/black"
+                    app:backgroundTint="@color/org_gold"
+                    app:rippleColor="#33FEBA70" />
             </LinearLayout>
         </com.google.android.material.card.MaterialCardView>
 
-        <!-- Footer: logout -->
+        <!-- Footer: logout (outlined gold) -->
         <com.google.android.material.button.MaterialButton
             android:id="@+id/btnLogout"
             style="@style/Widget.Material3.Button.OutlinedButton"
@@ -331,6 +390,12 @@
             android:layout_height="wrap_content"
             android:layout_gravity="center_horizontal"
             android:layout_marginTop="16dp"
-            android:text="@string/contact_logout" />
+            android:text="@string/contact_logout"
+            android:textAllCaps="false"
+            android:textColor="@color/org_gold"
+            app:strokeColor="@color/org_gold"
+            app:strokeWidth="1dp"
+            app:backgroundTint="@android:color/transparent"
+            app:rippleColor="#33FEBA70" />
     </LinearLayout>
 </ScrollView>
