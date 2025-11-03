@@ -11,7 +11,7 @@
         android:layout_width="match_parent"
         android:layout_height="?attr/actionBarSize"
         android:background="@color/blue_main"
-        app:titleTextColor="@android:color/black"
+        app:titleTextColor="@color/org_gold"
         app:navigationIconTint="@color/org_gold" />
 
     <TextView
