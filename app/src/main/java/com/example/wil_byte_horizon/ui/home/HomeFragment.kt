@@ -14,6 +14,8 @@ import com.example.wil_byte_horizon.R
 import com.example.wil_byte_horizon.databinding.FragmentHomeBinding
 import kotlinx.coroutines.delay
 import kotlinx.coroutines.launch
+import androidx.navigation.fragment.findNavController
+
 
 class HomeFragment : Fragment() {
 
@@ -71,9 +73,22 @@ class HomeFragment : Fragment() {
 //        binding.btnVolunteer.setOnClickListener {
 //            // findNavController().navigate(R.id.action_home_to_volunteer)
 //        }
+        binding.btnDonate.setOnClickListener {
+            // Navigate to DonationFragment
+            try {
+                findNavController().navigate(R.id.action_home_to_donationFragment)
+            } catch (e: Exception) {
+                e.printStackTrace()
+            }
+        }
+
         binding.btnAllNews.setOnClickListener {
             // findNavController().navigate(R.id.action_home_to_news)
         }
+        binding.btnAllNews.setOnClickListener {
+            // findNavController().navigate(R.id.action_home_to_news)
+        }
+
     }
 
     private fun bindObservers() {
