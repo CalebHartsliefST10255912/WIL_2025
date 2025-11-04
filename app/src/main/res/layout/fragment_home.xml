@@ -53,7 +53,24 @@
                     android:textAppearance="?attr/textAppearanceBodyMedium"
                     android:textColor="#E6F8F8F9" />
 
-<!--                <LinearLayout-->
+                <com.google.android.material.button.MaterialButton
+                    android:id="@+id/btnDonate"
+                    style="@style/Widget.Material3.Button"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="16dp"
+                    android:text="@string/cta_donate"
+                    android:textAllCaps="false"
+                    android:textColor="@color/blue_main"
+                    app:backgroundTint="@color/org_gold"
+                    app:rippleColor="#33FEBA70"
+                    app:icon="@drawable/money"
+                    app:iconPadding="8dp"
+                    app:iconGravity="textStart"
+                    app:iconTint="@color/blue_main" />
+
+
+                <!--                <LinearLayout-->
 <!--                    android:layout_width="match_parent"-->
 <!--                    android:layout_height="wrap_content"-->
 <!--                    android:layout_marginTop="16dp"-->

@@ -1,0 +1,165 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/scrollDonate"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:fillViewport="true"
+    android:background="@drawable/fragment_background">
+
+    <LinearLayout
+        android:id="@+id/donateContent"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="16dp"
+        android:background="@android:color/transparent">
+
+        <!-- Header / Purpose -->
+        <com.google.android.material.card.MaterialCardView
+            android:id="@+id/cardDonateHeader"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:cardCornerRadius="20dp"
+            app:cardUseCompatPadding="false"
+            app:cardBackgroundColor="@color/blue_main"
+            app:strokeColor="#26FEBA70"
+            app:strokeWidth="1dp"
+            app:cardElevation="0dp"
+            android:stateListAnimator="@null">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:padding="20dp"
+                android:background="@android:color/transparent">
+
+                <TextView
+                    android:id="@+id/txtDonateTitle"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Support Ndikhondinani"
+                    android:textAppearance="?attr/textAppearanceHeadlineSmall"
+                    android:textStyle="bold"
+                    android:textColor="@color/nav_white" />
+
+                <TextView
+                    android:id="@+id/txtDonateSubtitle"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="8dp"
+                    android:text="Your donation helps us provide skills training and opportunities for underprivileged learners."
+                    android:textAppearance="?attr/textAppearanceBodyMedium"
+                    android:textColor="#E6F8F8F9" />
+            </LinearLayout>
+        </com.google.android.material.card.MaterialCardView>
+
+        <!-- Donation Input Section -->
+        <com.google.android.material.card.MaterialCardView
+            android:id="@+id/cardDonationInput"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            app:cardCornerRadius="16dp"
+            app:cardUseCompatPadding="false"
+            app:cardBackgroundColor="@color/blue_main"
+            app:strokeColor="#26FEBA70"
+            app:strokeWidth="1dp"
+            app:cardElevation="0dp"
+            android:stateListAnimator="@null">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:padding="20dp"
+                android:background="@android:color/transparent">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Enter Donation Amount (ZAR)"
+                    android:textAppearance="?attr/textAppearanceTitleSmall"
+                    android:textColor="@color/org_gold"
+                    android:textStyle="bold" />
+
+                <com.google.android.material.textfield.TextInputLayout
+                    android:id="@+id/layoutAmount"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="8dp"
+                    app:boxBackgroundMode="filled"
+                    app:boxBackgroundColor="#1AFFFFFF"
+                    app:startIconTint="@color/org_gold">
+
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:id="@+id/editAmount"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:inputType="numberDecimal"
+                        android:hint="Rand Amount"
+                        android:textColor="@color/black"
+                        android:textColorHint="#80FFFFFF" />
+                </com.google.android.material.textfield.TextInputLayout>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="16dp"
+                    android:text="Optional Message"
+                    android:textAppearance="?attr/textAppearanceTitleSmall"
+                    android:textColor="@color/org_gold"
+                    android:textStyle="bold" />
+
+                <com.google.android.material.textfield.TextInputLayout
+                    android:id="@+id/layoutMessage"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="8dp"
+                    app:boxBackgroundMode="filled"
+                    app:boxBackgroundColor="#1AFFFFFF"
+                    app:startIconTint="@color/org_gold">
+
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:id="@+id/editMessage"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:hint="Add a note to the organization (optional)"
+                        android:inputType="textCapSentences"
+                        android:maxLines="3"
+                        android:textColor="@color/black"
+                        android:textColorHint="#80FFFFFF" />
+                </com.google.android.material.textfield.TextInputLayout>
+            </LinearLayout>
+        </com.google.android.material.card.MaterialCardView>
+
+        <!-- Donate Button -->
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/btnDonatePayfast"
+            style="@style/Widget.Material3.Button"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="24dp"
+            android:text="Donate with PayFast"
+            android:textAllCaps="false"
+            android:textColor="@color/blue_main"
+            app:backgroundTint="@color/org_gold"
+            app:iconPadding="8dp"
+            app:iconGravity="textStart"
+            app:iconTint="@color/blue_main"
+            app:rippleColor="#33FEBA70" />
+
+        <!-- Transparency Notice -->
+        <TextView
+            android:id="@+id/txtDonateTransparency"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:text="All transactions are securely processed through PayFast. Ndikhondinani does not store any card information."
+            android:textAppearance="?attr/textAppearanceBodySmall"
+            android:textColor="#B3FFFFFF"
+            android:gravity="center"
+            android:padding="8dp" />
+    </LinearLayout>
+</ScrollView>

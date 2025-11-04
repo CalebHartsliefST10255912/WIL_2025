@@ -8,8 +8,19 @@
     <fragment
         android:id="@+id/navigation_home"
         android:name="com.example.wil_byte_horizon.ui.home.HomeFragment"
-        android:label=""
-        tools:layout="@layout/fragment_home" />
+        android:label="Home">
+
+        <action
+            android:id="@+id/action_home_to_donationFragment"
+            app:destination="@id/donationFragment" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/donationFragment"
+        android:name="com.example.wil_byte_horizon.ui.donation.DonationFragment"
+        android:label="Donate"
+        tools:layout="@layout/donation_fragment" />
+
 
     <fragment
         android:id="@+id/navigation_enrol"
