@@ -20,7 +20,7 @@
     <fragment
         android:id="@+id/navigation_event"
         android:name="com.example.wil_byte_horizon.ui.event.EventFragment"
-        android:label="@string/title_soup"
+        android:label="@string/title_events"
         tools:layout="@layout/fragment_event" />
 
     <fragment
@@ -46,18 +46,31 @@
         android:name="com.example.wil_byte_horizon.ui.admin.EventEditorFragment"
         android:label="New Event"
         tools:layout="@layout/fragment_event_editor" />
+
     <fragment
         android:id="@+id/qualificationEditorFragment"
         android:name="com.example.wil_byte_horizon.ui.admin.QualificationEditorFragment"
         android:label="New Qualification"
         tools:layout="@layout/fragment_qualification_editor" />
 
+    <!-- ✅ New details destination (no Safe Args needed) -->
+    <fragment
+        android:id="@+id/qualificationDetailsFragment"
+        android:name="com.example.wil_byte_horizon.ui.enrol.QualificationDetailsFragment"
+        android:label="Qualification Details"
+        tools:layout="@layout/fragment_qualification_details">
+        <!-- Optional: declares expected arg, even without Safe Args -->
+        <argument
+            android:name="qualificationId"
+            app:argType="string" />
+    </fragment>
+
+    <!-- Your existing admin actions can remain if used elsewhere -->
     <action
         android:id="@+id/action_navigation_admin_to_eventEditorFragment"
         app:destination="@id/eventEditorFragment" />
     <action
         android:id="@+id/action_navigation_admin_to_qualificationEditorFragment"
         app:destination="@id/qualificationEditorFragment" />
-
 
 </navigation>

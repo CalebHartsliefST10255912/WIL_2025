@@ -4,9 +4,12 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.ArrayAdapter
+import android.widget.AutoCompleteTextView
 import androidx.core.widget.doAfterTextChanged
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.activityViewModels
+import com.example.wil_byte_horizon.R
 import com.example.wil_byte_horizon.databinding.FragmentStepBackgroundBinding
 import com.example.wil_byte_horizon.ui.enrol_form.EnrolFormViewModel
 
@@ -15,82 +18,64 @@ class BackgroundStepFragment : Fragment() {
     private var _binding: FragmentStepBackgroundBinding? = null
     private val binding get() = _binding!!
     private val vm: EnrolFormViewModel by activityViewModels()
+
     private var showErrors = false
 
-    override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View {
+    override fun onCreateView(
+        inflater: LayoutInflater,
+        container: ViewGroup?,
+        savedInstanceState: Bundle?
+    ): View {
         _binding = FragmentStepBackgroundBinding.inflate(inflater, container, false)
         return binding.root
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
-        super.onViewCreated(view, savedInstanceState)
-
-        binding.inputHighestEducation.setText(vm.highestEducation.value)
-        binding.inputEmploymentStatus.setText(vm.employmentStatus.value)
+        // Prefill from VM
+        binding.inputHighestEducation.setText(vm.highestEducation.value, false)
+        binding.inputEmploymentStatus.setText(vm.employmentStatus.value, false)
         binding.inputMotivation.setText(vm.motivation.value)
 
-        // Dropdowns: validate on both text change and item click
+        // Adapters for exposed dropdowns
+        val edu = resources.getStringArray(R.array.education_level_options)
+        val emp = resources.getStringArray(R.array.employment_status_options)
+
+        (binding.inputHighestEducation as AutoCompleteTextView).setAdapter(
+            ArrayAdapter(requireContext(), android.R.layout.simple_list_item_1, edu)
+        )
+        (binding.inputEmploymentStatus as AutoCompleteTextView).setAdapter(
+            ArrayAdapter(requireContext(), android.R.layout.simple_list_item_1, emp)
+        )
+
+        // Write to VM on selection/typing
+        binding.inputHighestEducation.setOnItemClickListener { parent, _, pos, _ ->
+            vm.highestEducation.value = parent.getItemAtPosition(pos).toString()
+        }
+        binding.inputEmploymentStatus.setOnItemClickListener { parent, _, pos, _ ->
+            vm.employmentStatus.value = parent.getItemAtPosition(pos).toString()
+        }
+
         binding.inputHighestEducation.doAfterTextChanged {
             vm.highestEducation.value = it?.toString().orEmpty()
-            if (showErrors) validateHighestEducation()
         }
-        binding.inputHighestEducation.setOnItemClickListener { _,_,_,_ ->
-            vm.highestEducation.value = binding.inputHighestEducation.text?.toString().orEmpty()
-            if (showErrors) validateHighestEducation()
-        }
-
         binding.inputEmploymentStatus.doAfterTextChanged {
             vm.employmentStatus.value = it?.toString().orEmpty()
-            if (showErrors) validateEmploymentStatus()
         }
-        binding.inputEmploymentStatus.setOnItemClickListener { _,_,_,_ ->
-            vm.employmentStatus.value = binding.inputEmploymentStatus.text?.toString().orEmpty()
-            if (showErrors) validateEmploymentStatus()
-        }
-
         binding.inputMotivation.doAfterTextChanged {
             vm.motivation.value = it?.toString().orEmpty()
-            if (showErrors) validateMotivation()
         }
     }
 
-    /** Host calls this on Next. */
+    /** Called by EnrolFormActivity when Next is pressed on this step. */
     fun onNextPressed(): Boolean {
         showErrors = true
-        val ok = validateHighestEducation() && validateEmploymentStatus() && validateMotivation()
-        if (!ok) focusFirstError()
-        return ok
-    }
-
-    private fun validateHighestEducation(): Boolean {
-        val ok = binding.inputHighestEducation.text?.toString()?.isNotBlank() == true
-        binding.inputHighestEducationLayout.error = if (showErrors && !ok) "Please select your highest education." else null
-        return ok
-    }
-
-    private fun validateEmploymentStatus(): Boolean {
-        val ok = binding.inputEmploymentStatus.text?.toString()?.isNotBlank() == true
-        binding.inputEmploymentStatusLayout.error = if (showErrors && !ok) "Please select your employment status." else null
-        return ok
-    }
-
-    private fun validateMotivation(): Boolean {
-        val v = binding.inputMotivation.text?.toString()?.trim().orEmpty()
-        val ok = v.length >= 10
-        binding.inputMotivationLayout.error = if (showErrors && !ok) "Please provide at least 10 characters." else null
-        return ok
-    }
-
-    private fun focusFirstError() {
-        when {
-            binding.inputHighestEducationLayout.error != null -> binding.inputHighestEducation.requestFocus()
-            binding.inputEmploymentStatusLayout.error != null -> binding.inputEmploymentStatus.requestFocus()
-            binding.inputMotivationLayout.error != null       -> binding.inputMotivation.requestFocus()
-        }
+        // Background step is optional according to ViewModel.validateStep(2); always pass.
+        // If later you make fields required, add validators here and return their AND.
+        return true
     }
 
     override fun onDestroyView() {
-        super.onDestroyView()
         _binding = null
+        super.onDestroyView()
     }
 }

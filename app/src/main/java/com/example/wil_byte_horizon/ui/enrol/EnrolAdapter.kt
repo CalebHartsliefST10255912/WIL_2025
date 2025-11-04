@@ -5,8 +5,8 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.Button
 import android.widget.ImageButton
-import android.widget.TextView
 import android.widget.PopupMenu
+import android.widget.TextView
 import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.ListAdapter
 import androidx.recyclerview.widget.RecyclerView
@@ -17,7 +17,8 @@ class EnrolAdapter(
     private val isAdmin: Boolean,
     private val onEnrolClick: (Qualification) -> Unit,
     private val onEdit: (Qualification) -> Unit,
-    private val onDelete: (Qualification) -> Unit
+    private val onDelete: (Qualification) -> Unit,
+    private val onOpenDetails: (Qualification) -> Unit      // ✅ new
 ) : ListAdapter<Qualification, EnrolAdapter.VH>(Diff) {
 
     object Diff : DiffUtil.ItemCallback<Qualification>() {
@@ -34,9 +35,14 @@ class EnrolAdapter(
         fun bind(item: Qualification) {
             tvTitle.text = item.title
             tvDesc.text  = item.description
+
+            // Tap the whole card to open details
+            itemView.setOnClickListener { onOpenDetails(item) }
+
+            // Enrol button as before
             btnEnrol.setOnClickListener { onEnrolClick(item) }
 
-            // Admin overflow (only visible for admins)
+            // Admin overflow
             btnOverflow?.apply {
                 visibility = if (isAdmin) View.VISIBLE else View.GONE
                 setOnClickListener { v ->

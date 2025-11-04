@@ -21,8 +21,7 @@ class AboutFragment : Fragment() {
     private val binding get() = _binding!!
 
     // Customize to your project
-    private val websiteUrl = "https://example.com"
-    private val privacyUrl = "https://example.com/privacy"
+    private val privacyUrl = "https://web-ndikhondinani-npo--ndikhondinani-npo-db.us-east4.hosted.app/privacy"
     private val shareText =
         "Check out this app: https://play.google.com/store/apps/details?id=${BuildConfig.APPLICATION_ID}"
 

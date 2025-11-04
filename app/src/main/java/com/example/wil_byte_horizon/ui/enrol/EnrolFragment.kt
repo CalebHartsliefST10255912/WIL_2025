@@ -15,6 +15,7 @@ import androidx.fragment.app.viewModels
 import androidx.lifecycle.Lifecycle
 import androidx.lifecycle.lifecycleScope
 import androidx.lifecycle.repeatOnLifecycle
+import androidx.navigation.fragment.NavHostFragment
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.example.wil_byte_horizon.R
@@ -99,10 +100,18 @@ class EnrolFragment : Fragment() {
                                     }
                                 },
                                 onEdit = { qual -> showEditQualificationDialog(qual) },
-                                onDelete = { qual -> confirmDeleteQualification(qual) }
+                                onDelete = { qual -> confirmDeleteQualification(qual) },
+                                onOpenDetails = { qual ->
+                                    // ✅ Navigate without Safe Args
+                                    val bundle = Bundle().apply {
+                                        putString("qualificationId", qual.id)
+                                    }
+                                    NavHostFragment.findNavController(this@EnrolFragment)
+                                        .navigate(R.id.qualificationDetailsFragment, bundle)
+                                }
                             ).also { recycler.adapter = it }
 
-                            // Immediately paint current snapshot so list isn't blank when we return
+                            // Immediately paint current snapshot so list isn't blank
                             adapter?.submitList(vm.filtered.value)
                         }
                 }
@@ -143,9 +152,10 @@ class EnrolFragment : Fragment() {
     }
 
     private fun launchForm(qual: Qualification) {
-        val i = Intent(requireContext(), EnrolFormActivity::class.java)
-        i.putExtra("QUAL_ID", qual.id)
-        i.putExtra("QUAL_TITLE", qual.title)
+        val i = Intent(requireContext(), EnrolFormActivity::class.java).apply {
+            putExtra("QUAL_ID", qual.id)
+            putExtra("QUAL_TITLE", qual.title)
+        }
         startActivity(i)
     }
 

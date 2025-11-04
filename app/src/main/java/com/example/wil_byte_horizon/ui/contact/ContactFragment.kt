@@ -26,7 +26,6 @@ class ContactFragment : Fragment() {
     private val orgPhone by lazy { getString(R.string.org_phone) }
     private val orgWebsite by lazy { getString(R.string.org_website) }
     private val orgAddressQuery by lazy { getString(R.string.org_address_query) } // for Maps search
-    private val donateUrl by lazy { getString(R.string.org_donate_url) }
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -60,7 +59,6 @@ class ContactFragment : Fragment() {
         binding.rowPhone.setOnClickListener { dialPhone() }
         binding.rowWebsite.setOnClickListener { openUrl(orgWebsite) }
         binding.rowAddress.setOnClickListener { openMaps(orgAddressQuery) }
-        binding.btnDonate.setOnClickListener { openUrl(donateUrl) }
 
         // Logout (kept, but subtle)
         binding.btnLogout.setOnClickListener {

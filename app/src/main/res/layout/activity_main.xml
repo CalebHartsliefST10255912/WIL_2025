@@ -35,12 +35,13 @@
         <!-- BOTTOM NAV (ID must match MainActivity binding: navView) -->
         <com.google.android.material.bottomnavigation.BottomNavigationView
             android:id="@+id/navView"
-            style="@style/Widget.MyApp.BottomNav"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:background="@color/blue_main"
             app:itemIconTint="@color/nav_item_color"
             app:itemTextColor="@color/nav_item_color"
+            app:itemTextAppearanceActive="@style/TextAppearance.Material3.LabelLarge"
+            app:itemTextAppearanceInactive="@style/TextAppearance.Material3.LabelMedium"
             app:menu="@menu/bottom_nav_menu" />
 
     </LinearLayout>

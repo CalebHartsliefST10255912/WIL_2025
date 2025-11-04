@@ -111,6 +111,7 @@
         <!-- Province: exposed dropdown -->
         <com.google.android.material.textfield.TextInputLayout
             android:id="@+id/inputProvinceLayout"
+            style="@style/Widget.Material3.TextInputLayout.OutlinedBox.ExposedDropdownMenu"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="12dp"
@@ -131,8 +132,8 @@
                 android:importantForAutofill="no"
                 android:textColor="@color/black"
                 android:textColorHint="#CCFFFFFF"
-                android:popupBackground="@color/blue_main"
-                android:entries="@array/south_africa_provinces" />
+                android:popupBackground="@color/nav_white"
+                app:simpleItems="@array/south_africa_provinces" />
         </com.google.android.material.textfield.TextInputLayout>
 
         <com.google.android.material.textfield.TextInputLayout

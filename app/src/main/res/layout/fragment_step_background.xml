@@ -15,6 +15,7 @@
         <!-- Highest education -->
         <com.google.android.material.textfield.TextInputLayout
             android:id="@+id/inputHighestEducationLayout"
+            style="@style/Widget.Material3.TextInputLayout.OutlinedBox.ExposedDropdownMenu"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:hint="Highest education"
@@ -30,17 +31,17 @@
                 android:id="@+id/inputHighestEducation"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:inputType="none"
                 android:importantForAutofill="no"
                 android:textColor="@color/black"
                 android:textColorHint="#CCFFFFFF"
-                android:popupBackground="@color/blue_main"
-                android:entries="@array/education_level_options" />
+                android:popupBackground="@color/nav_white"
+                app:simpleItems="@array/education_level_options" />
         </com.google.android.material.textfield.TextInputLayout>
 
         <!-- Employment status -->
         <com.google.android.material.textfield.TextInputLayout
             android:id="@+id/inputEmploymentStatusLayout"
+            style="@style/Widget.Material3.TextInputLayout.OutlinedBox.ExposedDropdownMenu"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="12dp"
@@ -57,12 +58,11 @@
                 android:id="@+id/inputEmploymentStatus"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:inputType="none"
                 android:importantForAutofill="no"
                 android:textColor="@color/black"
                 android:textColorHint="#CCFFFFFF"
-                android:popupBackground="@color/blue_main"
-                android:entries="@array/employment_status_options" />
+                android:popupBackground="@color/nav_white"
+                app:simpleItems="@array/employment_status_options" />
         </com.google.android.material.textfield.TextInputLayout>
 
         <!-- Motivation -->

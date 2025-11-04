@@ -2,6 +2,7 @@ package com.example.wil_byte_horizon.ui.enrol_form
 
 import android.os.Bundle
 import android.view.View
+import android.widget.Toast
 import androidx.activity.viewModels
 import androidx.appcompat.app.AppCompatActivity
 import androidx.fragment.app.Fragment
@@ -125,9 +126,18 @@ class EnrolFormActivity : AppCompatActivity() {
             binding.btnBack.isEnabled = true
 
             if (ok) {
-                Snackbar.make(binding.root, R.string.form_submitted, Snackbar.LENGTH_LONG).show()
+                // ✅ Firestore write completed successfully
+                // Show a toast to the user
+                Toast.makeText(
+                    this,
+                    "Registration successful! You should receive an email shortly.",
+                    Toast.LENGTH_LONG
+                ).show()
+
+                // Optionally keep the screen for a moment, but usually we can finish immediately
                 finish()
             } else {
+                // Keep using Snackbar (or Toast) for failure
                 Snackbar.make(
                     binding.root,
                     msg ?: getString(R.string.form_submit_failed),
@@ -136,6 +146,7 @@ class EnrolFormActivity : AppCompatActivity() {
             }
         }
     }
+
 
     override fun onSupportNavigateUp(): Boolean {
         onBackPressedDispatcher.onBackPressed()

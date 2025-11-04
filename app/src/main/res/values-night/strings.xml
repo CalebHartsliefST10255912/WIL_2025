@@ -7,7 +7,6 @@
     <string name="title_training" />
     <string name="title_contactus" />
     <string name="title_qualifications" />
-    <string name="title_events" />
     <string name="enrolment">Enrolment</string>
     <string name="event">Events</string>
     <string name="contact_us">Contact Us</string>
@@ -65,10 +64,10 @@
     <string name="about_contact_us">Contact us</string>
 
     <!-- Org details (edit these for your NPO) -->
-    <string name="org_email">ndikhondinani@gmail.com</string>
-    <string name="org_phone">+27 73 182 9749</string>
-    <string name="org_website">https://web-ndikhondinani-npo--ndikhondinani-npo-db.us-east4.hosted.app</string>
-    <string name="org_address_query">Ward 21, Dambuza Location, Edendale, Pietermaritzburg, 3201</string>
+    <string name="org_email">info@example.org</string>
+    <string name="org_phone">+27 11 555 1234</string>
+    <string name="org_website">https://www.example.org</string>
+    <string name="org_address_query">Ndikhondinani NPO, Johannesburg, South Africa</string>
 
     <!-- A11y -->
     <string name="cd_org_logo">Organisation logo</string>
@@ -134,14 +133,6 @@
 
     <string name="content_desc_event_image">Event image</string>
     <string name="content_desc_more">More</string>
-
-    <string name="enrol_now">Enrol Now</string>
-    <string name="closed">Closed</string>
-    <string name="open">Open</string>
-    <string name="qualification_not_found">Qualification not found</string>
-    <string name="toast_registration_success">Registration successful! You should receive an email shortly.</string>
-
-
 
     <!-- Dropdown options: highest education -->
     <string-array name="education_level_options">
