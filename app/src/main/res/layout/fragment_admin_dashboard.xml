@@ -1,19 +1,35 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:orientation="vertical" android:padding="16dp"
-    android:layout_width="match_parent" android:layout_height="match_parent">
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    android:padding="16dp"
+    android:background="@android:color/transparent"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
 
+    <!-- Solid gold button -->
     <com.google.android.material.button.MaterialButton
         android:id="@+id/btnAddEvent"
-        style="@style/Widget.Material3.Button.TonalButton"
+        style="@style/Widget.Material3.Button"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
         android:text="Add Event"
-        android:layout_width="match_parent" android:layout_height="wrap_content" />
+        android:textAllCaps="false"
+        android:textColor="@android:color/black"
+        app:backgroundTint="@color/org_gold"
+        app:rippleColor="#33FEBA70" />
 
+    <!-- Solid gold button -->
     <com.google.android.material.button.MaterialButton
         android:id="@+id/btnAddQualification"
-        style="@style/Widget.Material3.Button.TonalButton"
-        android:text="Add Qualification"
+        style="@style/Widget.Material3.Button"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
         android:layout_marginTop="12dp"
-        android:layout_width="match_parent" android:layout_height="wrap_content" />
+        android:text="Add Qualification"
+        android:textAllCaps="false"
+        android:textColor="@android:color/black"
+        app:backgroundTint="@color/org_gold"
+        app:rippleColor="#33FEBA70" />
 
 </LinearLayout>
