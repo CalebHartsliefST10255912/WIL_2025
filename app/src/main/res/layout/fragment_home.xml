@@ -53,95 +53,95 @@
                     android:textAppearance="?attr/textAppearanceBodyMedium"
                     android:textColor="#E6F8F8F9" />
 
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_marginTop="16dp"
-                    android:orientation="horizontal"
-                    android:background="@android:color/transparent">
+<!--                <LinearLayout-->
+<!--                    android:layout_width="match_parent"-->
+<!--                    android:layout_height="wrap_content"-->
+<!--                    android:layout_marginTop="16dp"-->
+<!--                    android:orientation="horizontal"-->
+<!--                    android:background="@android:color/transparent">-->
 
-                    <!-- Gold primary -->
-                    <com.google.android.material.button.MaterialButton
-                        android:id="@+id/btnDonate"
-                        style="@style/Widget.Material3.Button"
-                        android:layout_width="0dp"
-                        android:layout_height="wrap_content"
-                        android:layout_weight="1"
-                        android:text="@string/cta_donate"
-                        android:textAllCaps="false"
-                        android:textColor="@color/blue_main"
-                        app:backgroundTint="@color/org_gold"
-                        app:rippleColor="#33FEBA70"
-                        app:icon="@drawable/ic_notifications_black_24dp"
-                        app:iconPadding="8dp"
-                        app:iconGravity="textStart"
-                        app:iconTint="@color/blue_main" />
+<!--                    &lt;!&ndash; Gold primary &ndash;&gt;-->
+<!--                    <com.google.android.material.button.MaterialButton-->
+<!--                        android:id="@+id/btnDonate"-->
+<!--                        style="@style/Widget.Material3.Button"-->
+<!--                        android:layout_width="0dp"-->
+<!--                        android:layout_height="wrap_content"-->
+<!--                        android:layout_weight="1"-->
+<!--                        android:text="@string/cta_donate"-->
+<!--                        android:textAllCaps="false"-->
+<!--                        android:textColor="@color/blue_main"-->
+<!--                        app:backgroundTint="@color/org_gold"-->
+<!--                        app:rippleColor="#33FEBA70"-->
+<!--                        app:icon="@drawable/ic_notifications_black_24dp"-->
+<!--                        app:iconPadding="8dp"-->
+<!--                        app:iconGravity="textStart"-->
+<!--                        app:iconTint="@color/blue_main" />-->
 
-                    <!-- Gold outlined -->
-                    <com.google.android.material.button.MaterialButton
-                        android:id="@+id/btnVolunteer"
-                        style="@style/Widget.Material3.Button.OutlinedButton"
-                        android:layout_width="0dp"
-                        android:layout_height="wrap_content"
-                        android:layout_marginStart="12dp"
-                        android:layout_weight="1"
-                        android:text="@string/cta_volunteer"
-                        android:textAllCaps="false"
-                        android:textColor="@color/org_gold"
-                        app:strokeColor="@color/org_gold"
-                        app:strokeWidth="1dp"
-                        app:backgroundTint="@android:color/transparent"
-                        app:rippleColor="#33FEBA70"
-                        app:icon="@drawable/ic_notifications_black_24dp"
-                        app:iconPadding="8dp"
-                        app:iconGravity="textStart"
-                        app:iconTint="@color/org_gold" />
-                </LinearLayout>
+<!--                    &lt;!&ndash; Gold outlined &ndash;&gt;-->
+<!--                    <com.google.android.material.button.MaterialButton-->
+<!--                        android:id="@+id/btnVolunteer"-->
+<!--                        style="@style/Widget.Material3.Button.OutlinedButton"-->
+<!--                        android:layout_width="0dp"-->
+<!--                        android:layout_height="wrap_content"-->
+<!--                        android:layout_marginStart="12dp"-->
+<!--                        android:layout_weight="1"-->
+<!--                        android:text="@string/cta_volunteer"-->
+<!--                        android:textAllCaps="false"-->
+<!--                        android:textColor="@color/org_gold"-->
+<!--                        app:strokeColor="@color/org_gold"-->
+<!--                        app:strokeWidth="1dp"-->
+<!--                        app:backgroundTint="@android:color/transparent"-->
+<!--                        app:rippleColor="#33FEBA70"-->
+<!--                        app:icon="@drawable/ic_notifications_black_24dp"-->
+<!--                        app:iconPadding="8dp"-->
+<!--                        app:iconGravity="textStart"-->
+<!--                        app:iconTint="@color/org_gold" />-->
+<!--                </LinearLayout>-->
             </LinearLayout>
         </com.google.android.material.card.MaterialCardView>
 
-        <!-- Impact Stats -->
-        <TextView
-            android:id="@+id/labelImpact"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="20dp"
-            android:text="@string/home_impact"
-            app:cardBackgroundColor="@android:color/transparent"
-            android:textAppearance="?attr/textAppearanceTitleMedium"
-            android:textColor="@color/nav_white"
-            android:shadowColor="@android:color/transparent"/>
+<!--        &lt;!&ndash; Impact Stats &ndash;&gt;-->
+<!--        <TextView-->
+<!--            android:id="@+id/labelImpact"-->
+<!--            android:layout_width="wrap_content"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:layout_marginTop="20dp"-->
+<!--            android:text="@string/home_impact"-->
+<!--            app:cardBackgroundColor="@android:color/transparent"-->
+<!--            android:textAppearance="?attr/textAppearanceTitleMedium"-->
+<!--            android:textColor="@color/nav_white"-->
+<!--            android:shadowColor="@android:color/transparent"/>-->
 
-        <LinearLayout
-            android:id="@+id/statsRow"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="8dp"
-            android:gravity="center"
-            android:orientation="horizontal"
-            android:weightSum="3"
-            android:background="@android:color/transparent">
+<!--        <LinearLayout-->
+<!--            android:id="@+id/statsRow"-->
+<!--            android:layout_width="match_parent"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:layout_marginTop="8dp"-->
+<!--            android:gravity="center"-->
+<!--            android:orientation="horizontal"-->
+<!--            android:weightSum="3"-->
+<!--            android:background="@android:color/transparent">-->
 
-            <com.example.wil_byte_horizon.ui.home.views.StatCardView
-                android:id="@+id/cardBeneficiaries"
-                android:layout_width="0dp"
-                android:layout_height="100dp"
-                android:layout_weight="1"
-                android:layout_marginEnd="8dp" />
+<!--            <com.example.wil_byte_horizon.ui.home.views.StatCardView-->
+<!--                android:id="@+id/cardBeneficiaries"-->
+<!--                android:layout_width="0dp"-->
+<!--                android:layout_height="100dp"-->
+<!--                android:layout_weight="1"-->
+<!--                android:layout_marginEnd="8dp" />-->
 
-            <com.example.wil_byte_horizon.ui.home.views.StatCardView
-                android:id="@+id/cardVolunteers"
-                android:layout_width="0dp"
-                android:layout_height="100dp"
-                android:layout_weight="1"
-                android:layout_marginEnd="8dp" />
+<!--            <com.example.wil_byte_horizon.ui.home.views.StatCardView-->
+<!--                android:id="@+id/cardVolunteers"-->
+<!--                android:layout_width="0dp"-->
+<!--                android:layout_height="100dp"-->
+<!--                android:layout_weight="1"-->
+<!--                android:layout_marginEnd="8dp" />-->
 
-            <com.example.wil_byte_horizon.ui.home.views.StatCardView
-                android:id="@+id/cardProjects"
-                android:layout_width="0dp"
-                android:layout_height="100dp"
-                android:layout_weight="1" />
-        </LinearLayout>
+<!--            <com.example.wil_byte_horizon.ui.home.views.StatCardView-->
+<!--                android:id="@+id/cardProjects"-->
+<!--                android:layout_width="0dp"-->
+<!--                android:layout_height="100dp"-->
+<!--                android:layout_weight="1" />-->
+<!--        </LinearLayout>-->
 
         <!-- Programs / What we do -->
         <TextView

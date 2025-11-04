@@ -39,7 +39,7 @@ class HomeFragment : Fragment() {
         setupLists()
         setupClicks()
         bindObservers()
-        animateStats()
+        //animateStats()
 
         return binding.root
     }
@@ -65,12 +65,12 @@ class HomeFragment : Fragment() {
     }
 
     private fun setupClicks() {
-        binding.btnDonate.setOnClickListener {
-            // findNavController().navigate(R.id.action_home_to_donate)
-        }
-        binding.btnVolunteer.setOnClickListener {
-            // findNavController().navigate(R.id.action_home_to_volunteer)
-        }
+//        binding.btnDonate.setOnClickListener {
+//            // findNavController().navigate(R.id.action_home_to_donate)
+//        }
+//        binding.btnVolunteer.setOnClickListener {
+//            // findNavController().navigate(R.id.action_home_to_volunteer)
+//        }
         binding.btnAllNews.setOnClickListener {
             // findNavController().navigate(R.id.action_home_to_news)
         }
@@ -84,36 +84,36 @@ class HomeFragment : Fragment() {
             newsAdapter.submitList(articles)
         }
         vm.stats.observe(viewLifecycleOwner) { s ->
-            binding.cardBeneficiaries.setLabel(getString(R.string.stat_beneficiaries))
-            binding.cardVolunteers.setLabel(getString(R.string.stat_volunteers))
-            binding.cardProjects.setLabel(getString(R.string.stat_projects))
-
-            // set targets + animate
-            binding.cardBeneficiaries.animateTo(s.beneficiaries)
-            binding.cardVolunteers.animateTo(s.volunteers)
-            binding.cardProjects.animateTo(s.projects)
+//            binding.cardBeneficiaries.setLabel(getString(R.string.stat_beneficiaries))
+//            binding.cardVolunteers.setLabel(getString(R.string.stat_volunteers))
+//            binding.cardProjects.setLabel(getString(R.string.stat_projects))
+//
+//            // set targets + animate
+//            binding.cardBeneficiaries.animateTo(s.beneficiaries)
+//            binding.cardVolunteers.animateTo(s.volunteers)
+//            binding.cardProjects.animateTo(s.projects)
         }
     }
 
-    private fun animateStats() {
-        lifecycleScope.launch {
-            delay(150)
-            listOf(binding.cardBeneficiaries, binding.cardVolunteers, binding.cardProjects).forEach { statView ->
-                val valueView = statView.findViewById<android.widget.TextView>(R.id.txtValue)
-                val target = (statView.tag as? Int) ?: 0
-                val duration = 700L
-                val steps = 40
-                for (i in 0..steps) {
-                    val t = i / steps.toFloat()
-                    val eased = DecelerateInterpolator().getInterpolation(t)
-                    val current = (target * eased).toInt()
-                    valueView.text = current.toString()
-                    delay(duration / steps)
-                }
-                valueView.text = target.toString()
-            }
-        }
-    }
+//    private fun animateStats() {
+//        lifecycleScope.launch {
+//            delay(150)
+//            listOf(binding.cardBeneficiaries, binding.cardVolunteers, binding.cardProjects).forEach { statView ->
+//                val valueView = statView.findViewById<android.widget.TextView>(R.id.txtValue)
+//                val target = (statView.tag as? Int) ?: 0
+//                val duration = 700L
+//                val steps = 40
+//                for (i in 0..steps) {
+//                    val t = i / steps.toFloat()
+//                    val eased = DecelerateInterpolator().getInterpolation(t)
+//                    val current = (target * eased).toInt()
+//                    valueView.text = current.toString()
+//                    delay(duration / steps)
+//                }
+//                valueView.text = target.toString()
+//            }
+//        }
+//    }
 
     override fun onDestroyView() {
         super.onDestroyView()
