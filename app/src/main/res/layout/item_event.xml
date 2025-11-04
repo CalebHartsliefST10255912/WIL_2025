@@ -26,7 +26,7 @@
             android:contentDescription="@string/content_desc_more"
             android:background="?attr/selectableItemBackgroundBorderless"
             android:src="@drawable/ic_more_vert_24px"
-            android:tint="@color/nav_white"
+            app:tint="@color/nav_white"
             android:visibility="gone"/>
 
         <!-- Poster with rounded corners -->
