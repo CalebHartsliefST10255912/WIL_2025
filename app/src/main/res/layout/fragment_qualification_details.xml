@@ -1,45 +1,60 @@
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.core.widget.NestedScrollView xmlns:android="http://schemas.android.com/apk/res/android"
-    android:layout_width="match_parent" android:layout_height="match_parent"
-    android:padding="16dp">
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="16dp"
+    android:background="@android:color/transparent">
 
     <LinearLayout
-        android:layout_width="match_parent" android:layout_height="wrap_content"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
         android:orientation="vertical">
 
+        <!-- Title -->
         <TextView
             android:id="@+id/tvTitle"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
             android:textStyle="bold"
             android:textSize="20sp"
-            android:textColor="@color/blue_main"
-            android:layout_width="match_parent" android:layout_height="wrap_content" />
+            android:textColor="@android:color/black" />
 
+        <!-- Meta (date, duration, etc.) -->
         <TextView
             android:id="@+id/tvMeta"
-            android:textSize="14sp"
-            android:textColor="#AA1A2336"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
             android:layout_marginTop="4dp"
-            android:layout_width="match_parent" android:layout_height="wrap_content" />
+            android:textSize="14sp"
+            android:textColor="#99000000" />
 
+        <!-- Gold divider -->
         <View
-            android:layout_width="match_parent" android:layout_height="1dp"
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
             android:layout_marginTop="12dp"
-            android:background="@color/blue_block" />
+            android:background="#26FEBA70" />
 
+        <!-- Description -->
         <TextView
             android:id="@+id/tvDesc"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
             android:layout_marginTop="12dp"
             android:textSize="16sp"
-            android:textColor="@color/blue_main"
-            android:layout_width="match_parent" android:layout_height="wrap_content" />
+            android:textColor="@android:color/black" />
 
-        <Button
+        <!-- CTA: solid gold, black text -->
+        <com.google.android.material.button.MaterialButton
             android:id="@+id/btnEnrol"
+            android:layout_width="match_parent"
+            android:layout_height="44dp"
             android:layout_marginTop="20dp"
-            android:layout_width="match_parent" android:layout_height="44dp"
             android:text="Enrol Now"
             android:textAllCaps="false"
-            android:background="@drawable/ripple_button"
-            android:textColor="@color/blue_main" />
+            android:textColor="@android:color/black"
+            app:backgroundTint="@color/org_gold"
+            app:rippleColor="#33FEBA70" />
     </LinearLayout>
 </androidx.core.widget.NestedScrollView>

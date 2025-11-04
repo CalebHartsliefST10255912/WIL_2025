@@ -12,7 +12,7 @@
         android:layout_height="match_parent"
         android:orientation="vertical">
 
-        <!-- SINGLE TOOLBAR (direct element; no include) -->
+        <!-- SINGLE TOOLBAR -->
         <com.google.android.material.appbar.MaterialToolbar
             android:id="@+id/topAppBar"
             android:layout_width="match_parent"
@@ -32,17 +32,15 @@
             app:defaultNavHost="true"
             app:navGraph="@navigation/mobile_navigation" />
 
-        <!-- BOTTOM NAV (ID must match MainActivity binding: navView) -->
+        <!-- BOTTOM NAV -->
         <com.google.android.material.bottomnavigation.BottomNavigationView
             android:id="@+id/navView"
+            style="@style/Widget.MyApp.BottomNav"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:background="@color/blue_main"
+            app:menu="@menu/bottom_nav_menu"
             app:itemIconTint="@color/nav_item_color"
-            app:itemTextColor="@color/nav_item_color"
-            app:itemTextAppearanceActive="@style/TextAppearance.Material3.LabelLarge"
-            app:itemTextAppearanceInactive="@style/TextAppearance.Material3.LabelMedium"
-            app:menu="@menu/bottom_nav_menu" />
-
+            app:itemTextColor="@color/nav_item_color" />
     </LinearLayout>
 </androidx.coordinatorlayout.widget.CoordinatorLayout>

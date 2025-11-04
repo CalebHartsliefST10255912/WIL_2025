@@ -1,24 +1,15 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
 
-    <style name="CircularImage">
-        <item name="cornerFamily">rounded</item>
-        <item name="cornerSize">50%</item>
-    </style>
+    <!-- BottomNavigationView without M3 active indicator pill -->
+    <style name="Widget.MyApp.BottomNav" parent="Widget.MaterialComponents.BottomNavigationView">
+        <!-- Keep your existing state lists -->
+        <item name="itemIconTint">@color/nav_item_color</item>
+        <item name="itemTextColor">@color/nav_item_color</item>
 
-    <style name="Widget.MyApp.BottomNav" parent="Widget.Material3.BottomNavigationView">
-        <item name="itemActiveIndicatorStyle">@style/BottomNav.ActiveIndicator.Transparent</item>
-    </style>
-
-    <style name="BottomNav.ActiveIndicator.Transparent" parent="">
-        <item name="android:width">0dp</item>
-        <item name="android:height">0dp</item>
-        <item name="android:insetLeft">0dp</item>
-        <item name="android:insetRight">0dp</item>
-        <item name="android:insetTop">0dp</item>
-        <item name="android:insetBottom">0dp</item>
-        <item name="android:shape">rectangle</item>
-        <item name="android:color">@android:color/transparent</item>
+        <!-- No background highlight/ripple behind items -->
+        <item name="itemRippleColor">@android:color/transparent</item>
+        <item name="itemBackground">@android:color/transparent</item>
     </style>
 
 </resources>
