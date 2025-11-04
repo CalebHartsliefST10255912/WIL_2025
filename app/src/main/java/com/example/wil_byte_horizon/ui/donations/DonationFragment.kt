@@ -8,7 +8,7 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.Toast
 import androidx.fragment.app.Fragment
-import com.example.wil_byte_horizon.databinding.DonationFragmentBinding
+import com.example.wil_byte_horizon.databinding.FragmentDonationBinding
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.firestore.FirebaseFirestore
 import java.net.URLEncoder
@@ -16,7 +16,7 @@ import java.nio.charset.StandardCharsets
 
 class DonationFragment : Fragment() {
 
-    private var _binding: DonationFragmentBinding? = null
+    private var _binding: FragmentDonationBinding? = null
     private val binding get() = _binding!!
 
     private val auth by lazy { FirebaseAuth.getInstance() }
@@ -27,7 +27,7 @@ class DonationFragment : Fragment() {
         container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View {
-        _binding = DonationFragmentBinding.inflate(inflater, container, false)
+        _binding = FragmentDonationBinding.inflate(inflater, container, false)
         return binding.root
     }
 

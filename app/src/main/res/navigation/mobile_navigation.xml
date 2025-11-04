@@ -19,7 +19,7 @@
         android:id="@+id/donationFragment"
         android:name="com.example.wil_byte_horizon.ui.donation.DonationFragment"
         android:label="Donate"
-        tools:layout="@layout/donation_fragment" />
+        tools:layout="@layout/fragment_donation" />
 
 
     <fragment

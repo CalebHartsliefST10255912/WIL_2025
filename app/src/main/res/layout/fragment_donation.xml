@@ -63,9 +63,9 @@
             android:layout_marginTop="20dp"
             app:cardCornerRadius="16dp"
             app:cardUseCompatPadding="false"
-            app:cardBackgroundColor="@color/blue_main"
+            app:cardBackgroundColor="@color/nav_white"
             app:strokeColor="#26FEBA70"
-            app:strokeWidth="1dp"
+            app:strokeWidth="0dp"
             app:cardElevation="0dp"
             android:stateListAnimator="@null">
 
@@ -84,14 +84,18 @@
                     android:textColor="@color/org_gold"
                     android:textStyle="bold" />
 
+                <!-- Amount (white fill, black text, GOLD cursor) -->
                 <com.google.android.material.textfield.TextInputLayout
                     android:id="@+id/layoutAmount"
+                    style="@style/Widget.Material3.TextInputLayout.OutlinedBox"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="8dp"
-                    app:boxBackgroundMode="filled"
-                    app:boxBackgroundColor="#1AFFFFFF"
-                    app:startIconTint="@color/org_gold">
+                    app:boxBackgroundColor="@color/nav_white"
+                    app:boxStrokeColor="@color/org_gold"
+                    app:boxStrokeWidth="1dp"
+                    app:boxStrokeWidthFocused="2dp"
+                    app:hintTextColor="@color/org_gold">
 
                     <com.google.android.material.textfield.TextInputEditText
                         android:id="@+id/editAmount"
@@ -100,7 +104,8 @@
                         android:inputType="numberDecimal"
                         android:hint="Rand Amount"
                         android:textColor="@color/black"
-                        android:textColorHint="#80FFFFFF" />
+                        android:textColorHint="@color/org_gold"
+                        android:textCursorDrawable="@drawable/cursor_org_gold" />
                 </com.google.android.material.textfield.TextInputLayout>
 
                 <TextView
@@ -112,29 +117,34 @@
                     android:textColor="@color/org_gold"
                     android:textStyle="bold" />
 
+                <!-- Message (white fill, black text, GOLD cursor) -->
                 <com.google.android.material.textfield.TextInputLayout
                     android:id="@+id/layoutMessage"
+                    style="@style/Widget.Material3.TextInputLayout.OutlinedBox"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="8dp"
-                    app:boxBackgroundMode="filled"
-                    app:boxBackgroundColor="#1AFFFFFF"
-                    app:startIconTint="@color/org_gold">
+                    app:boxBackgroundColor="@color/nav_white"
+                    app:boxStrokeColor="@color/org_gold"
+                    app:boxStrokeWidth="1dp"
+                    app:boxStrokeWidthFocused="2dp"
+                    app:hintTextColor="@color/org_gold">
 
                     <com.google.android.material.textfield.TextInputEditText
                         android:id="@+id/editMessage"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:hint="Add a note to the organization (optional)"
-                        android:inputType="textCapSentences"
+                        android:inputType="textCapSentences|textMultiLine"
                         android:maxLines="3"
                         android:textColor="@color/black"
-                        android:textColorHint="#80FFFFFF" />
+                        android:textColorHint="@color/org_gold"
+                        android:textCursorDrawable="@drawable/cursor_org_gold" />
                 </com.google.android.material.textfield.TextInputLayout>
             </LinearLayout>
         </com.google.android.material.card.MaterialCardView>
 
-        <!-- Donate Button -->
+        <!-- Donate Button (gold + black) -->
         <com.google.android.material.button.MaterialButton
             android:id="@+id/btnDonatePayfast"
             style="@style/Widget.Material3.Button"
@@ -143,11 +153,11 @@
             android:layout_marginTop="24dp"
             android:text="Donate with PayFast"
             android:textAllCaps="false"
-            android:textColor="@color/blue_main"
+            android:textColor="@android:color/black"
             app:backgroundTint="@color/org_gold"
             app:iconPadding="8dp"
             app:iconGravity="textStart"
-            app:iconTint="@color/blue_main"
+            app:iconTint="@android:color/black"
             app:rippleColor="#33FEBA70" />
 
         <!-- Transparency Notice -->
@@ -158,7 +168,7 @@
             android:layout_marginTop="16dp"
             android:text="All transactions are securely processed through PayFast. Ndikhondinani does not store any card information."
             android:textAppearance="?attr/textAppearanceBodySmall"
-            android:textColor="#B3FFFFFF"
+            android:textColor="#99000000"
             android:gravity="center"
             android:padding="8dp" />
     </LinearLayout>
