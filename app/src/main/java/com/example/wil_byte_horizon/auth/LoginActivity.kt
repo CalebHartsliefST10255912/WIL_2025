@@ -68,7 +68,7 @@ class LoginActivity : ComponentActivity() {
 
         val googleIdOption = GetGoogleIdOption.Builder()
             // *** IMPORTANT: this must be your WEB (server) client ID from Google Cloud Console ***
-            .setServerClientId(getString(R.string.server_client_id))
+            .setServerClientId(getString(R.string.default_web_client_id))
             .setFilterByAuthorizedAccounts(false)
             .build()
 

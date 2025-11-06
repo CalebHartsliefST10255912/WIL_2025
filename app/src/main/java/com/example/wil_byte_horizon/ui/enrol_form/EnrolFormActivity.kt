@@ -6,6 +6,9 @@ import android.widget.Toast
 import androidx.activity.viewModels
 import androidx.appcompat.app.AppCompatActivity
 import androidx.fragment.app.Fragment
+import androidx.lifecycle.Lifecycle
+import androidx.lifecycle.lifecycleScope
+import androidx.lifecycle.repeatOnLifecycle
 import androidx.viewpager2.widget.ViewPager2
 import com.example.wil_byte_horizon.R
 import com.example.wil_byte_horizon.core.FirebaseAuthManager
@@ -14,6 +17,7 @@ import com.example.wil_byte_horizon.ui.enrol_form.steps.BackgroundStepFragment
 import com.example.wil_byte_horizon.ui.enrol_form.steps.ContactStepFragment
 import com.example.wil_byte_horizon.ui.enrol_form.steps.PersonalStepFragment
 import com.google.android.material.snackbar.Snackbar
+import kotlinx.coroutines.launch
 
 class EnrolFormActivity : AppCompatActivity() {
 
@@ -39,6 +43,8 @@ class EnrolFormActivity : AppCompatActivity() {
             intent.getStringExtra("QUAL_ID") ?: "",
             intent.getStringExtra("QUAL_TITLE") ?: ""
         )
+
+        // Show title immediately; if you ever change it later, collect the flow
         binding.tvQualTitle.text = vm.qualificationTitle.value
 
         // Pager
@@ -60,7 +66,7 @@ class EnrolFormActivity : AppCompatActivity() {
         binding.btnNext.setOnClickListener {
             val step = pager.currentItem
 
-            // 🔴 Show field-level errors ON DEMAND (only when Next is pressed)
+            // Show field-level errors ON DEMAND (only when Next is pressed)
             val currentFrag = findStepFragment(step)
             val canProceedByUi = when (currentFrag) {
                 is PersonalStepFragment   -> currentFrag.onNextPressed()
@@ -75,7 +81,7 @@ class EnrolFormActivity : AppCompatActivity() {
                 return@setOnClickListener
             }
 
-            // (Optional) Keep your ViewModel gate as a second safety net
+            // Secondary guard
             if (!vm.validateStep(step)) {
                 Snackbar.make(binding.root, R.string.form_fix_errors, Snackbar.LENGTH_LONG).show()
                 return@setOnClickListener
@@ -92,6 +98,19 @@ class EnrolFormActivity : AppCompatActivity() {
         pager.registerOnPageChangeCallback(object : ViewPager2.OnPageChangeCallback() {
             override fun onPageSelected(position: Int) = updateButtons(position)
         })
+
+        // Optional: reflect submitting state in UI (prevents edge cases on rotation)
+        lifecycleScope.launch {
+            repeatOnLifecycle(Lifecycle.State.STARTED) {
+                launch {
+                    vm.submitting.collect { isSubmitting ->
+                        binding.progressCircular.visibility = if (isSubmitting) View.VISIBLE else View.GONE
+                        binding.btnNext.isEnabled = !isSubmitting
+                        binding.btnBack.isEnabled = !isSubmitting
+                    }
+                }
+            }
+        }
     }
 
     /** Find the fragment currently shown by ViewPager2. */
@@ -116,28 +135,19 @@ class EnrolFormActivity : AppCompatActivity() {
     }
 
     private fun submit() {
-        binding.progressCircular.visibility = View.VISIBLE
-        binding.btnNext.isEnabled = false
-        binding.btnBack.isEnabled = false
-
+        // The ViewModel guards double submits; UI will also be disabled via the 'submitting' collector
         vm.submit { ok, msg ->
-            binding.progressCircular.visibility = View.GONE
-            binding.btnNext.isEnabled = true
-            binding.btnBack.isEnabled = true
-
             if (ok) {
-                // ✅ Firestore write completed successfully
-                // Show a toast to the user
+                // ✅ Firestore write completed successfully.
+                // The Cloud Function already enqueued the success email.
                 Toast.makeText(
                     this,
                     "Registration successful! You should receive an email shortly.",
                     Toast.LENGTH_LONG
                 ).show()
-
-                // Optionally keep the screen for a moment, but usually we can finish immediately
                 finish()
             } else {
-                // Keep using Snackbar (or Toast) for failure
+                // The Cloud Function attempts to enqueue a failure email (best effort).
                 Snackbar.make(
                     binding.root,
                     msg ?: getString(R.string.form_submit_failed),
@@ -146,7 +156,6 @@ class EnrolFormActivity : AppCompatActivity() {
             }
         }
     }
-
 
     override fun onSupportNavigateUp(): Boolean {
         onBackPressedDispatcher.onBackPressed()

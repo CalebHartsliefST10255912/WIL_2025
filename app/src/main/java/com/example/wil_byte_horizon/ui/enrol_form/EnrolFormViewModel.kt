@@ -22,8 +22,8 @@ class EnrolFormViewModel(
     val qualificationTitle: StateFlow<String> = _qualificationTitle
 
     fun setQualification(id: String, title: String?) {
-        _qualificationId.value = id
-        _qualificationTitle.value = title ?: ""
+        _qualificationId.value = id.trim()
+        _qualificationTitle.value = (title ?: "").trim()
     }
 
     // Step 0 – Personal
@@ -56,21 +56,17 @@ class EnrolFormViewModel(
     fun validateStep(step: Int): Boolean {
         return when (step) {
             0 -> {
-                fullName.value.isNotBlank() &&
-                        idNumber.value.isNotBlank()
+                fullName.value.trim().isNotBlank() &&
+                        idNumber.value.trim().isNotBlank()
             }
             1 -> {
                 val e = email.value.trim()
                 e.isNotBlank() && '@' in e
             }
-            2 -> {
-                // background is optional in this baseline; always valid
-                true
-            }
+            2 -> true // background optional
             3 -> {
-                // review: ensure minimum required overall + terms
-                fullName.value.isNotBlank() &&
-                        idNumber.value.isNotBlank() &&
+                fullName.value.trim().isNotBlank() &&
+                        idNumber.value.trim().isNotBlank() &&
                         email.value.trim().isNotBlank() &&
                         '@' in email.value.trim() &&
                         qualificationId.value.isNotBlank()
@@ -85,33 +81,35 @@ class EnrolFormViewModel(
             qualificationTitle = qualificationTitle.value.ifBlank { null },
 
             // personal
-            fullName = fullName.value,
-            idNumber = idNumber.value,
-            dateOfBirth = dateOfBirth.value.ifBlank { null },
+            fullName = fullName.value.trim(),
+            idNumber = idNumber.value.trim(),
+            dateOfBirth = dateOfBirth.value.trim().ifBlank { null },
 
             // contact
-            email = email.value,
-            phone = phone.value.ifBlank { null },
-            address1 = address1.value.ifBlank { null },
-            address2 = address2.value.ifBlank { null },
-            city = city.value.ifBlank { null },
-            province = province.value.ifBlank { null },
-            postalCode = postalCode.value.ifBlank { null },
+            email = email.value.trim(),
+            phone = phone.value.trim().ifBlank { null },
+            address1 = address1.value.trim().ifBlank { null },
+            address2 = address2.value.trim().ifBlank { null },
+            city = city.value.trim().ifBlank { null },
+            province = province.value.trim().ifBlank { null },
+            postalCode = postalCode.value.trim().ifBlank { null },
 
             // background
-            highestEducation = highestEducation.value.ifBlank { null },
-            employmentStatus = employmentStatus.value.ifBlank { null },
-            motivation = motivation.value.ifBlank { null },
+            highestEducation = highestEducation.value.trim().ifBlank { null },
+            employmentStatus = employmentStatus.value.trim().ifBlank { null },
+            motivation = motivation.value.trim().ifBlank { null },
 
             // misc
             extra = emptyMap()
         )
     }
 
-    /**
-     * Call from your Activity's submit() after final validation passes.
-     */
     fun submit(onResult: (ok: Boolean, message: String?) -> Unit) {
+        if (_submitting.value) {
+            // prevent accidental double taps
+            return
+        }
+
         if (!validateStep(3)) {
             onResult(false, "Please complete required fields and accept terms.")
             return
@@ -127,10 +125,12 @@ class EnrolFormViewModel(
 
             result.fold(
                 onSuccess = { id ->
+                    // Server has already queued the success email.
                     onResult(true, "Submitted (#$id)")
                 },
                 onFailure = { e ->
                     _lastError.value = e.message
+                    // Server attempts to queue a failure email best-effort.
                     onResult(false, e.message ?: "Failed to submit")
                 }
             )
